@@ -41,7 +41,8 @@ d3.json("jobSearchResults.json", function(response) {
 
       // Add a new marker to the cluster group and bind a pop-up
       markers.addLayer(L.marker([latitude, longitude])
-        .bindPopup(response[i].title));
+        .bindPopup("<h1>" + response[i].title + "</h1> <hr> <h3>Company: " + response[i].company + "</h3>" 
+        + "<br><p>Date posted: " + new Date(response[i].created) +"</p>" ));
     }
 
   }
