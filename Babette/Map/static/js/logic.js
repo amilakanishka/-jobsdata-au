@@ -1,7 +1,7 @@
 // Creating map object
 var myMap = L.map("map", {
-  center: [-37.81, 144.97],
-  zoom: 11
+  center: [-25.69, 133.88],
+  zoom: 5
 });
 
 // Adding tile layer to the map
@@ -42,7 +42,8 @@ d3.json("jobSearchResults.json", function(response) {
       // Add a new marker to the cluster group and bind a pop-up
       markers.addLayer(L.marker([latitude, longitude])
         .bindPopup("<h1>" + response[i].title + "</h1> <hr> <h3>Company: " + response[i].company + "</h3>" 
-        + "<br><p>Date posted: " + new Date(response[i].created) +"</p>" ));
+        + "<p><a href=" + response[i].redirect_url + ">Position description</a></p>" +
+        "<p>Date posted: " + new Date(response[i].created) + "</p>" ));
     }
 
   }
