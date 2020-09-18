@@ -104,7 +104,7 @@ d3.json("jobSearchResults.json", function (response) {
   // Create a new marker cluster group
   var markers = L.markerClusterGroup({
     spiderfyOnMaxZoom: false,
-    // showCoverageOnHover: false,
+    showCoverageOnHover: false,
     // zoomToBoundsOnClick: false,
     iconCreateFunction: function (cluster) {
       var childCount = cluster.getChildCount();
