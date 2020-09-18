@@ -1,8 +1,64 @@
+// //The map will display in a different location based on the state selected:
+// //Selecting the value of the dropdown Menu:
+// var state = dropdownMenu.property("value");
+
+// //Create a conditional statement based on the sate selected:
+// if (state == "VIC") {
+//   var myMap = L.map("map", {
+//     center: [-37.81, 144.96],
+//     zoom: 7
+//   })
+// }
+// else if (state == "NSW") {
+//   var myMap = L.map("map", {
+//     center: [-33.86, 151.20],
+//     zoom: 7
+//   })
+// }
+// else if (state == "ACT") {
+//   var myMap = L.map("map", {
+//     center: [-35.28, 149.13],
+//     zoom: 7
+//   })
+// }
+// else if (state == "QLD") {
+//   var myMap = L.map("map", {
+//   center: [-23.52, 148.16],
+//   zoom: 6
+//   })
+// }
+// else if (state == "SA") {
+//   var myMap = L.map("map", {
+//   center: [-34.92, 138.60],
+//   zoom: 7
+//   })
+// }
+// else if (state == "WA") {
+//   var myMap = L.map("map", {
+//   center: [-31.95, 115.86],
+//   zoom: 7
+//   })
+// }
+// else if (state == "NT") {
+//   var myMap = L.map("map", {
+//   center: [-18, 134.19],
+//   zoom: 6
+//   })
+// }
+// else if (state == "All") {
+//   var myMap = L.map("map", {
+//   center: [-25.69, 133.88],
+//   zoom: 5
+//   })
+// }
+
+
 // Creating map object
 var myMap = L.map("map", {
   center: [-25.69, 133.88],
   zoom: 5
 });
+
 
 // Adding light tile layer to the map
 var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -32,7 +88,6 @@ var baseMaps = {
 // Pass our map layers into our layer control
 // Add the layer control to the map
 L.control.layers(baseMaps).addTo(myMap);
-
 
 // // Store API query variables
 // var baseURL = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?";
