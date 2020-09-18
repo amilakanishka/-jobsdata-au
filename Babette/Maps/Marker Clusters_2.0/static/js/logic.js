@@ -44,27 +44,33 @@ L.control.layers(baseMaps).addTo(myMap);
 // var url = baseURL + date + complaint + limit;
 
 // Grab the data with d3
-d3.json("jobSearchResults.json", function(response) {
+d3.json("jobSearchResults.json", function (response) {
 
   // Create a new marker cluster group
   var markers = L.markerClusterGroup({
+    spiderfyOnMaxZoom: false,
+    // showCoverageOnHover: false,
+    // zoomToBoundsOnClick: false,
     iconCreateFunction: function (cluster) {
-    var childCount = cluster.getChildCount();
-    var c = ' marker-cluster-';
-    if (childCount < 10) {
-      c += 'small';
-    } 
-    else if (childCount < 100) {
-      c += 'medium';
-    } 
-    else {
-      c += 'large';
+      var childCount = cluster.getChildCount();
+      var c = ' marker-cluster-';
+      if (childCount < 10) {
+        c += 'small';
+      }
+      else if (childCount < 100) {
+        c += 'medium';
+      }
+      else {
+        c += 'large';
+      }
+
+      return new L.DivIcon({
+        html: '<div><span>' + childCount + '</span></div>',
+        className: 'marker-cluster' + c, iconSize: new L.Point(40, 40)
+      });
     }
-   
-    return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', 
-     className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) });
-  }
-    });
+
+  });
 
   // Loop through data
   for (var i = 0; i < response.length; i++) {
@@ -78,9 +84,9 @@ d3.json("jobSearchResults.json", function(response) {
 
       // Add a new marker to the cluster group and bind a pop-up
       markers.addLayer(L.marker([latitude, longitude])
-        .bindPopup("<h1>" + response[i].title + "</h1> <hr> <h3>Company: " + response[i].company + "</h3>" 
-        + "<p><a href=" + response[i].redirect_url + ">Position description</a></p>" +
-        "<p>Date posted: " + new Date(response[i].created) + "</p>" ));
+        .bindPopup("<h1>" + response[i].title + "</h1> <hr> <h3>Company: " + response[i].company + "</h3>"
+          + "<p><a href=" + response[i].redirect_url + ">Position description</a></p>" +
+          "<p>Date posted: " + new Date(response[i].created) + "</p>"));
     }
 
   }
@@ -90,5 +96,22 @@ d3.json("jobSearchResults.json", function(response) {
 
 });
 
+// var markerCluster = new MarkerClusterer(map, markers, { 
+//   imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+//   zoomOnClick: false
+// });
+// markerCluster.addListener('clusterclick', function(cluster){
+//   if (markers.length > 5){ // change #5 if you need to test different scenarions
+//         infowindow.setPosition(cluster.getCenter());
+//         infowindow.setContent("Simple Test");
+//         infowindow.open(map);
+
+//         }
+//   else {
+//           markerCluster.zoomOnClick = true;
+//           map.fitBounds(cluster.getBounds());
+
+//              } 
+//   });
 
 
