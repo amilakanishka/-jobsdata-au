@@ -63,7 +63,10 @@ def get_jobs(stat=None, role=None):
         job_dict["keyword"] = keyword
         job_dict["state"] = state
         all_jobs.append(job_dict)
-    return jsonify(all_jobs)
+    # return jsonify(all_jobs)
+    data = all_jobs
+    return render_template("index.html", data=data)
+
 
 
 @app.route("/team")
