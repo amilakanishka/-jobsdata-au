@@ -1,0 +1,30 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.marker-cluster-small {
+  background-color: #f7cfb7;
+  }
+.marker-cluster-small div {
+  background-color:#F69356;
+  }
+.marker-cluster-medium {
+  background-color: #c4bcbc;
+  }
+.marker-cluster-medium div {
+  background-color:#8b8b8b;
+  }
+  
+.marker-cluster-large {
+  background-color:#bff0f0;
+  }
+.marker-cluster-large div {
+  background-color: #23B5B5;
+  }
