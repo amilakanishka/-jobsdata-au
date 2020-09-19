@@ -1,8 +1,11 @@
 var jsonPath = "jobSearchResults.json"
-var jobListing;
 
 d3.json(jsonPath)
-    .then(data => {jobListing = data;
+    .then(data => {var jobListing = data;
+    
+    // Need to add DOM/D3 to obtain input value from HTML
+    // TO DO - Insert codes here 
+
     
     // Console.log to DELETE LATER
     console.log(jobListing[0]);
@@ -35,9 +38,9 @@ d3.json(jsonPath)
     console.log(areas[0]);
     console.log(typeof(areas[0]));
 
-    // Get unique values for titles
-    var distinctTitles = [...new Set(titles)];
-    console.log(distinctTitles);  
+    // Get unique values for titles - NOT USED - DELETE LATER
+    // var distinctTitles = [...new Set(titles)];
+    // console.log(distinctTitles);  
 
     // Split words in title
     // Split symbols ( ) / [ ] ' | 
@@ -63,6 +66,7 @@ d3.json(jsonPath)
         counts[splitTitles[i]] = 1 + (counts[splitTitles[i]] || 0);
     }
 
+    // Console.log to DELETE LATER
     console.log("counts");
     console.log(counts);
 
@@ -76,7 +80,7 @@ d3.json(jsonPath)
     }
 
     // Console.log to DELETE LATER
-    console.log("wordData");
+    console.log("Sorted wordData");
     console.log(wordData);
 
     // Remove dictionary if key is - | ] or blank. Clean up balance after RegEx
@@ -85,14 +89,34 @@ d3.json(jsonPath)
         (item.x !== "") &&
         (item.x !== "-") &&
         (item.x !== "]"));
+
+        // Console.log to DELETE LATER
+        console.log("Clean up after RegEx wordData");
         console.log(wordData);
 
     // Sort the list of dictionaries by value
-    
+    wordData.sort(function(first, second) {
+        return second.value - first.value;
+    })
+
+    // Console.log to DELETE LATER
+    console.log("Filtered wordData");
+    console.log(wordData);
+
+    // Limit to top 30 words
+    var top30Words = [];
+
+    for (var i = 0; i < 35; i++) {
+        top30Words.push(wordData[i]);
+    }
+
+    // Console.log to DELETE LATER
+    console.log("top30Words");
+    console.log(top30Words);
 
     // Render word cloud chart
     anychart.onDocumentReady(function() {
-        var data = wordData;
+        var data = top30Words;
         var chart = anychart.tagCloud(data);
 
         // Create and configure a color scale
@@ -106,15 +130,14 @@ d3.json(jsonPath)
         chart.colorRange().enabled(true);
 
         // Set word angle to straight
-        // chart.angles([0]);
+        chart.angles([0]);
 
         // Set the chart title
-        chart.title("Most popular words used in position titles");
+        chart.title("Most Popular Words Used in Position Titles");
 
         // Configure the visual settings of the chart
         chart.hovered().fill("#FF5757");
-        chart.hovered().fontWeight(700);
-        chart.hovered().fontSize(58);
+        chart.hovered().fontWeight(800);
         
         // Set the container id
         chart.container("cloud");
@@ -123,6 +146,4 @@ d3.json(jsonPath)
         chart.draw();
     })
 
-    // Console.log to DELETE LATER
-    console.log(wordData);
-});
+}); 
