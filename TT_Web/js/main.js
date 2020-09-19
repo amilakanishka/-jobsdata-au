@@ -1,11 +1,3 @@
-/*  ---------------------------------------------------
-    Template Name: HVAC
-    Description: HVAC Car Dealer HTML Template
-    Author: Colorlib
-    Author URI: https://www.colorlib.com
-    Version: 1.0
-    Created: Colorlib
----------------------------------------------------------  */
 
 'use strict';
 
