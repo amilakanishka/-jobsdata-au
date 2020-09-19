@@ -75,6 +75,7 @@ d3.json(jsonPath)
                 });
     }
 
+    // Console.log to DELETE LATER
     console.log("wordData");
     console.log(wordData);
 
@@ -87,18 +88,41 @@ d3.json(jsonPath)
         console.log(wordData);
 
     // Sort the list of dictionaries by value
-
     
+
+    // Render word cloud chart
     anychart.onDocumentReady(function() {
         var data = wordData;
         var chart = anychart.tagCloud(data);
-        chart.title("Most popular words used in position titles");
+
+        // Create and configure a color scale
+        var customColorScale = anychart.scales.linearColor();
+        customColorScale.colors(["#246ED1", "#23B5B5"]);
+
+        // Bind customColorScale to the color scale of the chart
+        chart.colorScale(customColorScale);
+
+        // Add a color range
+        chart.colorRange().enabled(true);
+
+        // Set word angle to straight
         // chart.angles([0]);
-        // chart.colorRange(true);
-        // chart.colorRange().length("80%");
+
+        // Set the chart title
+        chart.title("Most popular words used in position titles");
+
+        // Configure the visual settings of the chart
+        chart.hovered().fill("#FF5757");
+        chart.hovered().fontWeight(700);
+        chart.hovered().fontSize(58);
+        
+        // Set the container id
         chart.container("cloud");
+
+        // Initiate drawing the chart
         chart.draw();
     })
 
+    // Console.log to DELETE LATER
     console.log(wordData);
 });
