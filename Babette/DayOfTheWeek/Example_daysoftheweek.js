@@ -1,4 +1,10 @@
+//This code is to create a graph showing the weekdays with the number of jobs ads
+
 var dates;
+
+//For the app
+// var data = JSON.parse('{{ data | tojson | safe}}');
+
 
 // Use D3 fetch to read the JSON file
 // The data from the JSON file is arbitrarily named importedData as the argument
@@ -13,37 +19,19 @@ d3.json("jobSearchResults.json").then(function (data) {
     //TO DELETE LATER
     console.log(dates);
 
-    // const dates = [
-    //     "2020-08-24T14:08:55Z",
-    //     "2020-08-25T14:08:55Z",
-    //     "2020-08-25T14:08:55Z",
-    //     "2020-08-26T14:08:55Z",
-    //     "2020-08-26T14:08:55Z",
-    //     "2020-08-26T14:08:55Z",
-    //     "2020-08-27T14:08:55Z",
-    //     "2020-08-28T14:08:55Z",
-    //     "2020-08-28T14:08:55Z",
-    //     "2020-08-29T14:08:55Z",
-    //     "2020-08-29T14:08:55Z",
-    //     "2020-08-29T14:08:55Z",
-    //     "2020-08-29T14:08:55Z",
-    //     "2020-08-30T14:08:55Z",
-    // ];
-    // console.log(dates);
-
+    //Get the weekday of the dates
     const daysOfWeek = dates.map(date => new Date(date).getDay());
     //TO DELETE LATER
     console.log(daysOfWeek)
 
-    // Now we have the days as numbers we can sort by frequency
-    // This function is from a google search: https://stackoverflow.com/a/3579651/414062
+    // Now we have the days as numbers we can get their frequency
+   
     function Frequency(array) {
         const frequency = {};
 
         array.forEach(value => frequency[value] = 0);
         const uniques = array.filter(value => ++frequency[value] == 1);
         return frequency;
-        // return uniques.sort((a, b) => frequency[b] - frequency[a]);
     }
 
     //Passing in our dates in the function Frequency so we get a dictionary of days and frequencies of job ads:
@@ -52,8 +40,8 @@ d3.json("jobSearchResults.json").then(function (data) {
     //TO DELETE LATER
     console.log(DaysOfWeek);
 
-    //  Now translate to weekday values
-    // const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+   
+    // Extract the weekdays from the dictionary Frequency and place them in an array to store our variable x:
     var x = [];
     // Iterate through each ID object
     Object.keys(DaysOfWeek).forEach(key => {
@@ -93,9 +81,17 @@ d3.json("jobSearchResults.json").then(function (data) {
 
     rearrange(x_days);
     rearrange(y);
+
  //TO DELETE LATER
  console.log(x_days);
     console.log(y);
 
 });
+
+function plot(x,y) {
+
+
+
+    
+}
 
