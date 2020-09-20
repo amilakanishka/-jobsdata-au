@@ -107,19 +107,19 @@ function wordBubble() {
         console.log(wordData);
 
         // Limit to top 30 words
-        var top30Words = [];
+        var topWords = [];
 
         for (var i = 0; i < 35; i++) {
-            top30Words.push(wordData[i]);
+            topWords.push(wordData[i]);
         }
 
         // Console.log to DELETE LATER
-        console.log("top30Words");
-        console.log(top30Words);
+        console.log("topWords");
+        console.log(topWords);
 
         // Render word cloud chart
         anychart.onDocumentReady(function() {
-            var data = top30Words;
+            var data = topWords;
             var chart = anychart.tagCloud(data);
 
             // Create and configure a color scale
