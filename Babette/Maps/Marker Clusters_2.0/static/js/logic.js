@@ -1,14 +1,18 @@
 // //The map will display in a different location based on the state selected:
 // //Selecting the value of the dropdown Menu:
-// var state = dropdownMenu.property("value");
+d3.select
+var state = value.property("value");
 
-// //Create a conditional statement based on the sate selected:
-// if (state == "VIC") {
-//   var myMap = L.map("map", {
-//     center: [-37.81, 144.96],
-//     zoom: 7
-//   })
-// }
+var state = [VIC, NSW,...]
+var latitude = [-37.81, -33.86, ]
+var longitude = [144.96, 151.20,  ]
+//Create a conditional statement based on the sate selected:
+if (state == state) {
+  var myMap = L.map("map", {
+    center: [latitude, longitude],
+    zoom: 7
+  })
+}
 // else if (state == "NSW") {
 //   var myMap = L.map("map", {
 //     center: [-33.86, 151.20],
@@ -99,7 +103,7 @@ L.control.layers(baseMaps).addTo(myMap);
 // var url = baseURL + date + complaint + limit;
 
 // Grab the data with d3
-d3.json("jobSearchResults.json", function (response) {
+d3.json("jobSearchResults.json").then(function (response) {
 
   // Create a new marker cluster group
   var markers = L.markerClusterGroup({
