@@ -2,15 +2,16 @@ var dates;
 
 // Use D3 fetch to read the JSON file
 // The data from the JSON file is arbitrarily named importedData as the argument
-d3.json("jobSearchResults.json", function (data) {
+d3.json("jobSearchResults.json").then(function (data) {
 
     //Access to each dictionnaries in data:
+    dates= []
     for (var i = 0; i < data.length; i++) {
-        dates = data[i].created;
+        data_dict = data[i];
+        dates.push(data_dict.created);
     }
-
+    //TO DELETE LATER
     console.log(dates);
-
 
     // const dates = [
     //     '2018-04-19',
@@ -27,6 +28,7 @@ d3.json("jobSearchResults.json", function (data) {
     // console.log(dates);
 
     const daysOfWeek = dates.map(date => new Date(date).getDay());
+    //TO DELETE LATER
     console.log(daysOfWeek)
 
     // Now we have the days as numbers we can sort by frequency
@@ -60,7 +62,7 @@ d3.json("jobSearchResults.json", function (data) {
 
     // Now translate to weekday values
     const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    const x_days = x.map(day => weekdays[day - 1]);
+    const x_days = x.map(day => weekdays[day]);
 
     //TO DELETE LATER
     console.log(x_days);
@@ -76,3 +78,4 @@ d3.json("jobSearchResults.json", function (data) {
     console.log(y);
 
 });
+
