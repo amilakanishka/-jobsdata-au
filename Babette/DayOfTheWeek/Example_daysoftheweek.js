@@ -14,16 +14,20 @@ d3.json("jobSearchResults.json").then(function (data) {
     console.log(dates);
 
     // const dates = [
-    //     '2018-04-19',
-    //     '2018-04-19',
-    //     '2018-04-19',
-    //     '2018-04-20',
-    //     '2018-04-24',
-    //     '2018-05-02',
-    //     '2018-05-02',
-    //     '2018-05-02',
     //     "2020-08-24T14:08:55Z",
-    //     "2020-09-08T03:28:55Z",
+    //     "2020-08-25T14:08:55Z",
+    //     "2020-08-25T14:08:55Z",
+    //     "2020-08-26T14:08:55Z",
+    //     "2020-08-26T14:08:55Z",
+    //     "2020-08-26T14:08:55Z",
+    //     "2020-08-27T14:08:55Z",
+    //     "2020-08-28T14:08:55Z",
+    //     "2020-08-28T14:08:55Z",
+    //     "2020-08-29T14:08:55Z",
+    //     "2020-08-29T14:08:55Z",
+    //     "2020-08-29T14:08:55Z",
+    //     "2020-08-29T14:08:55Z",
+    //     "2020-08-30T14:08:55Z",
     // ];
     // console.log(dates);
 
@@ -60,8 +64,8 @@ d3.json("jobSearchResults.json").then(function (data) {
     //TO DELETE LATER
     console.log(x);
 
-    // Now translate to weekday values
-    const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    // Now translate to weekday values - In our data, the Saturday is mapped as 0 and Friday is 6.
+    const weekdays = ['Saturday', 'Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     const x_days = x.map(day => weekdays[day]);
 
     //TO DELETE LATER
