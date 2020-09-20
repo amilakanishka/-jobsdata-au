@@ -127,26 +127,37 @@
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="hero__tab__form">
                                     <h2>Find Your Dream Data Professional Job</h2>
-                                    <form>
+                                    <form method="post">
                                         <div class="select-list">
                                             <div class="select-list-item">
                                                 <p>Select State</p>
-                                                <select>
-                                                    <option data-display=" ">Select State</option>
-                                                    <option value="">ACT</option>
-                                                    <option value="">Victoria</option>
+                                                <select name="state">
+                                                    <option data-display=" " value="All">Select State</option>
+                                                    <option value="Australian Capital Territory">ACT</option>
+                                                    <option value="Victoria">Victoria</option>
+                                                    <option value="New South Wales">NSW</option>
+                                                    <option value="Queensland">Queensland</option>
+                                                    <option value="Western Australia">Western Australia</option>
+                                                    <option value="South Australia">South Australia</option>
+                                                    <option value="Northern Territory">Northern Territory</option>
                                                 </select>
                                             </div>
                                             <div class="select-list-item">
                                                 <p>Select Role</p>
-                                                <select>
-                                                    <option data-display=" ">Select Role</option>
-                                                    <option value="">Data Analyst</option>
-                                                    <option value="">Data Scientist</option>
-                                                    <option value="">Data Engineer</option>
+                                                <select name="role">
+                                                    <option data-display=" " value="All">Select Role</option>
+                                                    <option value="Data Analyst">Data Analyst</option>
+                                                    <option value="Data Scientist">Data Scientist</option>
+                                                    <option value="Data Architect">Data Architect</option>
+                                                    <option value="Business Analyst">Business Analyst</option>
+                                                    <option value="Data Analytics">Data Analytics</option>
+                                                    <option value="Project Manager">Project Manager</option>
+                                                    <option value="Analyst">Analyst</option>
+                                                    <option value="Big Data">Big Data</option>
+                                                    <option value="Project Analyst">Project Analyst</option>                            
                                                 </select>
                                             </div>
-                                        <button type="submit" class="site-btn">Find me my dream role!</button>
+                                        <button type="submit" class="site-btn" >Find me my dream role!</button>
                                     </form>
                                 </div>
                             </div>
@@ -159,31 +170,31 @@
     </section>
     <!-- Hero Section End -->
 
-    <!-- <section>
-        <div class="services spad">
-            <div class="container">
-                    <h2>MAP HERE</h2>
-            </div>
+<!-- Map Section -->
+<section>
+    <div class="services spad1">
+        <div class="container">
+                <h2>MAP HERE</h2>
         </div>
-    </section> -->
-
-    <section>
-        <div class="map-container">
-            
-            <div id="map"></div>
-        </div>
-    </section>
-
-    <!-- Word Cloud -->
-    <section>
-    <div class="services spad">
+    </div>
+</section>
+<section>
+    <div class="map-container">
+        <div id="map" style="width: 500px; height: 500px"></div>
+    </div>
+</section>
+<!-- Map Section End -->
+<!-- Word Cloud -->
+<section>
+    <div class="services spad2">
         <div class="container">
             <div class="word_cloud">
                 <p class="font-2">WORD CLOUD HERE</p>
             </div>
         </div>
     </div> 
-    </section>
+</section>
+<!-- Word Cloud End-->
 
  
     <!-- Footer Section Begin -->
@@ -255,7 +266,7 @@
 
         // Grab the data with d3
         //d3.json("jobSearchResults.json", function (response) {
-        response = data;
+        var response = data;
         // Create a new marker cluster group
         var markers = L.markerClusterGroup({
             spiderfyOnMaxZoom: false,
