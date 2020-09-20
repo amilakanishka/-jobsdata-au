@@ -64,21 +64,37 @@ d3.json("jobSearchResults.json").then(function (data) {
     //TO DELETE LATER
     console.log(x);
 
-    // Now translate to weekday values - In our data, the Saturday is mapped as 0 and Friday is 6.
+    // Now translate to weekday values - In our data, the Saturday is index 0 and Friday is 6.
     const weekdays = ['Saturday', 'Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     const x_days = x.map(day => weekdays[day]);
-
-    //TO DELETE LATER
+//TO DELETE LATER
     console.log(x_days);
 
     //Extracting the frequency values for our y
     var y = [];
-    // Iterate through each ID object
+    // Iterate through
     Object.values(DaysOfWeek).forEach(value => {
-        // Concatenate "OTU" with each ID number
-        y.push(value)
+       y.push(value)
     });
     //TO DELETE LATER
+    console.log(y);
+
+  // Create a function to change the order of the index and position Monday as index 0:
+    
+  function rearrange(array) {
+
+    Array.prototype.move = function (from, to) {
+        this.splice(to, 0, this.splice(from, 1)[0]);
+      };
+    
+      array.move(0,6)
+      array.move(0,6)
+}
+
+    rearrange(x_days);
+    rearrange(y);
+ //TO DELETE LATER
+ console.log(x_days);
     console.log(y);
 
 });
