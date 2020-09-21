@@ -10,13 +10,8 @@ var dates;
 // The data from the JSON file is arbitrarily named importedData as the argument
 d3.json("jobSearchResults.json").then(function (data) {
 
-    //Access to each dictionnaries in data:
-    dates = []
-    for (var i = 0; i < data.length; i++) {
-        data_dict = data[i];
-        dates.push(data_dict.created);
-    }
- 
+    var dates = data.map(job => job.created);
+
 
     //Get the weekday of the dates
     const daysOfWeek = dates.map(date => new Date(date).getDay());
