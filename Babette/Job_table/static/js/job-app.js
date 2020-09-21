@@ -4,7 +4,11 @@
 
 // Use D3 fetch to read the JSON file
 // The data from the JSON file is arbitrarily named importedData as the argument
-d3.json("jobSearchMockUp.json").then(function (data) {
+d3.json("csvjson (3).json").then(function (data) {
+
+   //Slice the data to show the first 10 job listings:
+
+    var data = data.slice(0, 10);
 
     // Creating a variable to get a reference to the table body
     var tbody = d3.select("tbody");
@@ -25,7 +29,7 @@ d3.json("jobSearchMockUp.json").then(function (data) {
                 cell.text(value);
             } 
          // redirect_url TO BE CHANGED by 'description'
-        if (key == "redirect_url") {
+        if (key == "description") {
             var cell = row.append("tr");
             cell.text(value);
         }

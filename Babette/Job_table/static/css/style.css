@@ -83,6 +83,10 @@ select {
   min-width: 70px;
 }
 
+.table-row{
+  font-size: 24px,
+ }
+
 .loader {
   margin-top: 50px;
 }
@@ -186,6 +190,7 @@ select {
     content: attr(data-th);
   }
 
+ 
   .hero h1 {
     animation: smaller-title 1.2s forwards linear;
   }
