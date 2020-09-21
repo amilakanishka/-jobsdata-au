@@ -17,25 +17,24 @@ d3.json("jobSearchMockUp.json").then(function (data) {
                 var cell = row.append("tr");
                 cell.text(value);
             }
+        });
+        var row = tbody.append("tr");
+        Object.entries(job).forEach(([key, value]) => {
             if (key == "company") {
                 var cell = row.append("tr");
                 cell.text(value);
-            }
+            } 
+         // redirect_url TO BE CHANGED by 'description'
+        if (key == "redirect_url") {
+            var cell = row.append("tr");
+            cell.text(value);
+        }
+          if (key == "created") {
+            var cell = row.append("tr");
+            cell.text(new Date(value));
+        }
         });
-
-        // if (key == "company") {
-        //     var cell = row.append("tr");
-        //     cell.text(value);
-        // } 
-        //  // redirect_url TO BE CHANGED by 'description'
-        // if (key == "redirect_url") {
-        //     var cell = row.append("tr");
-        //     cell.text(value);
-        // }
-        // if (key == "created") {
-        //     var cell = row.append("tr");
-        //     cell.text(new Date(value));
-        // }
+      
     });
 
 
