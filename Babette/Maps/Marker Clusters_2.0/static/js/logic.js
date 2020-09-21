@@ -1,68 +1,21 @@
-// //The map will display in a different location based on the state selected:
-// //Selecting the value of the dropdown Menu:
-d3.select
-var state = value.property("value");
+// //The map will display in the centre of each state based on the state the user selected:
+//Selecting the value of the dropdown Menu:
+var dropdownMenu = d3.select("state");
+var state = dropdownMenu.property("value");
 
-var state = [VIC, NSW,...]
-var latitude = [-37.81, -33.86, ]
-var longitude = [144.96, 151.20,  ]
+var state = ["Australian Capital Territory", "Victoria", "New South Wales", "Queensland", "Western Australia",
+  "South Australia", "Northern Territory", "All"]
+var latitude = [-35.28, -37.81, -33.86, -23.52, -31.95, -34.92, -18, -25.69];
+var longitude = [149.13, 144.96, 151.20, 149.13, 115.86, 138.60, 134.19, 133.88];
+var zoom = [7, 7, 7, 6, 7, 7, 6, 5];
+
 //Create a conditional statement based on the sate selected:
 if (state == state) {
   var myMap = L.map("map", {
     center: [latitude, longitude],
-    zoom: 7
-  })
+    zoom: zoom
+  });
 }
-// else if (state == "NSW") {
-//   var myMap = L.map("map", {
-//     center: [-33.86, 151.20],
-//     zoom: 7
-//   })
-// }
-// else if (state == "ACT") {
-//   var myMap = L.map("map", {
-//     center: [-35.28, 149.13],
-//     zoom: 7
-//   })
-// }
-// else if (state == "QLD") {
-//   var myMap = L.map("map", {
-//   center: [-23.52, 148.16],
-//   zoom: 6
-//   })
-// }
-// else if (state == "SA") {
-//   var myMap = L.map("map", {
-//   center: [-34.92, 138.60],
-//   zoom: 7
-//   })
-// }
-// else if (state == "WA") {
-//   var myMap = L.map("map", {
-//   center: [-31.95, 115.86],
-//   zoom: 7
-//   })
-// }
-// else if (state == "NT") {
-//   var myMap = L.map("map", {
-//   center: [-18, 134.19],
-//   zoom: 6
-//   })
-// }
-// else if (state == "All") {
-//   var myMap = L.map("map", {
-//   center: [-25.69, 133.88],
-//   zoom: 5
-//   })
-// }
-
-
-// Creating map object
-var myMap = L.map("map", {
-  center: [-25.69, 133.88],
-  zoom: 5
-});
-
 
 // Adding light tile layer to the map
 var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -93,21 +46,12 @@ var baseMaps = {
 // Add the layer control to the map
 L.control.layers(baseMaps).addTo(myMap);
 
-// // Store API query variables
-// var baseURL = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?";
-// var date = "$where=created_date between'2016-01-01T00:00:00' and '2017-01-01T00:00:00'";
-// var complaint = "&complaint_type=Rodent";
-// var limit = "&$limit=10000";
-
-// // Assemble API query URL
-// var url = baseURL + date + complaint + limit;
-
-// Grab the data with d3
+// Grab the data with d3 (TO BE CHANGED FOR THE APP)
 d3.json("jobSearchResults.json").then(function (response) {
 
   // Create a new marker cluster group
   var markers = L.markerClusterGroup({
-    spiderfyOnMaxZoom: false,
+    //spiderfyOnMaxZoom: false,
     showCoverageOnHover: false,
     // zoomToBoundsOnClick: false,
     iconCreateFunction: function (cluster) {
@@ -131,7 +75,7 @@ d3.json("jobSearchResults.json").then(function (response) {
 
   });
 
-  // Loop through data
+  // Loop through the data 
   for (var i = 0; i < response.length; i++) {
 
     // Set the data location property to a variable
@@ -154,23 +98,5 @@ d3.json("jobSearchResults.json").then(function (response) {
   myMap.addLayer(markers);
 
 });
-
-// var markerCluster = new MarkerClusterer(map, markers, { 
-//   imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
-//   zoomOnClick: false
-// });
-// markerCluster.addListener('clusterclick', function(cluster){
-//   if (markers.length > 5){ // change #5 if you need to test different scenarions
-//         infowindow.setPosition(cluster.getCenter());
-//         infowindow.setContent("Simple Test");
-//         infowindow.open(map);
-
-//         }
-//   else {
-//           markerCluster.zoomOnClick = true;
-//           map.fitBounds(cluster.getBounds());
-
-//              } 
-//   });
 
 
