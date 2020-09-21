@@ -1,6 +1,7 @@
 // //The map will display in the centre of each state based on the state the user selected:
 //Selecting the value of the dropdown Menu:
-var dropdownMenu = d3.select("state");
+
+var dropdownMenu = d3.select("select").name("state");
 var state = dropdownMenu.property("value");
 
 var state = ["Australian Capital Territory", "Victoria", "New South Wales", "Queensland", "Western Australia",
