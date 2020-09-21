@@ -1,4 +1,4 @@
-
+// Get list of unique search keywords for benchmark salary mapping 
 var jsonPath = "jobSearchResults.json"
 
 d3.json(jsonPath)
@@ -17,6 +17,7 @@ d3.json(jsonPath)
 
 });
 
+// Benchmark salary chart
 var csvPath = "Benchmark_csv/Benchmark_info.csv"
 
 d3.csv(csvPath)
@@ -30,6 +31,13 @@ d3.csv(csvPath)
     // Need to add DOM/D3 to obtain input value from HTML
     // TO DO - Insert codes here 
     
-    // Filter by 1) Job Role 2) State 
+    // Filter by 1) Keyword 2) State 
+    var filteredbenchmarkListing = benchmarkListing.filter(item =>
+        (item.Keyword === "Data Analyst") &&  // Replace with inputValue for job search keyword
+        (item.State === "New South Wales")); // Replace ith inputValue for state
+
+    // Console.log to DELETE LATER
+    console.log(filteredbenchmarkListing);
+    
 
 });
