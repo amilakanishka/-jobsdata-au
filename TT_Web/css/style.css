@@ -657,66 +657,6 @@ ol {
 	display: none;
 }
 
-/* .hero__tab__form form .car-price {
-	margin-bottom: 45px;
-} */
-
-/* .hero__tab__form form .car-price p {
-	color: #545454;
-	margin-bottom: 5px;
-	margin-bottom: 12px;
-}
-
-.hero__tab__form form .car-price .price-range-wrap {
-	position: relative;
-}
-
-.hero__tab__form form .car-price .price-range-wrap .ui-widget-content {
-	height: 5px;
-	background: rgba(45, 45, 45, 0.1);
-	border: none;
-	border-radius: 1px;
-}
-
-.hero__tab__form form .car-price .price-range-wrap .ui-slider-horizontal .ui-slider-handle {
-	top: -5px;
-	margin-left: -4px;
-} */
-
-/* .hero__tab__form form .car-price .price-range-wrap .ui-slider .ui-slider-handle {
-	width: 14px;
-	height: 14px;
-	background: #ffffff;
-	border-radius: 50%;
-	cursor: pointer;
-} */
-
-/* .hero__tab__form form .car-price .price-range-wrap .ui-state-default,
-.hero__tab__form form .car-price .price-range-wrap .ui-widget-content .ui-state-default,
-.hero__tab__form form .car-price .price-range-wrap .ui-widget-header .ui-state-default,
-.hero__tab__form form .car-price .price-range-wrap .ui-button,
-.hero__tab__form form .car-price .price-range-wrap html .ui-button.ui-state-disabled:hover,
-.hero__tab__form form .car-price .price-range-wrap html .ui-button.ui-state-disabled:active {
-	border: 1.5px solid #ff5757;
-} */
-/* 
-.hero__tab__form form .car-price .price-range-wrap .ui-slider .ui-slider-range {
-	background: #ff5757;
-}
-
-.hero__tab__form form .car-price .price-input {
-	position: absolute;
-	left: 89px;
-	top: -36px;
-}
-
-.hero__tab__form form .car-price .price-input input {
-	font-size: 15px;
-	color: #545454;
-	font-weight: 700;
-	border: none;
-	width: 180px;
-} */
 /*---------------------
   Footer
 -----------------------*/
@@ -1019,27 +959,6 @@ ol {
 	.header__menu ul li {
 		margin-right: 32px;
 	}
-	/* .chooseus {
-		height: auto;
-	}
-	.chooseus__video {
-		height: 100%;
-	}
-	.car__filter form .filter-price .price-input {
-		position: relative;
-		left: 0;
-		top: 0;
-		margin-top: 20px;
-	}
-	.car__details__tab .nav-tabs .nav-item {
-		margin-right: 8px;
-	}
-	.testimonial__slider.owl-carousel .owl-nav button {
-		left: -10px;
-	}
-	.testimonial__slider.owl-carousel .owl-nav button.owl-next {
-		right: -10px;
-	} */
 }
 
 /* Tablet Device = 768px */
@@ -1056,39 +975,7 @@ ol {
 		position: relative;
 
 	}
-	/* .feature__text {
-		margin-bottom: 500px;
-	}
-	.feature__item {
-		float: none;
-	}
-	.chooseus {
-		height: auto;
-		padding-bottom: 0;
-	}
-	.chooseus__video {
-		height: 100%;
-		width: 100%;
-		position: relative;
-	}
-	.chooseus__text {
-		margin-bottom: 40px;
-	}
-	.car__sidebar {
-		margin-bottom: 40px;
-	}
-	.car__details__tab .nav-tabs .nav-item {
-		margin-right: 8px;
-	}
-	.blog__sidebar {
-		padding-top: 45px;
-	}
-	.testimonial__slider.owl-carousel .owl-nav button {
-		left: -10px;
-	}
-	.testimonial__slider.owl-carousel .owl-nav button.owl-next {
-		right: -10px;
-	} */
+
 	.header__top {
 		display: none;
 	}
@@ -1183,67 +1070,6 @@ ol {
 	.slicknav_nav {
 		display: block !important;
 	}
-	/* .offcanvas__logo {
-		margin-bottom: 30px;
-	}
-	.offcanvas__widget {
-		margin-bottom: 30px;
-	}
-	.offcanvas__widget a {
-		font-size: 15px;
-		color: #353535;
-		margin-right: 20px;
-		display: inline-block;
-	}
-	.offcanvas__widget .primary-btn {
-		color: #ffffff;
-	}
-	.offcanvas__widget__add {
-		margin-bottom: 20px;
-	}
-	.offcanvas__widget__add li {
-		font-size: 15px;
-		color: #353535;
-		margin-right: 35px;
-		list-style: none;
-		line-height: 30px;
-	}
-	.offcanvas__widget__add li:last-child {
-		margin-right: 0;
-	}
-	.offcanvas__widget__add li i {
-		font-size: 18px;
-		color: #353535;
-		margin-right: 6px;
-	}
-	.offcanvas__social a {
-		display: inline-block;
-		font-size: 15px;
-		color: #353535;
-		margin-right: 16px;
-	}
-	.offcanvas__social a:last-child {
-		margin-right: 0;
-	}
-	.offcanvas__phone__num {
-		margin-bottom: 20px;
-	}
-	.offcanvas__phone__num i {
-		color: #353535;
-		margin-right: 6px;
-		font-size: 15px;
-	}
-	.offcanvas__phone__num span {
-		font-size: 15px;
-		color: #353535;
-	}
-	.blog-details-hero {
-		padding-bottom: 150px;
-	}
-	.blog-details {
-		margin-top: -100px;
-	} */
-}
 
 /* Wide Mobile = 480px */
 
@@ -1538,24 +1364,6 @@ ol {
 	.filter__controls li {
 		margin-right: 15px;
 	}
-	.blog__details__hero__text h2 {
-		font-size: 35px;
-		line-height: normal;
-	}
-	.blog__details__quote {
-		padding: 0;
-	}
-	.blog__details__comment__item__pic {
-		float: none;
-		margin-bottom: 15px;
-	}
-	.blog__details__author__pic {
-		float: none;
-		margin-right: 0;
-	}
-	.blog__details__author__text {
-		overflow: visible;
-		padding-top: 30px;
 	}
 	.section-title.about-title h2 {
 		line-height: normal;
