@@ -28,7 +28,7 @@ function wordBubble() {
         // Console.log to DELETE LATER
         console.log("keyword");
         console.log(keywords.length);
-        console.log(keywords[0]);
+        console.log(keywords);
         console.log(typeof(keywords[0]));
 
         console.log("title");
@@ -46,7 +46,7 @@ function wordBubble() {
         // console.log(distinctTitles);  
 
         // Split words in title
-        // Split symbols ( ) / [ ] ' | 
+        // Use RegEx to replace special characters with space 
         var splitTitles = [];
 
         for (var i = 0; i < titles.length; i++) {
@@ -106,7 +106,7 @@ function wordBubble() {
         console.log("Filtered wordData");
         console.log(wordData);
 
-        // Limit to top 30 words
+        // Limit to top 35 words
         var topWords = [];
 
         for (var i = 0; i < 35; i++) {
