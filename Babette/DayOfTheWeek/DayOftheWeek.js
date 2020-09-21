@@ -92,7 +92,7 @@ d3.json("jobSearchResults.json").then(function (data) {
 
 
     //Calling our plot function:
-    plot(y, x_days);
+    barplot(y, x_days);
 
 
 });
@@ -100,7 +100,7 @@ d3.json("jobSearchResults.json").then(function (data) {
 
 
 
-function plot(y, x_days) {
+function barplot(y, x_days) {
 
 
     var color = []
