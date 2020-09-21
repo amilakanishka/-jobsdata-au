@@ -68,7 +68,7 @@ def get_jobs(stat=None, role=None):
         job_dict["title"] = title
         job_dict["salary_min"] = salary_min
         job_dict["salary_max"] = salary_max
-        job_dict["description"] = description
+        job_dict["description"] = description.replace('"', '\\"')
         job_dict["keyword"] = keyword
         job_dict["state"] = state
         all_jobs.append(job_dict)
