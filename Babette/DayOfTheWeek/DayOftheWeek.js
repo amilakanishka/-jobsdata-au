@@ -37,10 +37,7 @@ d3.json("jobSearchResults.json").then(function (data) {
     //Passing in our dates in the function Frequency so we get a dictionary of days and frequencies of job ads:
     const DaysOfWeek = Frequency(daysOfWeek);
 
-    //TO DELETE LATER
-    console.log(DaysOfWeek);
-
-
+    
     // Extract the weekdays from the dictionary Frequency and place them in an array to store our variable x:
     var x = [];
     // Iterate through each ID object
@@ -49,23 +46,19 @@ d3.json("jobSearchResults.json").then(function (data) {
         x.push(key)
     });
 
-    //TO DELETE LATER
-    console.log(x);
-
-    // Now translate to weekday values - In our data, the Saturday is index 0 and Friday is 6.
+    
+    // Now translate to weekday values - Note in our data, the Saturday is index 0 and Friday is 6 therefore the sequence starting Saturday:
     const weekdays = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     const x_days = x.map(day => weekdays[day]);
-    //TO DELETE LATER
-    console.log(x_days);
+   
 
     //Extracting the frequency values for our y
     var y = [];
-    // Iterate through
+    // Iterate through each value
     Object.values(DaysOfWeek).forEach(value => {
         y.push(value)
     });
-    //TO DELETE LATER
-    console.log(y);
+    
 
     // Create a function to change the order of the index and position Monday as index 0:
 
@@ -79,27 +72,17 @@ d3.json("jobSearchResults.json").then(function (data) {
         array.move(0, 6)
     }
 
+    //Rearrange the arrays x_days and y:
     rearrange(x_days);
-    rearrange(x);
     rearrange(y);
 
-
-    //TO DELETE LATER
-    console.log(x_days);
-    console.log(x);
-    console.log(y);
-
-
-
-    //Calling our plot function:
+    //Calling our bar plot function:
     barplot(y, x_days);
-
 
 });
 
 
-
-
+//Creating a function barplot to create our graph:
 function barplot(y, x_days) {
 
 
