@@ -11,20 +11,14 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b3674fd71e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lora:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <!-- Css Styles -->
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -124,7 +118,6 @@
                                 </div>
                             </div>
                          </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -132,30 +125,52 @@
     </section>
     <!-- Hero Section End -->
 
+    <!-- Map Section -->
     <section>
         <div class="services spad1">
-            <div class="container">
-                    <h2>MAP HERE</h2>
-            </div>
+            <!-- <div class="container-md"> -->
+                <h2 style="text-align:center">These are our last three listings</h2>
+            <!-- </div> -->
+            <div class="parent white">
+                <div class="card 1">
+                  <h3>Data Scientist</h3>
+                  <p>A bit about the job would be great</p>
+                  <div class="visual"></div>
+                </div>
+                <div class="card 2">
+                  <h3>Data Analyst</h3>
+                  <p> What a cool job after our analytics course.</p>
+                  <div class="visual"></div>
+                </div>
+                <div class="card 3">
+                  <h3>Product Manager</h3>
+                  <p>Someone needs to manage these projects.</p>
+                  <div class="visual"></div>
+                </div>
+              </div>
         </div>
     </section>
 
+    <!-- Map Section -->    
     <section>
+                
         <div class="map-container">
-            <div id="map" style="width: 500px; height: 500px"></div>
+            <div id="map" style="width: 900px; height: 600px"></div>
         </div>
     </section>
+    <!-- Map Section End -->
 
     <!-- Word Cloud -->
     <section>
         <div class="services spad2">
             <div class="container">
-                <div class="word_cloud">
+                <div id="cloud" style="width: 600px; height: 500px">
                     <p class="font-2">WORD CLOUD HERE</p>
                 </div>
             </div>
         </div> 
     </section>
+    <!-- Word Cloud End-->
 
  
     <!-- Footer Section Begin -->
@@ -175,35 +190,30 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <!-- A sorting and filtering plugin --> 
     <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <!-- Scrolling / carousel plugin -->
-    <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
-    <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
     <!-- d3 JS -->
-    <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
     <!-- Marker Cluster JS -->
     <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
     <!-- Our JS -->
     <script type="text/javascript" src="js/config.js"></script>
     <script type="text/javascript" src="js/logic.js"></script>
-
-
-
-    <!-- Other Plugins -->
+    <script type="text/javascript" src="js/cloud_app.js"></script>
+    <!-- Cloud App -->
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
 
 </body>
 
