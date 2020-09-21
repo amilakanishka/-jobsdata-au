@@ -16,13 +16,11 @@ d3.json("jobSearchResults.json").then(function (data) {
         data_dict = data[i];
         dates.push(data_dict.created);
     }
-    //TO DELETE LATER
-    console.log(dates);
+ 
 
     //Get the weekday of the dates
     const daysOfWeek = dates.map(date => new Date(date).getDay());
-    //TO DELETE LATER
-    console.log(daysOfWeek)
+   
 
     // Now we have the days as numbers we can get their frequency
 
@@ -85,7 +83,6 @@ d3.json("jobSearchResults.json").then(function (data) {
 //Creating a function barplot to create our graph:
 function barplot(y, x_days) {
 
-
     var color = []
     var max = Math.max.apply(null, y);
     Object.values(y).forEach(value => {
@@ -97,8 +94,6 @@ function barplot(y, x_days) {
         }
     });
 
-
-    console.log(color);
 
     var trace1 = {
         x: x_days,
