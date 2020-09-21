@@ -1,0 +1,445 @@
+﻿Source,Job Role,Country,State,Contract Type,Min_Sal,Max_Sal,Median
+Robert Walters,ERP/CRM/BI Architect,Australia,New South Wales,permanent,150000,210000,180000
+Robert Walters,ERP/CRM/BI Project Manager,Australia,New South Wales,permanent,160000,210000,185000
+Robert Walters,ERP/CRM Functional Consultant,Australia,New South Wales,permanent,140000,180000,160000
+Robert Walters,BI Developer,Australia,New South Wales,permanent,100000,165000,133000
+Robert Walters,Data Analyst,Australia,New South Wales,permanent,65000,140000,103000
+Robert Walters,Data Architect,Australia,New South Wales,permanent,150000,200000,175000
+Robert Walters,BI Architect,Australia,New South Wales,permanent,150000,200000,175000
+Robert Walters,BI Manager,Australia,New South Wales,permanent,160000,210000,185000
+Robert Walters,BI Project Manager,Australia,New South Wales,permanent,140000,180000,160000
+Robert Walters,BI Developer,Australia,New South Wales,permanent,130000,160000,145000
+Robert Walters,Junior BI Developer,Australia,New South Wales,permanent,80000,130000,105000
+Robert Walters,BI Consultant,Australia,New South Wales,permanent,130000,160000,145000
+Robert Walters,BI Business Analyst,Australia,New South Wales,permanent,120000,150000,135000
+Robert Walters,Data Analyst,Australia,New South Wales,permanent,95000,140000,118000
+Robert Walters,Junior Data Analyst,Australia,New South Wales,permanent,65000,95000,80000
+Robert Walters,Data Engineer,Australia,New South Wales,permanent,120000,170000,145000
+Robert Walters,Data Modeller,Australia,New South Wales,permanent,130000,160000,145000
+Robert Walters,Data Scientist,Australia,New South Wales,permanent,140000,200000,170000
+Robert Walters,Junior Data Scientist,Australia,New South Wales,permanent,80000,140000,110000
+Robert Walters,RPA Delivery Manager,Australia,New South Wales,permanent,150000,170000,160000
+Robert Walters,RPA Team Lead,Australia,New South Wales,permanent,140000,160000,150000
+Robert Walters,RPA Developer,Australia,New South Wales,permanent,110000,140000,125000
+Robert Walters,RPA Consultant,Australia,New South Wales,permanent,80000,100000,90000
+Robert Walters,AI Senior Engineer,Australia,New South Wales,permanent,140000,160000,150000
+Robert Walters,AI Engineer,Australia,New South Wales,permanent,110000,140000,125000
+Robert Walters,Machine Learning Engineer,Australia,New South Wales,permanent,120000,160000,140000
+Robert Walters,IoT Specialist,Australia,New South Wales,permanent,130000,160000,145000
+Robert Walters,ERP/CRM/BI Architect,Australia,New South Wales,contract,110,160,135
+Robert Walters,ERP/CRM/BI Project Manager,Australia,New South Wales,contract,110,160,135
+Robert Walters,ERP/CRM Functional Consultant,Australia,New South Wales,contract,110,140,125
+Robert Walters,BI Developer,Australia,New South Wales,contract,80,140,110
+Robert Walters,Data Analyst,Australia,New South Wales,contract,40,120,80
+Robert Walters,Data Architect,Australia,New South Wales,contract,110,150,130
+Robert Walters,BI Architect,Australia,New South Wales,contract,110,150,130
+Robert Walters,BI Manager,Australia,New South Wales,contract,110,150,130
+Robert Walters,BI Project Manager,Australia,New South Wales,contract,110,140,125
+Robert Walters,BI Developer,Australia,New South Wales,contract,90,125,108
+Robert Walters,Junior BI Developer,Australia,New South Wales,contract,60,90,75
+Robert Walters,BI Consultant,Australia,New South Wales,contract,90,125,108
+Robert Walters,BI Business Analyst,Australia,New South Wales,contract,90,120,105
+Robert Walters,Data Analyst,Australia,New South Wales,contract,75,110,93
+Robert Walters,Junior Data Analyst,Australia,New South Wales,contract,50,75,63
+Robert Walters,Data Engineer,Australia,New South Wales,contract,80,125,103
+Robert Walters,Data Modeller,Australia,New South Wales,contract,90,125,108
+Robert Walters,Data Scientist,Australia,New South Wales,contract,95,150,123
+Robert Walters,Junior Data Scientist,Australia,New South Wales,contract,60,95,78
+Robert Walters,RPA Delivery Manager,Australia,New South Wales,contract,900,1000,950
+Robert Walters,RPA Team Lead,Australia,New South Wales,contract,800,1000,900
+Robert Walters,RPA Developer,Australia,New South Wales,contract,700,900,800
+Robert Walters,RPA Consultant,Australia,New South Wales,contract,600,800,700
+Robert Walters,AI Senior Engineer,Australia,New South Wales,contract,900,1100,1000
+Robert Walters,AI Engineer,Australia,New South Wales,contract,700,900,800
+Robert Walters,Machine Learning Engineer,Australia,New South Wales,contract,800,1100,950
+Robert Walters,IoT Specialist,Australia,New South Wales,contract,800,1000,900
+Robert Walters,Senior Project Manager,Australia,New South Wales,permanent,160000,220000,190000
+Robert Walters,Project Manager,Australia,New South Wales,permanent,140000,170000,155000
+Robert Walters,Junior Project Manager,Australia,New South Wales,permanent,105000,130000,118000
+Robert Walters,Lead Business Analyst,Australia,New South Wales,permanent,150000,180000,165000
+Robert Walters,Senior Business Analyst,Australia,New South Wales,permanent,120000,150000,135000
+Robert Walters,Business Analyst,Australia,New South Wales,permanent,90000,125000,108000
+Robert Walters,Junior Business Analyst,Australia,New South Wales,permanent,80000,95000,88000
+Robert Walters,Process Analyst,Australia,New South Wales,permanent,100000,130000,115000
+Robert Walters,Senior Project Manager,Australia,New South Wales,contract,113,160,137
+Robert Walters,Project Manager,Australia,New South Wales,contract,97,115,106
+Robert Walters,Junior Project Manager,Australia,New South Wales,contract,72,90,81
+Robert Walters,Lead Business Analyst,Australia,New South Wales,contract,100,131,116
+Robert Walters,Senior Business Analyst,Australia,New South Wales,contract,90,112,101
+Robert Walters,Business Analyst,Australia,New South Wales,contract,75,94,85
+Robert Walters,Junior Business Analyst,Australia,New South Wales,contract,55,75,65
+Robert Walters,Process Analyst,Australia,New South Wales,contract,75,110,93
+Robert Walters,Infrastructure/Development/BI Manager,Australia,Queensland,permanent,140000,180000,160000
+Robert Walters,Senior Project Manager,Australia,Queensland,permanent,145000,185000,165000
+Robert Walters,Project Manager,Australia,Queensland,permanent,115000,145000,130000
+Robert Walters,Senior Business Analyst,Australia,Queensland,permanent,125000,140000,133000
+Robert Walters,Business Analyst,Australia,Queensland,permanent,100000,125000,113000
+Robert Walters,Database Administrator,Australia,Queensland,permanent,90000,120000,105000
+Robert Walters,Infrastructure/Development/BI Manager,Australia,Queensland,contract,105,155,130
+Robert Walters,Senior Project Manager,Australia,Queensland,contract,120,160,140
+Robert Walters,Project Manager,Australia,Queensland,contract,110,135,123
+Robert Walters,Senior Business Analyst,Australia,Queensland,contract,90,115,103
+Robert Walters,Business Analyst,Australia,Queensland,contract,80,105,93
+Robert Walters,Database Administrator,Australia,Queensland,contract,80,100,90
+Robert Walters,Infrastructure/Development/BI Manager,Australia,South Australia,permanent,100000,185000,143000
+Robert Walters,Senior Project Manager,Australia,South Australia,permanent,90000,150000,120000
+Robert Walters,Project Manager,Australia,South Australia,permanent,70000,110000,90000
+Robert Walters,Senior Business Analyst,Australia,South Australia,permanent,90000,130000,110000
+Robert Walters,Business Analyst,Australia,South Australia,permanent,70000,100000,85000
+Robert Walters,Database Administrator,Australia,South Australia,permanent,70000,110000,90000
+Robert Walters,Infrastructure/Development/BI Manager,Australia,South Australia,contract,100,150,125
+Robert Walters,Senior Project Manager,Australia,South Australia,contract,80,130,105
+Robert Walters,Project Manager,Australia,South Australia,contract,60,100,80
+Robert Walters,Senior Business Analyst,Australia,South Australia,contract,85,110,98
+Robert Walters,Business Analyst,Australia,South Australia,contract,50,90,70
+Robert Walters,Database Administrator,Australia,South Australia,contract,60,95,78
+Robert Walters,Data Scientist,Australia,Victoria,permanent,100000,200000,150000
+Robert Walters,Data Engineer,Australia,Victoria,permanent,110000,170000,140000
+Robert Walters,Data Analyst,Australia,Victoria,permanent,70000,140000,105000
+Robert Walters,Project Manager,Australia,Victoria,permanent,130000,190000,160000
+Robert Walters,Business Analyst,Australia,Victoria,permanent,100000,160000,130000
+Robert Walters,Project Coordinator/Administrator,Australia,Victoria,permanent,80000,110000,95000
+Robert Walters,Data Scientist,Australia,Victoria,contract,100,170,135
+Robert Walters,Data Engineer,Australia,Victoria,contract,80,130,105
+Robert Walters,Data Analyst,Australia,Victoria,contract,60,100,80
+Robert Walters,Project Manager,Australia,Victoria,contract,95,140,118
+Robert Walters,Business Analyst,Australia,Victoria,contract,75,125,100
+Robert Walters,Project Coordinator/Administrator,Australia,Victoria,contract,55,95,75
+Robert Walters,Data Architect,Australia,Western Australia,permanent,160000,190000,175000
+Robert Walters,BI Architect,Australia,Western Australia,permanent,150000,170000,160000
+Robert Walters,Senior BI Consultant,Australia,Western Australia,permanent,140000,165000,153000
+Robert Walters,BI Consultant,Australia,Western Australia,permanent,125000,140000,133000
+Robert Walters,BI Developer,Australia,Western Australia,permanent,90000,135000,113000
+Robert Walters,Senior Data Analyst,Australia,Western Australia,permanent,120000,150000,135000
+Robert Walters,Data Analyst,Australia,Western Australia,permanent,100000,120000,110000
+Robert Walters,Senior Data Scientist,Australia,Western Australia,permanent,160000,190000,175000
+Robert Walters,Data Scientist,Australia,Western Australia,permanent,130000,160000,145000
+Robert Walters,Data Modeller,Australia,Western Australia,permanent,120000,150000,135000
+Robert Walters,Data Engineer,Australia,Western Australia,permanent,110000,140000,125000
+Robert Walters,RPA Team Lead,Australia,Western Australia,permanent,120000,140000,130000
+Robert Walters,RPA Developer,Australia,Western Australia,permanent,100000,120000,110000
+Robert Walters,RPA Consultant,Australia,Western Australia,permanent,75000,100000,88000
+Robert Walters,AI Senior Engineer,Australia,Western Australia,permanent,115000,140000,128000
+Robert Walters,AI Engineer,Australia,Western Australia,permanent,100000,120000,110000
+Robert Walters,Machine Learning Engineer,Australia,Western Australia,permanent,115000,140000,128000
+Robert Walters,Senior Project Manager,Australia,Western Australia,permanent,150000,165000,158000
+Robert Walters,Project Manager,Australia,Western Australia,permanent,130000,150000,140000
+Robert Walters,Project Coordinator,Australia,Western Australia,permanent,70000,95000,83000
+Robert Walters,PMO Analyst,Australia,Western Australia,permanent,80000,120000,100000
+Robert Walters,Senior Business Analyst,Australia,Western Australia,permanent,135000,150000,143000
+Robert Walters,Business Analyst,Australia,Western Australia,permanent,100000,135000,118000
+Robert Walters,System Analyst,Australia,Western Australia,permanent,90000,120000,105000
+Robert Walters,Data Architect,Australia,Western Australia,contract,120,140,130
+Robert Walters,BI Architect,Australia,Western Australia,contract,110,130,120
+Robert Walters,Senior BI Consultant,Australia,Western Australia,contract,100,115,108
+Robert Walters,BI Consultant,Australia,Western Australia,contract,80,100,90
+Robert Walters,BI Developer,Australia,Western Australia,contract,65,90,78
+Robert Walters,Senior Data Analyst,Australia,Western Australia,contract,75,100,88
+Robert Walters,Data Analyst,Australia,Western Australia,contract,65,80,73
+Robert Walters,Senior Data Scientist,Australia,Western Australia,contract,120,145,133
+Robert Walters,Data Scientist,Australia,Western Australia,contract,90,120,105
+Robert Walters,Data Modeller,Australia,Western Australia,contract,85,110,98
+Robert Walters,Data Engineer,Australia,Western Australia,contract,80,105,93
+Robert Walters,RPA Team Lead,Australia,Western Australia,contract,85,100,93
+Robert Walters,RPA Developer,Australia,Western Australia,contract,85,100,93
+Robert Walters,RPA Consultant,Australia,Western Australia,contract,60,80,70
+Robert Walters,AI Senior Engineer,Australia,Western Australia,contract,80,100,90
+Robert Walters,AI Engineer,Australia,Western Australia,contract,65,90,78
+Robert Walters,Machine Learning Engineer,Australia,Western Australia,contract,80,100,90
+Robert Walters,Senior Project Manager,Australia,Western Australia,contract,105,125,115
+Robert Walters,Project Manager,Australia,Western Australia,contract,90,110,100
+Robert Walters,Project Coordinator,Australia,Western Australia,contract,50,65,58
+Robert Walters,PMO Analyst,Australia,Western Australia,contract,55,75,65
+Robert Walters,Senior Business Analyst,Australia,Western Australia,contract,90,115,103
+Robert Walters,Business Analyst,Australia,Western Australia,contract,80,100,90
+Robert Walters,System Analyst,Australia,Western Australia,contract,75,90,83
+Robert Walters,Business Analyst,Australia,Australian Capital Territory,permanent,120000,160000,140000
+Robert Walters,Project Manager,Australia,Australian Capital Territory,permanent,130000,170000,150000
+Robert Walters,ERP/CRM/BI Architect,Australia,Australian Capital Territory,permanent,150000,210000,180000
+Robert Walters,ERP/CRM/BI Project Manager,Australia,Australian Capital Territory,permanent,160000,210000,185000
+Robert Walters,ERP/CRM Functional Consultant,Australia,Australian Capital Territory,permanent,140000,180000,160000
+Robert Walters,BI Developer,Australia,Australian Capital Territory,permanent,100000,165000,133000
+Robert Walters,Data Analyst,Australia,Australian Capital Territory,permanent,65000,140000,103000
+Robert Walters,Business Analyst,Australia,Australian Capital Territory,contract,80,110,95
+Robert Walters,Project Manager,Australia,Australian Capital Territory,contract,100,140,120
+Robert Walters,ERP/CRM/BI Architect,Australia,Australian Capital Territory,contract,110,160,135
+Robert Walters,ERP/CRM/BI Project Manager,Australia,Australian Capital Territory,contract,110,160,135
+Robert Walters,ERP/CRM Functional Consultant,Australia,Australian Capital Territory,contract,110,140,125
+Robert Walters,BI Developer,Australia,Australian Capital Territory,contract,80,140,110
+Robert Walters,Data Analyst,Australia,Australian Capital Territory,contract,40,120,80
+Rowben Consulting,Business Analyst,Australia,New South Wales,permanent,90000,120000,105000
+Rowben Consulting,Senior Business Analyst,Australia,New South Wales,permanent,120000,140000,130000
+Rowben Consulting,Business Architect,Australia,New South Wales,permanent,130000,180000,155000
+Rowben Consulting,Process Analyst,Australia,New South Wales,permanent,115000,140000,128000
+Rowben Consulting,Project Manager,Australia,New South Wales,permanent,135000,155000,145000
+Rowben Consulting,BI Architect,Australia,New South Wales,permanent,155000,200000,178000
+Rowben Consulting,BI Business Analyst,Australia,New South Wales,permanent,120000,150000,135000
+Rowben Consulting,BI Consultant,Australia,New South Wales,permanent,120000,150000,135000
+Rowben Consulting,BI Developer,Australia,New South Wales,permanent,125000,150000,138000
+Rowben Consulting,BI Manager,Australia,New South Wales,permanent,155000,200000,178000
+Rowben Consulting,BI Project Manager,Australia,New South Wales,permanent,135000,165000,150000
+Rowben Consulting,Data Analyst,Australia,New South Wales,permanent,90000,130000,110000
+Rowben Consulting,Data Architect,Australia,New South Wales,permanent,155000,200000,178000
+Rowben Consulting,Data Engineer,Australia,New South Wales,permanent,130000,185000,158000
+Rowben Consulting,Data Modeller,Australia,New South Wales,permanent,130000,185000,158000
+Rowben Consulting,Data Scientist,Australia,New South Wales,permanent,130000,185000,158000
+Rowben Consulting,ERP/CRM Business Analyst,Australia,New South Wales,permanent,120000,150000,135000
+Rowben Consulting,ERP/CRM Consultant,Australia,New South Wales,permanent,140000,160000,150000
+Rowben Consulting,ERP/CRM Developer,Australia,New South Wales,permanent,125000,150000,138000
+Rowben Consulting,ERP/CRM Project Manager,Australia,New South Wales,permanent,130000,180000,155000
+Rowben Consulting,ERP/CRM Solution Architect,Australia,New South Wales,permanent,160000,200000,180000
+Rowben Consulting,Business Analyst,Australia,New South Wales,contract,470,680,575
+Rowben Consulting,Senior Business Analyst,Australia,New South Wales,contract,635,790,713
+Rowben Consulting,Business Architect,Australia,New South Wales,contract,680,1015,848
+Rowben Consulting,Process Analyst,Australia,New South Wales,contract,600,790,695
+Rowben Consulting,Project Manager,Australia,New South Wales,contract,705,875,790
+Rowben Consulting,BI Architect,Australia,New South Wales,contract,805,1130,968
+Rowben Consulting,BI Business Analyst,Australia,New South Wales,contract,635,850,743
+Rowben Consulting,BI Consultant,Australia,New South Wales,contract,635,850,743
+Rowben Consulting,BI Developer,Australia,New South Wales,contract,635,850,743
+Rowben Consulting,BI Manager,Australia,New South Wales,contract,805,1130,968
+Rowben Consulting,BI Project Manager,Australia,New South Wales,contract,705,930,818
+Rowben Consulting,Data Analyst,Australia,New South Wales,contract,470,735,603
+Rowben Consulting,Data Architect,Australia,New South Wales,contract,800,1130,965
+Rowben Consulting,Data Engineer,Australia,New South Wales,contract,680,1045,863
+Rowben Consulting,Data Modeller,Australia,New South Wales,contract,680,1045,863
+Rowben Consulting,Data Scientist,Australia,New South Wales,contract,680,1045,863
+Rowben Consulting,ERP/CRM Business Analyst,Australia,New South Wales,contract,635,850,743
+Rowben Consulting,ERP/CRM Consultant,Australia,New South Wales,contract,730,905,818
+Rowben Consulting,ERP/CRM Developer,Australia,New South Wales,contract,650,850,750
+Rowben Consulting,ERP/CRM Project Manager,Australia,New South Wales,contract,680,1015,848
+Rowben Consulting,ERP/CRM Solution Architect,Australia,New South Wales,contract,835,1130,983
+Rowben Consulting,Business Analyst,Australia,Australian Capital Territory,permanent,"90,000","120,000",105000
+Rowben Consulting,Senior Business Analyst,Australia,Australian Capital Territory,permanent,"120,000","160,000",140000
+Rowben Consulting,Change Analyst,Australia,Australian Capital Territory,permanent,"85,000","120,000",103000
+Rowben Consulting,Senior Change Analyst,Australia,Australian Capital Territory,permanent,"120,000","130,000",125000
+Rowben Consulting,Process Analyst,Australia,Australian Capital Territory,permanent,"105,000","135,000",120000
+Rowben Consulting,Project Manager,Australia,Australian Capital Territory,permanent,"110,000","140,000",125000
+Rowben Consulting,Senior Project Manager,Australia,Australian Capital Territory,permanent,"140,000","180,000",160000
+Rowben Consulting,BI Architect,Australia,Australian Capital Territory,permanent,"155,000","200,000",178000
+Rowben Consulting,BI Business Analyst,Australia,Australian Capital Territory,permanent,"120,000","150,000",135000
+Rowben Consulting,BI Consultant,Australia,Australian Capital Territory,permanent,"120,000","150,000",135000
+Rowben Consulting,BI Developer,Australia,Australian Capital Territory,permanent,"125,000","150,000",138000
+Rowben Consulting,BI Manager,Australia,Australian Capital Territory,permanent,"155,000","200,000",178000
+Rowben Consulting,BI Project Manager,Australia,Australian Capital Territory,permanent,"135,000","165,000",150000
+Rowben Consulting,Data Analyst,Australia,Australian Capital Territory,permanent,"90,000","130,000",110000
+Rowben Consulting,Data Architect,Australia,Australian Capital Territory,permanent,"155,000","200,000",178000
+Rowben Consulting,Data Engineer,Australia,Australian Capital Territory,permanent,"130,000","185,000",158000
+Rowben Consulting,Data Modeller,Australia,Australian Capital Territory,permanent,"130,000","185,000",158000
+Rowben Consulting,Data Scientist,Australia,Australian Capital Territory,permanent,"130,000","185,000",158000
+Rowben Consulting,ERP/CRM Business Analyst,Australia,Australian Capital Territory,permanent,"120,000","150,000",135000
+Rowben Consulting,ERP/CRM Consultant,Australia,Australian Capital Territory,permanent,"140,000","160,000",150000
+Rowben Consulting,ERP/CRM Developer,Australia,Australian Capital Territory,permanent,"125,000","150,000",138000
+Rowben Consulting,ERP/CRM Project Manager,Australia,Australian Capital Territory,permanent,"130,000","180,000",155000
+Rowben Consulting,ERP/CRM Solution Architect,Australia,Australian Capital Territory,permanent,"160,000","200,000",180000
+Rowben Consulting,Business Analyst,Australia,Australian Capital Territory,contract,500,700,600
+Rowben Consulting,Senior Business Analyst,Australia,Australian Capital Territory,contract,700,900,800
+Rowben Consulting,Change Analyst,Australia,Australian Capital Territory,contract,450,900,675
+Rowben Consulting,Senior Change Analyst,Australia,Australian Capital Territory,contract,700,870,785
+Rowben Consulting,Process Analyst,Australia,Australian Capital Territory,contract,600,890,745
+Rowben Consulting,Project Manager,Australia,Australian Capital Territory,contract,650,890,770
+Rowben Consulting,Senior Project Manager,Australia,Australian Capital Territory,contract,890,950,920
+Rowben Consulting,BI Architect,Australia,Australian Capital Territory,contract,805,"1,130",968
+Rowben Consulting,BI Business Analyst,Australia,Australian Capital Territory,contract,635,850,743
+Rowben Consulting,BI Consultant,Australia,Australian Capital Territory,contract,635,850,743
+Rowben Consulting,BI Developer,Australia,Australian Capital Territory,contract,635,850,743
+Rowben Consulting,BI Manager,Australia,Australian Capital Territory,contract,805,"1,130",968
+Rowben Consulting,BI Project Manager,Australia,Australian Capital Territory,contract,705,"1,130",918
+Rowben Consulting,Data Analyst,Australia,Australian Capital Territory,contract,470,950,710
+Rowben Consulting,Data Architect,Australia,Australian Capital Territory,contract,"1,050","1,200",1125
+Rowben Consulting,Data Engineer,Australia,Australian Capital Territory,contract,680,"1,045",863
+Rowben Consulting,Data Modeller,Australia,Australian Capital Territory,contract,680,"1,045",863
+Rowben Consulting,Data Scientist,Australia,Australian Capital Territory,contract,800,"1,200",1000
+Rowben Consulting,ERP/CRM Business Analyst,Australia,Australian Capital Territory,contract,635,850,743
+Rowben Consulting,ERP/CRM Consultant,Australia,Australian Capital Territory,contract,730,905,818
+Rowben Consulting,ERP/CRM Developer,Australia,Australian Capital Territory,contract,650,950,800
+Rowben Consulting,ERP/CRM Project Manager,Australia,Australian Capital Territory,contract,680,"1,115",898
+Rowben Consulting,ERP/CRM Solution Architect,Australia,Australian Capital Territory,contract,835,"1,330",1083
+Rowben Consulting,Business Analyst,Australia,Victoria,permanent,"100,000","120,000",110000
+Rowben Consulting,Senior Business Analyst,Australia,Victoria,permanent,"120,000","140,000",130000
+Rowben Consulting,PMO Analyst,Australia,Victoria,permanent,"90,000","100,000",95000
+Rowben Consulting,Process Analyst,Australia,Victoria,permanent,"105,000","135,000",120000
+Rowben Consulting,Change Analyst,Australia,Victoria,permanent,"70,000","90,000",80000
+Rowben Consulting,Project Manager,Australia,Victoria,permanent,"100,000","130,000",115000
+Rowben Consulting,BI Architect,Australia,Victoria,permanent,"155,000","200,000",178000
+Rowben Consulting,BI Business Analyst,Australia,Victoria,permanent,"120,000","150,000",135000
+Rowben Consulting,BI Consultant,Australia,Victoria,permanent,"110,000","140,000",125000
+Rowben Consulting,BI Developer,Australia,Victoria,permanent,"125,000","150,000",138000
+Rowben Consulting,BI Manager,Australia,Victoria,permanent,"155,000","200,000",178000
+Rowben Consulting,BI Project Manager,Australia,Victoria,permanent,"135,000","165,000",150000
+Rowben Consulting,Data Analyst,Australia,Victoria,permanent,"90,000","130,000",110000
+Rowben Consulting,Data Architect,Australia,Victoria,permanent,"155,000","200,000",178000
+Rowben Consulting,Data Engineer,Australia,Victoria,permanent,"130,000","185,000",158000
+Rowben Consulting,Data Modeller,Australia,Victoria,permanent,"130,000","185,000",158000
+Rowben Consulting,Data Scientist,Australia,Victoria,permanent,"130,000","185,000",158000
+Rowben Consulting,ERP/CRM Business Analyst,Australia,Victoria,permanent,"120,000","150,000",135000
+Rowben Consulting,ERP/CRM Consultant,Australia,Victoria,permanent,"140,000","160,000",150000
+Rowben Consulting,ERP/CRM Developer,Australia,Victoria,permanent,"125,000","150,000",138000
+Rowben Consulting,ERP/CRM Project Manager,Australia,Victoria,permanent,"130,000","180,000",155000
+Rowben Consulting,ERP/CRM Solution Architect,Australia,Victoria,permanent,"160,000","200,000",180000
+Rowben Consulting,Business Analyst,Australia,Victoria,contract,600,700,650
+Rowben Consulting,Senior Business Analyst,Australia,Victoria,contract,700,900,800
+Rowben Consulting,PMO Analyst,Australia,Victoria,contract,600,750,675
+Rowben Consulting,Process Analyst,Australia,Victoria,contract,700,900,800
+Rowben Consulting,Change Analyst,Australia,Victoria,contract,600,750,675
+Rowben Consulting,Project Manager,Australia,Victoria,contract,700,"1,000",850
+Rowben Consulting,BI Architect,Australia,Victoria,contract,900,"1,130",1015
+Rowben Consulting,BI Business Analyst,Australia,Victoria,contract,700,900,800
+Rowben Consulting,BI Consultant,Australia,Victoria,contract,700,900,800
+Rowben Consulting,BI Developer,Australia,Victoria,contract,650,950,800
+Rowben Consulting,BI Manager,Australia,Victoria,contract,1000,"1,200",1100
+Rowben Consulting,BI Project Manager,Australia,Victoria,contract,800,"1,000",900
+Rowben Consulting,Data Analyst,Australia,Victoria,contract,550,750,650
+Rowben Consulting,Data Architect,Australia,Victoria,contract,"1,000","1,150",1075
+Rowben Consulting,Data Engineer,Australia,Victoria,contract,700,"1,000",850
+Rowben Consulting,Data Modeller,Australia,Victoria,contract,750,"1,050",900
+Rowben Consulting,Data Scientist,Australia,Victoria,contract,800,"1,100",950
+Rowben Consulting,ERP/CRM Business Analyst,Australia,Victoria,contract,750,950,850
+Rowben Consulting,ERP/CRM Consultant,Australia,Victoria,contract,730,905,818
+Rowben Consulting,ERP/CRM Developer,Australia,Victoria,contract,650,850,750
+Rowben Consulting,ERP/CRM Project Manager,Australia,Victoria,contract,900,"1,200",1050
+Rowben Consulting,ERP/CRM Solution Architect,Australia,Victoria,contract,835,"1,130",983
+Rowben Consulting,Business Analyst,Australia,Queensland,permanent,"85,000","110,000",98000
+Rowben Consulting,Senior Business Analyst,Australia,Queensland,permanent,"110,000","140,000",125000
+Rowben Consulting,Business Architect,Australia,Queensland,permanent,"100,000","130,000",115000
+Rowben Consulting,PMO Analyst,Australia,Queensland,permanent,"95,000","130,000",113000
+Rowben Consulting,Change Analyst,Australia,Queensland,permanent,"85,000","125,000",105000
+Rowben Consulting,Senior Change Analyst,Australia,Queensland,permanent,"150,000","180,000",165000
+Rowben Consulting,Process Analyst,Australia,Queensland,permanent,"105,000","135,000",120000
+Rowben Consulting,Project Manager,Australia,Queensland,permanent,"130,000","150,000",140000
+Rowben Consulting,Senior Project Manager,Australia,Queensland,permanent,"140,000","170,000",155000
+Rowben Consulting,BI Architect,Australia,Queensland,permanent,"155,000","200,000",178000
+Rowben Consulting,BI Business Analyst,Australia,Queensland,permanent,"120,000","150,000",135000
+Rowben Consulting,BI Consultant,Australia,Queensland,permanent,"120,000","150,000",135000
+Rowben Consulting,BI Developer,Australia,Queensland,permanent,"125,000","150,000",138000
+Rowben Consulting,BI Manager,Australia,Queensland,permanent,"155,000","200,000",178000
+Rowben Consulting,BI Project Manager,Australia,Queensland,permanent,"135,000","165,000",150000
+Rowben Consulting,Data Analyst,Australia,Queensland,permanent,"90,000","130,000",110000
+Rowben Consulting,Data Architect,Australia,Queensland,permanent,"155,000","200,000",178000
+Rowben Consulting,Data Engineer,Australia,Queensland,permanent,"130,000","185,000",158000
+Rowben Consulting,Data Modeller,Australia,Queensland,permanent,"130,000","185,000",158000
+Rowben Consulting,Data Scientist,Australia,Queensland,permanent,"130,000","185,000",158000
+Rowben Consulting,ERP/CRM Business Analyst,Australia,Queensland,permanent,"120,000","150,000",135000
+Rowben Consulting,ERP/CRM Consultant,Australia,Queensland,permanent,"140,000","160,000",150000
+Rowben Consulting,ERP/CRM Developer,Australia,Queensland,permanent,"125,000","150,000",138000
+Rowben Consulting,ERP/CRM Project Manager,Australia,Queensland,permanent,"130,000","180,000",155000
+Rowben Consulting,ERP/CRM Solution Architect,Australia,Queensland,permanent,"160,000","200,000",180000
+Rowben Consulting,Business Analyst,Australia,Queensland,contract,520,680,600
+Rowben Consulting,Senior Business Analyst,Australia,Queensland,contract,680,750,715
+Rowben Consulting,Business Architect,Australia,Queensland,contract,520,680,600
+Rowben Consulting,PMO Analyst,Australia,Queensland,contract,850,"1,050",950
+Rowben Consulting,Change Analyst,Australia,Queensland,contract,445,650,548
+Rowben Consulting,Senior Change Analyst,Australia,Queensland,contract,780,950,865
+Rowben Consulting,Process Analyst,Australia,Queensland,contract,550,700,625
+Rowben Consulting,Project Manager,Australia,Queensland,contract,800,900,850
+Rowben Consulting,Senior Project Manager,Australia,Queensland,contract,900,"1,000",950
+Rowben Consulting,BI Architect,Australia,Queensland,contract,805,"1,130",968
+Rowben Consulting,BI Business Analyst,Australia,Queensland,contract,750,900,825
+Rowben Consulting,BI Consultant,Australia,Queensland,contract,750,900,825
+Rowben Consulting,BI Developer,Australia,Queensland,contract,680,850,765
+Rowben Consulting,BI Manager,Australia,Queensland,contract,805,"1,130",968
+Rowben Consulting,BI Project Manager,Australia,Queensland,contract,800,"1,000",900
+Rowben Consulting,Data Analyst,Australia,Queensland,contract,650,800,725
+Rowben Consulting,Data Architect,Australia,Queensland,contract,905,"1,130",1018
+Rowben Consulting,Data Engineer,Australia,Queensland,contract,720,"1,000",860
+Rowben Consulting,Data Modeller,Australia,Queensland,contract,720,"1,000",860
+Rowben Consulting,Data Scientist,Australia,Queensland,contract,720,"1,000",860
+Rowben Consulting,ERP/CRM Business Analyst,Australia,Queensland,contract,750,850,800
+Rowben Consulting,ERP/CRM Consultant,Australia,Queensland,contract,800,"1,000",900
+Rowben Consulting,ERP/CRM Developer,Australia,Queensland,contract,750,950,850
+Rowben Consulting,ERP/CRM Project Manager,Australia,Queensland,contract,800,"1,000",900
+Rowben Consulting,ERP/CRM Solution Architect,Australia,Queensland,contract,835,"1,130",983
+Rowben Consulting,Business Analyst,Australia,South Australia,permanent,"75,000","100,000",88000
+Rowben Consulting,Senior Business Analyst,Australia,South Australia,permanent,"100,000","130,000",115000
+Rowben Consulting,Project Manager,Australia,South Australia,permanent,"130,000","170,000",150000
+Rowben Consulting,Process Analyst,Australia,South Australia,permanent,"110,000","140,000",125000
+Rowben Consulting,Change Analyst,Australia,South Australia,permanent,"85,000","110,000",98000
+Rowben Consulting,Senior Change Analyst,Australia,South Australia,permanent,"110,000","140,000",125000
+Rowben Consulting,PMO Analyst,Australia,South Australia,permanent,"90,000","120,000",105000
+Rowben Consulting,BI Architect,Australia,South Australia,permanent,"145,000","190,000",168000
+Rowben Consulting,BI Business Analyst,Australia,South Australia,permanent,"115,000","150,000",133000
+Rowben Consulting,BI Consultant,Australia,South Australia,permanent,"110,000","150,000",130000
+Rowben Consulting,BI Developer,Australia,South Australia,permanent,"115,000","140,000",128000
+Rowben Consulting,BI Manager,Australia,South Australia,permanent,"145,000","200,000",173000
+Rowben Consulting,BI Project Manager,Australia,South Australia,permanent,"125,000","155,000",140000
+Rowben Consulting,Data Analyst,Australia,South Australia,permanent,"85,000","130,000",108000
+Rowben Consulting,Data Architect,Australia,South Australia,permanent,"145,000","190,000",168000
+Rowben Consulting,Data Engineer,Australia,South Australia,permanent,"125,000","175,000",150000
+Rowben Consulting,Data Modeller,Australia,South Australia,permanent,"125,000","175,000",150000
+Rowben Consulting,Data Scientist,Australia,South Australia,permanent,"150,000","140,000",145000
+Rowben Consulting,ERP/CRM Business Analyst,Australia,South Australia,permanent,"115,000","180,000",148000
+Rowben Consulting,ERP/CRM Consultant,Australia,South Australia,permanent,"120,000","150,000",135000
+Rowben Consulting,ERP/CRM Developer,Australia,South Australia,permanent,"115,000","140,000",128000
+Rowben Consulting,ERP/CRM Project Manager,Australia,South Australia,permanent,"120,000","170,000",145000
+Rowben Consulting,ERP/CRM Solution Architect,Australia,South Australia,permanent,"150,000","200,000",175000
+Rowben Consulting,Business Analyst,Australia,South Australia,contract,400,600,500
+Rowben Consulting,Senior Business Analyst,Australia,South Australia,contract,600,900,750
+Rowben Consulting,Project Manager,Australia,South Australia,contract,700,900,800
+Rowben Consulting,Process Analyst,Australia,South Australia,contract,600,750,675
+Rowben Consulting,Change Analyst,Australia,South Australia,contract,500,650,575
+Rowben Consulting,Senior Change Analyst,Australia,South Australia,contract,600,750,675
+Rowben Consulting,PMO Analyst,Australia,South Australia,contract,500,750,625
+Rowben Consulting,BI Architect,Australia,South Australia,contract,765,"1,100",933
+Rowben Consulting,BI Business Analyst,Australia,South Australia,contract,605,805,705
+Rowben Consulting,BI Consultant,Australia,South Australia,contract,600,800,700
+Rowben Consulting,BI Developer,Australia,South Australia,contract,600,800,700
+Rowben Consulting,BI Manager,Australia,South Australia,contract,750,"1,100",925
+Rowben Consulting,BI Project Manager,Australia,South Australia,contract,670,900,785
+Rowben Consulting,Data Analyst,Australia,South Australia,contract,450,700,575
+Rowben Consulting,Data Architect,Australia,South Australia,contract,750,"1,000",875
+Rowben Consulting,Data Engineer,Australia,South Australia,contract,650,900,775
+Rowben Consulting,Data Modeller,Australia,South Australia,contract,650,900,775
+Rowben Consulting,Data Scientist,Australia,South Australia,contract,650,"1,000",825
+Rowben Consulting,ERP/CRM Business Analyst,Australia,South Australia,contract,600,800,700
+Rowben Consulting,ERP/CRM Consultant,Australia,South Australia,contract,700,900,800
+Rowben Consulting,ERP/CRM Developer,Australia,South Australia,contract,650,900,775
+Rowben Consulting,ERP/CRM Project Manager,Australia,South Australia,contract,650,900,775
+Rowben Consulting,ERP/CRM Solution Architect,Australia,South Australia,contract,750,"1,000",875
+Rowben Consulting,Business Analyst,Australia,Western Australia,permanent,"85,000","110,000",98000
+Rowben Consulting,Senior Business Analyst,Australia,Western Australia,permanent,"110,000","140,000",125000
+Rowben Consulting,Project Manager,Australia,Western Australia,permanent,"130,000","150,000",140000
+Rowben Consulting,Senior Project Manager,Australia,Western Australia,permanent,"160,000","200,000",180000
+Rowben Consulting,Change Analyst,Australia,Western Australia,permanent,"85,000","110,000",98000
+Rowben Consulting,Senior Change Analyst,Australia,Western Australia,permanent,"110,000","140,000",125000
+Rowben Consulting,PMO Analyst,Australia,Western Australia,permanent,"95,000","130,000",113000
+Rowben Consulting,Process Analyst,Australia,Western Australia,permanent,"105,000","135,000",120000
+Rowben Consulting,BI Architect,Australia,Western Australia,permanent,"155,000","200,000",178000
+Rowben Consulting,BI Business Analyst,Australia,Western Australia,permanent,"120,000","150,000",135000
+Rowben Consulting,BI Consultant,Australia,Western Australia,permanent,"120,000","150,000",135000
+Rowben Consulting,BI Developer,Australia,Western Australia,permanent,"125,000","150,000",138000
+Rowben Consulting,BI Manager,Australia,Western Australia,permanent,"155,000","200,000",178000
+Rowben Consulting,BI Project Manager,Australia,Western Australia,permanent,"135,000","165,000",150000
+Rowben Consulting,Data Analyst,Australia,Western Australia,permanent,"90,000","130,000",110000
+Rowben Consulting,Data Architect,Australia,Western Australia,permanent,"155,000","200,000",178000
+Rowben Consulting,Data Engineer,Australia,Western Australia,permanent,"130,000","185,000",158000
+Rowben Consulting,Data Modeller,Australia,Western Australia,permanent,"130,000","185,000",158000
+Rowben Consulting,Data Scientist,Australia,Western Australia,permanent,"130,000","185,000",158000
+Rowben Consulting,ERP/CRM Business Analyst,Australia,Western Australia,permanent,"120,000","150,000",135000
+Rowben Consulting,ERP/CRM Consultant,Australia,Western Australia,permanent,"140,000","160,000",150000
+Rowben Consulting,ERP/CRM Developer,Australia,Western Australia,permanent,"125,000","150,000",138000
+Rowben Consulting,ERP/CRM Project Manager,Australia,Western Australia,permanent,"130,000","180,000",155000
+Rowben Consulting,ERP/CRM Solution Architect,Australia,Western Australia,permanent,"160,000","200,000",180000
+Rowben Consulting,Business Analyst,Australia,Western Australia,contract,445,575,510
+Rowben Consulting,Senior Business Analyst,Australia,Western Australia,contract,700,900,800
+Rowben Consulting,Project Manager,Australia,Western Australia,contract,680,780,730
+Rowben Consulting,Senior Project Manager,Australia,Western Australia,contract,850,"1,200",1025
+Rowben Consulting,Change Analyst,Australia,Western Australia,contract,450,650,550
+Rowben Consulting,Senior Change Analyst,Australia,Western Australia,contract,575,730,653
+Rowben Consulting,PMO Analyst,Australia,Western Australia,contract,550,800,675
+Rowben Consulting,Process Analyst,Australia,Western Australia,contract,550,705,628
+Rowben Consulting,BI Architect,Australia,Western Australia,contract,805,"1,130",968
+Rowben Consulting,BI Business Analyst,Australia,Western Australia,contract,635,850,743
+Rowben Consulting,BI Consultant,Australia,Western Australia,contract,635,850,743
+Rowben Consulting,BI Developer,Australia,Western Australia,contract,635,850,743
+Rowben Consulting,BI Manager,Australia,Western Australia,contract,805,"1,130",968
+Rowben Consulting,BI Project Manager,Australia,Western Australia,contract,705,930,818
+Rowben Consulting,Data Analyst,Australia,Western Australia,contract,470,735,603
+Rowben Consulting,Data Architect,Australia,Western Australia,contract,800,1130,965
+Rowben Consulting,Data Engineer,Australia,Western Australia,contract,680,"1,045",863
+Rowben Consulting,Data Modeller,Australia,Western Australia,contract,680,"1,045",863
+Rowben Consulting,Data Scientist,Australia,Western Australia,contract,680,"1,045",863
+Rowben Consulting,ERP/CRM Business Analyst,Australia,Western Australia,contract,635,850,743
+Rowben Consulting,ERP/CRM Consultant,Australia,Western Australia,contract,730,905,818
+Rowben Consulting,ERP/CRM Developer,Australia,Western Australia,contract,650,850,750
+Rowben Consulting,ERP/CRM Project Manager,Australia,Western Australia,contract,680,"1,015",848
+Rowben Consulting,ERP/CRM Solution Architect,Australia,Western Australia,contract,835,"1,130",983
