@@ -6,6 +6,16 @@
 // The data from the JSON file is arbitrarily named importedData as the argument
 d3.json("csvjson (3).json").then(function (data) {
 
+    // //Convert the date string to new Date
+    // var newData = data.forEach((job) => { 
+    //     Object.entries(job).forEach(([key, value]) => {
+    //         if (key === "created") {
+    //             value === (new Date(value));
+    //         }
+    //     });
+    // });
+    // console.log(newData);
+
    //Slice the data to show the first 10 job listings:
 
     var data = data.slice(0, 10);
@@ -43,6 +53,4 @@ d3.json("csvjson (3).json").then(function (data) {
 
 
 });
-
-
 
