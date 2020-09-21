@@ -43,7 +43,7 @@
     });
 
     /*------------------
-		Navigation
+		Navigation - NEED TO FIX
 	--------------------*/
     $(".header__menu").slicknav({
         prependTo: '#mobile-menu-wrap',
@@ -51,36 +51,23 @@
     });
 
     /*--------------------------
-        Testimonial Slider
-    ----------------------------*/
-    $(".car__item__pic__slider").owlCarousel({
-        loop: true,
-        margin: 0,
-        items: 1,
-        dots: true,
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: false
-    });
-
-    /*--------------------------
-        Select
+        Select - NEED TO FIX
     ----------------------------*/
     $("select").niceSelect();
 
     /*------------------
 		Single Product
 	--------------------*/
-    $('.job-thumbs-track .ct').on('click', function () {
-        $('.job-thumbs-track .ct').removeClass('active');
-        var imgurl = $(this).data('imgbigurl');
-        var bigImg = $('.job-big-img').attr('src');
-        if (imgurl != bigImg) {
-            $('.job-big-img').attr({
-                src: imgurl
-            });
-        }
-    });
+    // $('.job-thumbs-track .ct').on('click', function () {
+    //     $('.job-thumbs-track .ct').removeClass('active');
+    //     var imgurl = $(this).data('imgbigurl');
+    //     var bigImg = $('.job-big-img').attr('src');
+    //     if (imgurl != bigImg) {
+    //         $('.job-big-img').attr({
+    //             src: imgurl
+    //         });
+    //     }
+    // });
 
     /*------------------
         Counter Up
