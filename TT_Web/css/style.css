@@ -130,10 +130,16 @@ ol {
 	background-position: top center;
 }
 
-.spad {
+.spad1 {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.spad2 {
 	padding-top: 150px;
 	padding-bottom: 150px;
 }
+
 
 .text-white h1,
 .text-white h2,
@@ -195,6 +201,17 @@ ol {
 	animation: loader 0.8s linear infinite;
 	-webkit-animation: loader 0.8s linear infinite;
 }
+
+/* Main map */
+#map-container {
+	bottom: -87px;
+	left: 10px;
+	width: 75%;
+	height: 75%;
+	position: realtive;
+	transition: bottom .3s;
+	z-index: 3;
+  }
 
 @keyframes loader {
 	0% {
@@ -307,68 +324,9 @@ ol {
   Header
 -----------------------*/
 
-/* .header__top {
-	background: #323232;
-} */
-
-/* .header__top__widget {
-	padding: 8px 0 8px;
-} */
-
-/* .header__top__widget li {
-	font-size: 15px;
-	color: #ffffff;
-	display: inline-block;
-	margin-right: 35px;
-	list-style: none;
-}
-
-.header__top__widget li:last-child {
-	margin-right: 0;
-}
-
-.header__top__widget li i {
-	font-size: 18px;
-	color: #8d8d8d;
-	margin-right: 6px;
-} */
-
 .header__top__right {
 	text-align: right;
 }
-
-/* .header__top__phone {
-	display: inline-block;
-	margin-right: 20px;
-	padding: 14px 0 12px;
-}
-
-.header__top__phone i {
-	color: #8d8d8d;
-	margin-right: 6px;
-	font-size: 15px;
-}
-
-.header__top__phone span {
-	font-size: 15px;
-	color: #ffffff;
-} */
-
-/* .header__top__social {
-	display: inline-block;
-	padding: 14px 0 12px;
-} */
-
-/* .header__top__social a {
-	display: inline-block;
-	font-size: 15px;
-	color: #ffffff;
-	margin-right: 16px;
-} */
-
-/* .header__top__social a:last-child {
-	margin-right: 0;
-} */
 
 .header__nav {
 	text-align: right;

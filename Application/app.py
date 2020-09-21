@@ -10,6 +10,8 @@ from sqlalchemy.ext.declarative import declarative_base
 import psycopg2
 # from models import Keyword,Jobs
 from flask import Flask, jsonify
+import sys
+
 
 app = Flask(__name__)
 
@@ -35,9 +37,16 @@ State = Base.classes.state
 def hello():
     return "Hello World!"
 
-@app.route("/<stat>/<role>")
+@app.route("/<stat>/<role>", methods=['GET', 'POST'])
 def get_jobs(stat=None, role=None):
-    
+
+    if request.method == 'POST':
+        
+        stateSelection = request.form.get('state')
+        roleSelection = request.form.get('role')
+        stat = str(stateSelection)
+        role = str(roleSelection)
+        
     session = Session(engine)
 
     results = session.query(Jobs.company, Jobs.contract_time, Jobs.contract_type, Jobs.latitude, Jobs.longitude, Jobs.area, Jobs.redirect_url,Jobs.created,Jobs.title,Jobs.salary_min,
@@ -63,10 +72,11 @@ def get_jobs(stat=None, role=None):
         job_dict["keyword"] = keyword
         job_dict["state"] = state
         all_jobs.append(job_dict)
-    # return jsonify(all_jobs)
+    
     data = all_jobs
+    # print(data)
     return render_template("index.html", data=data)
-
+    
 
 
 @app.route("/team")

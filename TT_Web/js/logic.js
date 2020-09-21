@@ -99,7 +99,7 @@ L.control.layers(baseMaps).addTo(myMap);
 // var url = baseURL + date + complaint + limit;
 
 // Grab the data with d3
-d3.json("jobSearchResults.json", function (response) {
+d3.json("jobSearchResults.json").then(function (response) {
 
   // Create a new marker cluster group
   var markers = L.markerClusterGroup({
