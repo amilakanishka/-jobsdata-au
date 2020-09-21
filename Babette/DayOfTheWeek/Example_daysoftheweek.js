@@ -120,8 +120,19 @@ function plot(y, x_days) {
     var trace1 = {
         x: x_days,
         y: y,
+        text: y.map(String),
+        textfont: {
+            size: 14
+        },
+        textposition: 'auto',
+        hoverinfo: 'none',
         marker: {
-            color: color
+            color: color,
+            opacity: 0.6,
+            line: {
+                color: "#545454",
+                width: 1.5
+            }
         },
         type: 'bar'
     };
@@ -129,9 +140,28 @@ function plot(y, x_days) {
     var data = [trace1];
 
     var layout = {
-        title: 'Job ads per weekdays',
-        xaxis: { title: "Weekdays" },
-        yaxis: { title: "Number of job ads" },
+        title: 'Job ads per weekday',
+        titlefont: {
+            size: 24,
+            color: '#000000'
+        },
+        xaxis: {
+            tickfont: {
+                size: 14,
+                color: '#000000'
+            }
+        },
+        yaxis: {
+            title: "Number of job ads",
+            titlefont: {
+                size: 18,
+                color: '#000000'
+            },
+            tickfont: {
+                size: 14,
+                color: '#000000'
+            }
+        },
         showlegend: false,
         height: 600,
         width: 1000
