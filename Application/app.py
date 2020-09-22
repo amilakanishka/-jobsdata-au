@@ -15,13 +15,13 @@ import sys
 
 app = Flask(__name__)
 
-# app.config.from_object(os.environ['APP_SETTINGS'])
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# db = SQLAlchemy(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "postgresql://Jupyter_User:test@127.0.0.1/JobsDB"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
 Base = declarative_base()
 # db credentials to be moved to hide
-engine = create_engine("postgresql://Jupyter_User:test@127.0.0.1/JobsDB")
+engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -34,18 +34,25 @@ Keyword = Base.classes.keyword
 State = Base.classes.state
 
 @app.route("/")
-def hello():
-    return "Hello World!"
+def home():
+    session = Session(engine)
+    statesResults = session.query(State.state).all()
+    rolesResults = session.query(Keyword.keyword).all()
+    session.close()
+    stateList = []
+    roleList = []
+    for state in statesResults:
+        stateList.append(state[0])
 
-@app.route("/<stat>/<role>", methods=['GET', 'POST'])
+    for keyword in rolesResults:
+        roleList.append(keyword[0])        
+
+    stateList.append('All')
+    roleList.append('All')
+    return render_template("index.html",sdata=stateList, rdata = roleList)
+
+@app.route("/get_jobs/<stat>/<role>", methods=['GET'])
 def get_jobs(stat=None, role=None):
-
-    if request.method == 'POST':
-        
-        stateSelection = request.form.get('state')
-        roleSelection = request.form.get('role')
-        stat = str(stateSelection)
-        role = str(roleSelection)
         
     session = Session(engine)
 
@@ -75,9 +82,8 @@ def get_jobs(stat=None, role=None):
     
     data = all_jobs
     # print(data)
-    return render_template("index.html", data=data)
+    return jsonify(data)
     
-
 
 @app.route("/team")
 def team():

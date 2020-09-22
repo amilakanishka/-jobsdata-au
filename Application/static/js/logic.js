@@ -54,14 +54,50 @@
 
 
 // Creating map object
-function myFunc(vars) {
-  var dat = JSON.parse(vars);
-  console.log(dat);
 
-  var myMap = L.map("map", {
-    center: [-25.69, 133.88],
-    zoom: 5
-    });
+d3.select("#submit").on("click", handleSubmit);
+var myMap = null;
+
+function handleSubmit() {
+  // Prevent the page from refreshing
+  d3.event.preventDefault();
+
+  // Select the input value from the form
+  var stateSelection = d3.select("#ddstate").node().value;
+  console.log(stateSelection);
+  var roleSelection = d3.select("#ddrole").node().value;
+  console.log(roleSelection);
+  var url = `/get_jobs/${stateSelection}/${roleSelection}`;
+  d3.json(url).then(function(data) {
+    console.log(data);
+    renderMap(data,stateSelection);
+    renderWordCloud(data);
+  });
+}
+
+function renderMap(data,state){
+    if (myMap !== undefined && myMap !== null) {
+      myMap.remove(); // should remove the map from UI and clean the inner children of DOM element
+    }
+
+    var state = ["Australian Capital Territory", "Victoria", "New South Wales", "Queensland", "Western Australia",
+      "South Australia", "Northern Territory", "All"]
+    var latitude = [-35.28, -37.81, -33.86, -23.52, -31.95, -34.92, -18, -25.69];
+    var longitude = [149.13, 144.96, 151.20, 149.13, 115.86, 138.60, 134.19, 133.88];
+    var zoom = [7, 7, 7, 6, 7, 7, 6, 5];
+
+    //Create a conditional statement based on the sate selected:
+    if (state == state) {
+      var myMap = L.map("map", {
+        center: [latitude, longitude],
+        zoom: zoom
+      });
+    }
+
+  // myMap = L.map("map", {
+  //   center: [-25.69, 133.88],
+  //   zoom: 5
+  //   });
 
 
     // Adding light tile layer to the map
@@ -95,7 +131,7 @@ function myFunc(vars) {
 
     // Grab the data with d3
     //d3.json("jobSearchResults.json", function (response) {
-    var response = dat;
+    var response = data;
     // Create a new marker cluster group
     Street: streetmap
     var markers = L.markerClusterGroup({
@@ -144,150 +180,108 @@ function myFunc(vars) {
 
     // Add our marker cluster layer to the map
     myMap.addLayer(markers);
+}
 
-    // -------------------------------------------------------------------------------------------------------------------
-    // Word colud
+function renderWordCloud(data){
+  var jobListing = data
+  var keywords = [];
+  var titles = [];
+  var areas = [];
 
-    var jobListing = dat
-    var keywords = [];
-    var titles = [];
-    var areas = [];
+  for (var i = 0; i < jobListing.length; i++) {
+      keywords.push(jobListing[i].keyword) // Return keyword in a list
+      titles.push(jobListing[i].title) // Return title in a list
+      areas.push(jobListing[i].area) // Return area in a list
+  };
 
-    for (var i = 0; i < jobListing.length; i++) {
-        keywords.push(jobListing[i].keyword) // Return keyword in a list
-        titles.push(jobListing[i].title) // Return title in a list
-        areas.push(jobListing[i].area) // Return area in a list
-    };
+  // Get unique values for titles - NOT USED - DELETE LATER
+  // var distinctTitles = [...new Set(titles)];
+  // console.log(distinctTitles);  
 
-    // Console.log to DELETE LATER
-    console.log("keyword");
-    console.log(keywords.length);
-    console.log(keywords);
-    console.log(typeof(keywords[0]));
+  // Split words in title
+  // Use RegEx to replace special characters with space 
+  var splitTitles = [];
 
-    console.log("title");
-    console.log(titles.length);
-    console.log(titles[0]);
-    console.log(typeof(titles[0]));
+  for (var i = 0; i < titles.length; i++) {
+      var temp = titles[i].replace(/[&\/\\#,+()$~%.'":*?<>{}[_-]|[\0\d]/g," ")
+                          .split(" ");
+      splitTitles = splitTitles.concat(temp);
+  }
 
-    console.log("area");
-    console.log(areas.length);
-    console.log(areas[0]);
-    console.log(typeof(areas[0]));
+  // Count by unique
+  var counts = {};
 
-    // Get unique values for titles - NOT USED - DELETE LATER
-    // var distinctTitles = [...new Set(titles)];
-    // console.log(distinctTitles);  
+  for (var i = 0; i < splitTitles.length; i++) {
+      counts[splitTitles[i]] = 1 + (counts[splitTitles[i]] || 0);
+  }
 
-    // Split words in title
-    // Use RegEx to replace special characters with space 
-    var splitTitles = [];
+  // Set the data
+  var wordData = [];
+  
+  for (var item in counts) {
+      wordData.push({ x: item, 
+                  value: counts[item]
+              });
+  }
 
-    for (var i = 0; i < titles.length; i++) {
-        var temp = titles[i].replace(/[&\/\\#,+()$~%.'":*?<>{}[_-]|[\0\d]/g," ")
-                            .split(" ");
-        splitTitles = splitTitles.concat(temp);
-    }
+  // Remove dictionary if key is - | ] or blank. Clean up balance after RegEx
+  var wordData = wordData.filter(item =>
+      (item.x !== "|") &&
+      (item.x !== "") &&
+      (item.x !== "-") &&
+      (item.x !== "]"));
 
-    // Console.log to DELETE LATER
-    console.log("last temp");
-    console.log(temp);
-    console.log("splitTitles");
-    console.log(splitTitles.length);
-    console.log(splitTitles[0]);
+  // Sort the list of dictionaries by value
+  wordData.sort(function(first, second) {
+      return second.value - first.value;
+  })
 
-    // Count by unique
-    var counts = {};
+  // Limit to top 35 words
+  var topWords = [];
 
-    for (var i = 0; i < splitTitles.length; i++) {
-        counts[splitTitles[i]] = 1 + (counts[splitTitles[i]] || 0);
-    }
+  for (var i = 0; i < 35; i++) {
+      topWords.push(wordData[i]);
+  }
 
-    // Console.log to DELETE LATER
-    console.log("counts");
-    console.log(counts);
 
-    // Set the data
-    var wordData = [];
-    
-    for (var item in counts) {
-        wordData.push({ x: item, 
-                    value: counts[item]
-                });
-    }
+  // Render word cloud chart
+  anychart.onDocumentReady(function() {
 
-    // Console.log to DELETE LATER
-    console.log("Sorted wordData");
-    console.log(wordData);
+      var data = topWords;
+      var chart = anychart.tagCloud(data);
 
-    // Remove dictionary if key is - | ] or blank. Clean up balance after RegEx
-    var wordData = wordData.filter(item =>
-        (item.x !== "|") &&
-        (item.x !== "") &&
-        (item.x !== "-") &&
-        (item.x !== "]"));
+      // Create and configure a color scale
+      var customColorScale = anychart.scales.linearColor();
+      customColorScale.colors(["#246ED1", "#23B5B5"]);
 
-        // Console.log to DELETE LATER
-        console.log("Clean up after RegEx wordData");
-        console.log(wordData);
+      // Bind customColorScale to the color scale of the chart
+      chart.colorScale(customColorScale);
 
-    // Sort the list of dictionaries by value
-    wordData.sort(function(first, second) {
-        return second.value - first.value;
-    })
+      // Add a color range
+      chart.colorRange().enabled(true);
 
-    // Console.log to DELETE LATER
-    console.log("Filtered wordData");
-    console.log(wordData);
+      // Set word angle to straight
+      chart.angles([0]);
 
-    // Limit to top 35 words
-    var topWords = [];
+      // Set the chart title
+      chart.title("Most Popular Words Used in Position Titles");
 
-    for (var i = 0; i < 35; i++) {
-        topWords.push(wordData[i]);
-    }
+      // Configure the visual settings of the chart
+      chart.hovered().fill("#FF5757");
+      chart.hovered().fontWeight(800);
+      
+      // Set the container id
+      chart.container("cloud");
 
-    // Console.log to DELETE LATER
-    console.log("topWords");
-    console.log(topWords);
-
-    // Render word cloud chart
-    anychart.onDocumentReady(function() {
-        var data = topWords;
-        var chart = anychart.tagCloud(data);
-
-        // Create and configure a color scale
-        var customColorScale = anychart.scales.linearColor();
-        customColorScale.colors(["#246ED1", "#23B5B5"]);
-
-        // Bind customColorScale to the color scale of the chart
-        chart.colorScale(customColorScale);
-
-        // Add a color range
-        chart.colorRange().enabled(true);
-
-        // Set word angle to straight
-        chart.angles([0]);
-
-        // Set the chart title
-        chart.title("Most Popular Words Used in Position Titles");
-
-        // Configure the visual settings of the chart
-        chart.hovered().fill("#FF5757");
-        chart.hovered().fontWeight(800);
-        
-        // Set the container id
-        chart.container("cloud");
-
-        // Initiate drawing the chart
-        chart.draw();
-    })    
-  return vars
+      // Initiate drawing the chart
+      chart.draw();
+  })    
 }
 
 window.onload=function(){
-    
 }
+
+
 //});
 
 // var markerCluster = new MarkerClusterer(map, markers, { 
