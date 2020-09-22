@@ -42,6 +42,7 @@
         <div class="loader"></div>
     </div>
     <!-- Header Section Begin -->
+    
     <header class="header">
         <div class="container">
             <div class="row">
@@ -125,7 +126,7 @@
     </section>
     <!-- Hero Section End -->
 
-    <!-- Map Section -->
+    <!-- Box Section -->
     <section>
         <div class="services spad1">
             <!-- <div class="container-md"> -->
@@ -133,26 +134,87 @@
             <!-- </div> -->
             <div class="parent white">
                 <div class="card 1">
-                  <h3>Data Scientist</h3>
-                  <p>A bit about the job would be great</p>
-                  <div class="visual"></div>
+                    <h3>Data Scientist</h3>
+                    <p>A bit about the job would be great</p>
+                    <div class="visual"></div>
                 </div>
                 <div class="card 2">
-                  <h3>Data Analyst</h3>
-                  <p> What a cool job after our analytics course.</p>
-                  <div class="visual"></div>
+                    <h3>Data Analyst</h3>
+                    <p> What a cool job after our analytics course.</p>
+                    <div class="visual"></div>
                 </div>
                 <div class="card 3">
-                  <h3>Product Manager</h3>
-                  <p>Someone needs to manage these projects.</p>
-                  <div class="visual"></div>
+                    <h3>Product Manager</h3>
+                    <p>Someone needs to manage these projects.</p>
+                    <div class="visual"></div>
                 </div>
-              </div>
+                </div>
         </div>
     </section>
+    <!-- Box Section End -->
+
+    
+    <!-- Charting section start -->
+
+    <section class="index-part-2">
+        <div class="container">
+           <div class="row">
+              <div class="text-center">
+                <h2 style="text-align:center">Data Professionals</h2>
+              </div>
+              <hr class="hr-mid">
+              <div class="sub-text text-center">
+                    <p class="row">
+                       Where and how to find your dream job
+                    </p>
+              </div>
+          </div>
+           <div class="row">
+               <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
+                     <div class="block text-center block-first">
+                        <div class="map-container">
+                            <div id="map" style="width: 600px; height: 400px"></div>
+                        </div>
+                       </div>   
+               </div>
+               <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
+                     <div class="block text-center block-second">
+                        <div class="cloud-container">
+                            <div class="col-md-6">
+                                <div id="cloud" style="width: 600px; height: 400px">
+                                </div>
+                            </div>
+                        </div>                                       
+                     </div>
+               </div>
+           </div>
+
+           <div class="row">
+               <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
+                   <div class="block text-center block-third">
+                        <div class="weekday-container">
+                            <div id="weekday-plot" style="width: 600px; height: 400px">
+                            </div>
+                        </div>   
+                   </div>   
+               </div>
+               <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
+                   <div class="block text-center block-last">
+                           <div class="icon">
+                                <i class="fa fa-bar-chart fa-2x"></i>
+                           </div>  
+                           <h4></h4>
+                           <p></p>                                        
+                     </div>
+                   </div>
+               </div>
+           </div>
+   </section>
+<!-- Charting section end -->
+
 
     <!-- Map Section -->    
-    <section>
+    <!-- <section>
                 
         <div class="map-container">
             <div id="map" style="width: 900px; height: 600px"></div>
@@ -161,16 +223,24 @@
     <!-- Map Section End -->
 
     <!-- Word Cloud -->
-    <section>
-        <div class="services spad2">
-            <div class="container">
-                <div id="cloud" style="width: 600px; height: 500px">
-                    <p class="font-2">WORD CLOUD HERE</p>
+    <!-- <section>
+        <div class="container">
+                <div class="col-md-6">
+                    <div id="cloud" style="width: 500px; height: 400px">
+                    </div>
                 </div>
-            </div>
-        </div> 
-    </section>
+        </div>  -->
+    <!-- </section> -->
     <!-- Word Cloud End-->
+
+    <!-- Day of the week chart -->
+    <!-- <section> -->
+        <!-- <div class="col-md-6">
+            <div id="weekday-plot" style="width: 400px; height: 300px">
+            </div>
+        </div>
+    </section> -->
+
 
  
     <!-- Footer Section Begin -->
@@ -211,9 +281,12 @@
     <script type="text/javascript" src="js/config.js"></script>
     <script type="text/javascript" src="js/logic.js"></script>
     <script type="text/javascript" src="js/cloud_app.js"></script>
+    <script type="text/javascript" src="js/DayOftheWeek.js"></script>
     <!-- Cloud App -->
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+    <!-- Day of the week App -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </body>
 
