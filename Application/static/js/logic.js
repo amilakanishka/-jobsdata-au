@@ -80,24 +80,24 @@ function renderMap(data,state){
       myMap.remove(); // should remove the map from UI and clean the inner children of DOM element
     }
 
-    var state = ["Australian Capital Territory", "Victoria", "New South Wales", "Queensland", "Western Australia",
-      "South Australia", "Northern Territory", "All"]
-    var latitude = [-35.28, -37.81, -33.86, -23.52, -31.95, -34.92, -18, -25.69];
-    var longitude = [149.13, 144.96, 151.20, 149.13, 115.86, 138.60, 134.19, 133.88];
-    var zoom = [7, 7, 7, 6, 7, 7, 6, 5];
+    // var state = ["Australian Capital Territory", "Victoria", "New South Wales", "Queensland", "Western Australia",
+    //   "South Australia", "Northern Territory", "All"]
+    // var latitude = [-35.28, -37.81, -33.86, -23.52, -31.95, -34.92, -18, -25.69];
+    // var longitude = [149.13, 144.96, 151.20, 149.13, 115.86, 138.60, 134.19, 133.88];
+    // var zoom = [7, 7, 7, 6, 7, 7, 6, 5];
 
-    //Create a conditional statement based on the sate selected:
-    if (state == state) {
-      var myMap = L.map("map", {
-        center: [latitude, longitude],
-        zoom: zoom
-      });
-    }
+    // //Create a conditional statement based on the sate selected:
+    // if (state == state) {
+    //   var myMap = L.map("map", {
+    //     center: [latitude, longitude],
+    //     zoom: zoom
+    //   });
+    // }
 
-  // myMap = L.map("map", {
-  //   center: [-25.69, 133.88],
-  //   zoom: 5
-  //   });
+  myMap = L.map("map", {
+    center: [-25.69, 133.88],
+    zoom: 5
+    });
 
 
     // Adding light tile layer to the map
