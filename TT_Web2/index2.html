@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HVAC Template">
+    <meta name="keywords" content="HVAC, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Jobs</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b3674fd71e.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/font-awesome.min.css') }}"> -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <!-- Css Styles -->
+    <!-- <link rel="stylesheet" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}" type="text/css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/nice-select.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/slicknav.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <!-- Marker Cluster CSS -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+    <!-- Javascript & Leaflet-->
+
+    <!-- Js Plugins -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',filename='js/jquery.nice-select.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <!-- A sorting and filtering plugin --> 
+    <script src="{{ url_for('static',filename='js/mixitup.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.slicknav.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
+       <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+    <!-- d3 JS -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- Marker Cluster JS -->
+    <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+    <!-- Our JS -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/config.js') }}"></script>
+    
+   
+    <!-- <script type="text/javascript" src="{{ url_for('static',filename='js/cloud_app.js') }}"></script> -->
+    <!-- Cloud App -->
+    <!-- Cloud App -->
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="{{ url_for('static',filename='img/AAData_Job_big.png') }}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="header__nav">
+                        <nav class="header__menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">Home</a></li>
+                                </li>
+                                <!-- <li><a href="./about.html">Benchmark</a></li> -->
+                                <li><a href="./team.html">Team</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero spad set-bg" style="background-image: url({{ url_for('static', filename='img/AA_hero_image3.png') }})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="hero__text">
+                        <div class="hero__text__title">
+                            <span>FIND YOUR DREAM DATA ANALYTICS JOB</span>
+                            <h2>Australia's # 1 Data Professionals Job Search Website</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="hero__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Search Available Jobs</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="hero__tab__form">
+                                    <h2>Find Your Dream Data Professional Job</h2>
+                                    <form method="post">
+                                        <div class="select-list">
+                                            <div class="select-list-item">
+                                                <p>Select State</p>
+                                                <select name="state">
+                                                    <option data-display=" " value="All">Select State</option>
+                                                    <option value="Australian Capital Territory">ACT</option>
+                                                    <option value="Victoria">Victoria</option>
+                                                    <option value="New South Wales">NSW</option>
+                                                    <option value="Queensland">Queensland</option>
+                                                    <option value="Western Australia">Western Australia</option>
+                                                    <option value="South Australia">South Australia</option>
+                                                    <option value="Northern Territory">Northern Territory</option>
+                                                </select>
+                                            </div>
+                                            <div class="select-list-item">
+                                                <p>Select Role</p>
+                                                <select name="role">
+                                                    <option data-display=" " value="All">Select Role</option>
+                                                    <option value="Data Analyst">Data Analyst</option>
+                                                    <option value="Data Scientist">Data Scientist</option>
+                                                    <option value="Data Architect">Data Architect</option>
+                                                    <option value="Business Analyst">Business Analyst</option>
+                                                    <option value="Data Analytics">Data Analytics</option>
+                                                    <option value="Project Manager">Project Manager</option>
+                                                    <option value="Analyst">Analyst</option>
+                                                    <option value="Big Data">Big Data</option>
+                                                    <option value="Project Analyst">Project Analyst</option>                            
+                                                </select>
+                                            </div>
+                                        <button type="submit" class="site-btn" >Find me my dream role!</button>
+                                    </form>
+                                </div>
+                            </div>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Box Section -->
+    <section>
+        <div class="services spad1">
+            <!-- <div class="container-md"> -->
+                <h2 style="text-align:center">These are our last three listings</h2>
+            <!-- </div> -->
+            <div class="parent white">
+                <div class="card 1">
+                  <h3>Data Scientist</h3>
+                  <p>A bit about the job would be great</p>
+                  <div class="visual"></div>
+                </div>
+                <div class="card 2">
+                  <h3>Data Analyst</h3>
+                  <p> What a cool job after our analytics course.</p>
+                  <div class="visual"></div>
+                </div>
+                <div class="card 3">
+                  <h3>Product Manager</h3>
+                  <p>Someone needs to manage these projects.</p>
+                  <div class="visual"></div>
+                </div>
+              </div>
+        </div>
+    </section>
+    <!-- Box Section End -->
+
+    <!-- Map Section -->    
+    <section>
+                
+        <div class="map-container">
+            <div id="map" style="width: 900px; height: 600px" align="center"></div>
+        </div>
+    </section>
+    <!-- Map Section End -->
+
+    <!-- Word Cloud -->
+    <section>
+        <div class="services spad2">
+            <div class="container">
+                <div id="cloud" style="width: 600px; height: 500px">
+                    <p class="font-2">WORD CLOUD HERE</p>
+                </div>
+            </div>
+        </div> 
+    </section>
+    <!-- Word Cloud End-->
+
+ 
+    <!-- Footer Section Begin -->
+    <footer class="footer set-bg" data-setbg="{{ url_for('static',filename='img/holder.png') }}">
+        <div class="container">
+            <div class="footer__contact">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__contact__title">
+                            <h2>Get your dream job now!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <script type="text/javascript" src="{{ url_for('static',filename='js/logic.js') }}"></script>
+    <script type="text/javascript">
+        myVar = myFunc('{{ data | tojson | safe}}');
+     </script> 
+
+    <!-- Other Plugins -->
+
+</body>
+
+</html>
