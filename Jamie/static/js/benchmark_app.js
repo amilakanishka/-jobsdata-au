@@ -1,8 +1,8 @@
 // Get list of unique search keywords for benchmark salary mapping - not required for final
 // Keep this until we finalise our search parameter 
-var jsonPath = "jobSearchResults.json"
+var jsonPathJob = "jobSearchResults.json"
 
-d3.json(jsonPath)
+d3.json(jsonPathJob)
     .then(data => {var jobListing = data;
 
     // Declare variables as lists for loop
@@ -32,16 +32,20 @@ function benchmarkChart() {
 
     d3.csv(csvPath)
         .then(data => {var benchmarkListing = data;
+
+        console.log("benchmarkListing");
+        console.log(benchmarkListing);
         
         // Need to add DOM/D3 to obtain input value from HTML
         // Insert code here
 
         // Temp code
-        d3.json(jsonPath)
+        d3.json(jsonPathJob)
             .then(data => {var jobListing = data;
 
             // Mock data - need to be replaced with inputValue
-            var selectedJob = jobListing[11]; // index 3 for permanent index 10 for contract
+            var selectedJob = jobListing[11]; // index 3 for permanent index 11 for contract
+            console.log("selectedJob");
             console.log(selectedJob);
 
             // Get keyword, state, title and company for filtering and plotting
