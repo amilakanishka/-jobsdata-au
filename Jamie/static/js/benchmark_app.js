@@ -71,6 +71,7 @@ d3.csv(csvPath)
         // var selectedState = selectedJob.State // no such field now.. all in string
         var selectedTitle = selectedJob.title;
         var selectedCompany = selectedJob.company;
+        var selectedJobRole = selectedCompany + ": " + selectedTitle;
 
         // Get Minimum & Maximum Salary - conditional function to deal with annual/daily/hourly rates
         if (selectedJob.salary_min == "") {
@@ -82,9 +83,13 @@ d3.csv(csvPath)
         } else selectedMinSal = selectedJob.salary_min;
                selectedMaxSal = selectedJob.salary_max;
 
-
         // Calculate Median Salary 
         var selectedMedSal = (selectedMinSal + selectedMaxSal) / 2;
+
+        // Conditional function to classify a job as "contract" or "permanent" based on salary expression (annual/daily rate)
+        if (selectedMinSal < 30000) {
+            var selectedContractType = "contract";
+        } else selectedContractType = "permanent";
 
         console.log("selectedMinSal");
         console.log(selectedMinSal);
@@ -95,7 +100,8 @@ d3.csv(csvPath)
         console.log(selectedKeyword);
         console.log(selectedTitle);
         console.log(selectedCompany);
-    
+        console.log(selectedContractType);
+        console.log(selectedJobRole);
     
     
         // Filter by 1) Keyword 2) State 
@@ -125,6 +131,16 @@ d3.csv(csvPath)
         var permMinSalsText = permanentBenchmarkListing.map(row => "$"+row.Min_Sal);
         var permMaxSalsText = permanentBenchmarkListing.map(row => "$"+row.Max_Sal);
         var permMedSalsText = permanentBenchmarkListing.map(row => "$"+row.Median);
+
+        // Add selected data to array
+        permJobRoles.push(selectedJobRole);
+        permMinSals.push(selectedMinSal);
+        permMaxSals.push((selectedMaxSal-selectedMedSal));
+        permMedSals.push((selectedMedSal-selectedMinSal));
+        permMinSalsText.push("$"+selectedMinSal);
+        permMaxSalsText.push("$"+selectedMaxSal);
+        permMedSalsText.push("$"+selectedMedSal);
+
 
         console.log("permtracedata");
         console.log(permMinSals);
