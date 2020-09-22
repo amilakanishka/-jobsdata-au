@@ -19,6 +19,7 @@ d3.json(jsonPath)
 
 });
 
+// BENCHMARK FUNCTION HERE
 // Function to create Benchmark salary chart
 
 function benchmarkChart() {
