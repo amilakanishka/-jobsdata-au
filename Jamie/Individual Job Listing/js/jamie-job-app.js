@@ -17,7 +17,6 @@ d3.csv(csvPath)
                 // Get data and insert into variable
                 var jobKeyword = jobListing[i].keyword;
                 var jobRole = jobListing[i].title;
-                var jobID = jobListing[i].id;
                 var jobCompany = jobListing[i].company;
                 var jobPlace = jobListing[i].area;
                 var jobState = jobListing[i].state;
@@ -100,7 +99,7 @@ d3.csv(csvPath)
                 rowDiv.appendChild(bootstrapDivRight);
 
                 // Then append the whole thing onto the test section
-                document.getElementById('test').appendChild(containerDiv);
+                document.getElementById('individual-job').appendChild(containerDiv);
 
                 // SETUP BENCHMARK CHART
                 // Get keyword, state, title and company for filtering and plotting
