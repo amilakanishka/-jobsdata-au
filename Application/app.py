@@ -12,7 +12,7 @@ import psycopg2
 from flask import Flask, jsonify
 import sys
 
-
+CONST_ALL = "All"
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "postgresql://Jupyter_User:test@127.0.0.1/JobsDB"
@@ -47,18 +47,27 @@ def home():
     for keyword in rolesResults:
         roleList.append(keyword[0])        
 
-    stateList.append('All')
-    roleList.append('All')
+    stateList.append(CONST_ALL)
+    roleList.append(CONST_ALL)
     return render_template("index.html",sdata=stateList, rdata = roleList)
 
 @app.route("/get_jobs/<stat>/<role>", methods=['GET'])
 def get_jobs(stat=None, role=None):
-        
-    session = Session(engine)
-
-    results = session.query(Jobs.company, Jobs.contract_time, Jobs.contract_type, Jobs.latitude, Jobs.longitude, Jobs.area, Jobs.redirect_url,Jobs.created,Jobs.title,Jobs.salary_min,
-        Jobs.salary_max,Jobs.description,Keyword.keyword,State.state).filter(Keyword.id == Jobs.keyword_id,State.id == Jobs.state_id,State.state == stat, Keyword.keyword == role).all()
-
+    results = None    
+    session = Session(engine)    
+    
+    if stat == CONST_ALL and role == CONST_ALL:
+        results = session.query(Jobs.company, Jobs.contract_time, Jobs.contract_type, Jobs.latitude, Jobs.longitude, Jobs.area, Jobs.redirect_url,Jobs.created,Jobs.title,Jobs.salary_min,
+            Jobs.salary_max,Jobs.description,Keyword.keyword,State.state).filter(Keyword.id == Jobs.keyword_id,State.id == Jobs.state_id).all()
+    if stat == CONST_ALL and role != CONST_ALL:
+        results = session.query(Jobs.company, Jobs.contract_time, Jobs.contract_type, Jobs.latitude, Jobs.longitude, Jobs.area, Jobs.redirect_url,Jobs.created,Jobs.title,Jobs.salary_min,
+            Jobs.salary_max,Jobs.description,Keyword.keyword,State.state).filter(Keyword.id == Jobs.keyword_id,State.id == Jobs.state_id, Keyword.keyword == role).all()
+    if stat != CONST_ALL and role == CONST_ALL:    
+        results = session.query(Jobs.company, Jobs.contract_time, Jobs.contract_type, Jobs.latitude, Jobs.longitude, Jobs.area, Jobs.redirect_url,Jobs.created,Jobs.title,Jobs.salary_min,
+            Jobs.salary_max,Jobs.description,Keyword.keyword,State.state).filter(Keyword.id == Jobs.keyword_id,State.id == Jobs.state_id,State.state == stat).all()
+    if stat != CONST_ALL and role != CONST_ALL:    
+        results = session.query(Jobs.company, Jobs.contract_time, Jobs.contract_type, Jobs.latitude, Jobs.longitude, Jobs.area, Jobs.redirect_url,Jobs.created,Jobs.title,Jobs.salary_min,
+            Jobs.salary_max,Jobs.description,Keyword.keyword,State.state).filter(Keyword.id == Jobs.keyword_id,State.id == Jobs.state_id,State.state == stat, Keyword.keyword == role).all()            
     session.close()    
 
     all_jobs = []

@@ -73,7 +73,13 @@ function handleSubmit() {
     renderMap(data,stateSelection);
     renderWordCloud(data);
     renderWeekday(data);
+    gotoBottom("#map");
   });
+}
+
+function gotoBottom(item){
+  // var element = d3.select(item);
+  location.href = item;
 }
 
 function renderMap(data,state){
@@ -81,24 +87,28 @@ function renderMap(data,state){
       myMap.remove(); // should remove the map from UI and clean the inner children of DOM element
     }
 
-    // var state = ["Australian Capital Territory", "Victoria", "New South Wales", "Queensland", "Western Australia",
-    //   "South Australia", "Northern Territory", "All"]
-    // var latitude = [-35.28, -37.81, -33.86, -23.52, -31.95, -34.92, -18, -25.69];
-    // var longitude = [149.13, 144.96, 151.20, 149.13, 115.86, 138.60, 134.19, 133.88];
-    // var zoom = [7, 7, 7, 6, 7, 7, 6, 5];
+    var stateLocations = {
+                          "Australian Capital Territory": [-35.28, 149.13, 7], 
+                          "Victoria"                    : [-37.81, 144.96, 7], 
+                          "New South Wales"             : [-33.86, 151.20, 7], 
+                          "Queensland"                  : [-23.52, 149.13, 6], 
+                          "Western Australia"           : [-31.95, 115.86, 7], 
+                          "South Australia"             : [-34.93, 138.60, 7], 
+                          "Northern Territory"          : [-35.28, 149.13, 6], 
+                          "Australian Capital Territory": [-25.69, 133.88, 5],
+                          "All"                         : [-25.27, 133.77, 4] 
+                        };
 
-    // //Create a conditional statement based on the sate selected:
-    // if (state == state) {
-    //   var myMap = L.map("map", {
-    //     center: [latitude, longitude],
-    //     zoom: zoom
-    //   });
-    // }
 
-  myMap = L.map("map", {
-    center: [-25.69, 133.88],
-    zoom: 5
-    });
+    console.log(stateLocations);     
+    for (const [key, value] of Object.entries(stateLocations)) {      
+      if(key == state){
+        myMap = L.map("map", {
+          center: [value[0], value[1]],
+          zoom: value[2]
+          });        
+      }
+    }              
 
 
     // Adding light tile layer to the map
@@ -184,6 +194,7 @@ function renderMap(data,state){
 }
 
 function renderWordCloud(data){
+  d3.select("#cloud").selectAll("div").remove();
   var jobListing = data
   var keywords = [];
   var titles = [];
@@ -248,8 +259,8 @@ function renderWordCloud(data){
   // Render word cloud chart
   anychart.onDocumentReady(function() {
 
-      var data = topWords;
-      var chart = anychart.tagCloud(data);
+      var chartdata = topWords;
+      var chart = anychart.tagCloud(chartdata);
 
       // Create and configure a color scale
       var customColorScale = anychart.scales.linearColor();
