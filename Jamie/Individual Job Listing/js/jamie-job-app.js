@@ -12,7 +12,7 @@ d3.csv(csvPath)
 
             jobListing = jobListing.filter(job => job.salary_min > 100);
 
-            for (i = 0; i < 10; i++) {
+            for (i = 0; i < 20; i++) {
 
                 // Get data and insert into variable
                 var jobKeyword = jobListing[i].keyword;
