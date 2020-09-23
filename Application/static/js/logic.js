@@ -358,6 +358,8 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
     var url = `/get_benchmark/${stateSelection}/${roleSelection}`;
     d3.json(url).then(function(benchmarkListing) {
 
+        var hoverBar = ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d',
+        'toggleHover', 'toggleSpikelines', 'hoverCompareCartesian', 'hoverClosestCartesian']
         jobListing = jobListing.filter(job => job.salary_min > 100);
 
         for (i = 0; i < 30; i++) {
@@ -590,7 +592,7 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
             };
 
             // Render chart
-            Plotly.newPlot(`insertChartHere${i}`, permBenchmarkData, permBenchmarkLayout);
+            Plotly.newPlot(`insertChartHere${i}`, permBenchmarkData, permBenchmarkLayout,{ modeBarButtonsToRemove: hoverBar });
 
         } else if (selectedContractType === "contract") {
 
@@ -681,7 +683,7 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
             };
 
             // Render chart
-            Plotly.newPlot(`insertChartHere${i}`, contractBenchmarkData, contractBenchmarkLayout);
+            Plotly.newPlot(`insertChartHere${i}`, contractBenchmarkData, contractBenchmarkLayout,{ modeBarButtonsToRemove: hoverBar });
         };
     
     };
