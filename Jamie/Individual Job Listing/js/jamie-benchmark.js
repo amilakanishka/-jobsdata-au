@@ -1,151 +1,72 @@
-var jsonPathJob = "jobSearchResults2.json"
+// BENCHMARK FUNCTION HERE
+// Function to create Benchmark salary chart
 
-// Benchmark salary chart file path
-var csvPath = "Benchmark_info.csv"
+function benchmarkChart() {
 
+    // Benchmark salary chart file path
+    var csvPath = "Benchmark_info.csv"
 
-d3.csv(csvPath)
-    .then(data => {var benchmarkListing = data;
+    // Create global variables outside
+    // if need be.. see if this works
 
-    d3.json(jsonPathJob)
-        .then(data => {jobListing = data;
+    d3.csv(csvPath)
+        .then(data => {var benchmarkListing = data;
 
-            jobListing = jobListing.filter(job => job.salary_min > 100);
+        console.log("benchmarkListing");
+        console.log(benchmarkListing);
+        
+        // Need to add DOM/D3 to obtain input value from HTML
+        // Insert code here
 
-            for (i = 0; i < 10; i++) {
+        // Temp code
+        d3.json(jsonPathJob)
+            .then(data => {var jobListing = data;
 
-                // Get data and insert into variable
-                var jobKeyword = jobListing[i].keyword;
-                var jobRole = jobListing[i].title;
-                var jobID = jobListing[i].id;
-                var jobCompany = jobListing[i].company;
-                var jobPlace = jobListing[i].area;
-                var jobState = jobListing[i].state;
-                var jobDate = jobListing[i].created;
-                var jobTime = jobListing[i].contract_time;
-                var jobType = jobListing[i].contract_type;
-                var jobDescription = jobListing[i].description;
-                var jobSalMin = jobListing[i].salary_min;
-                var jobSalMax = jobListing[i].salary_max;
+            // Mock data - need to be replaced with inputValue
+            var selectedJob = jobListing[17]; // index 3 for permanent index 17 for contract
+            console.log("selectedJob");
+            console.log(selectedJob);
 
-                // Create container div for job detail
-                var containerDiv = document.createElement('div');
-                // containerDiv.id = 'test';
-                containerDiv.className = 'container';
+            // Get keyword, state, title and company for filtering and plotting
+            var selectedKeyword = selectedJob.keyword;
+            // var selectedState = selectedJob.State // no such field now.. all in string
+            var selectedTitle = selectedJob.title;
+            var selectedCompany = selectedJob.company;
+            var selectedJobRole = selectedCompany + ": " + selectedTitle;
+            var selectedState = selectedJob.state;
 
-                // Create row div
-                var rowDiv = document.createElement('div');
-                // rowDiv.id = 'block';
-                rowDiv.className = 'row';
+            // Get Minimum & Maximum Salary - conditional function to deal with annual/daily/hourly rates
+            if (selectedJob.salary_min == "") {
+                var selectedMinSal = 0;
+                var selectedMaxSal = 0;
+            } else if (selectedJob.salary_min < 500) {
+                selectedMinSal = selectedJob.salary_min * 8;
+                selectedMaxSal = selectedJob.salary_max * 8;
+            } else selectedMinSal = selectedJob.salary_min;
+                selectedMaxSal = selectedJob.salary_max;
 
-                // DIV FOR JOB LISTING
-                // Create div for bootstrap
-                var bootstrapDivLeft = document.createElement('div');
-                bootstrapDivLeft.id = 'insertJobHere';
-                bootstrapDivLeft.className = 'col-md-6 mx-auto';
+            // Calculate Median Salary 
+            var selectedMedSal = (selectedMinSal + selectedMaxSal) / 2;
 
-                // Create h2 for job title
-                var titleH2 =  document.createElement('h2');
-                // titleH2.id = jobID; // change in loop
-                titleH2.innerText = jobRole;
+            // Conditional function to classify a job as "contract" or "permanent" based on salary expression (annual/daily rate)
+            if (selectedMinSal < 30000) {
+                var selectedContractType = "contract";
+            } else selectedContractType = "permanent";
 
-                // Create a for company
-                var companyA =  document.createElement('p');
-                companyA.className = 'job-company';
-                companyA.innerText = jobCompany;
-
-                // Create ul
-                var jobUl =  document.createElement('ul');
-
-                // Create il for place
-                var placeIl =  document.createElement('li');
-                placeIl.className = 'job-place';
-                placeIl.innerText = jobPlace;
-
-                // Create il for date
-                var dateIl =  document.createElement('li');
-                dateIl.className = 'job-date';
-                dateIl.innerText = jobDate;
-
-                // Create il for contract time
-                var timeIl =  document.createElement('li');
-                timeIl.className = 'job-time';
-                timeIl.innerText = jobTime;
-
-                // Create il for contract type
-                var typeIl =  document.createElement('li');
-                typeIl.className = 'job-type';
-                typeIl.innerText = jobType;
-
-                // Create p for job description
-                var descriptionP =  document.createElement('p');
-                descriptionP.className = 'job-description'
-                descriptionP.innerText = jobDescription;
-
-                // DIV FOR CHART
-                // Create div for bootstrap
-                var bootstrapDivRight = document.createElement('div');
-                bootstrapDivRight.id = 'insertChartHere'+i;
-                bootstrapDivRight.className = 'col-md-6 benchmark-chart';
-
-                // Append child 
-                containerDiv.appendChild(rowDiv);
-                rowDiv.appendChild(bootstrapDivLeft);
-                bootstrapDivLeft.appendChild(titleH2);
-                bootstrapDivLeft.appendChild(companyA);
-                bootstrapDivLeft.appendChild(jobUl);
-                jobUl.appendChild(dateIl);
-                jobUl.appendChild(placeIl);
-                jobUl.appendChild(timeIl);
-                jobUl.appendChild(typeIl);
-                bootstrapDivLeft.appendChild(descriptionP);
-                rowDiv.appendChild(bootstrapDivRight);
-
-
-                // Then append the whole thing onto the test section
-                document.getElementById('test').appendChild(containerDiv);
-
-                // SETUP BENCHMARK CHART
-
-                // Get keyword, state, title and company for filtering and plotting
-                var selectedKeyword = jobKeyword;
-                var selectedState = jobState;
-                var selectedTitle = jobRole;
-                var selectedCompany = jobCompany;
-                var selectedJobRole = selectedCompany + ": " + selectedTitle;
-
-                // Get Minimum & Maximum Salary - conditional function to deal with annual/daily/hourly rates
-                if (jobSalMin == "") {
-                    var selectedMinSal = 0;
-                    var selectedMaxSal = 0;
-                } else if (jobSalMax < 500) {
-                    selectedMinSal = selectedJob.salary_min * 8;
-                    selectedMaxSal = selectedJob.salary_max * 8;
-                } else selectedMinSal = jobSalMin;
-                    selectedMaxSal = jobSalMax;
-
-                // Calculate Median Salary 
-                var selectedMedSal = (selectedMinSal + selectedMaxSal) / 2;
-
-                // Conditional function to classify a job as "contract" or "permanent" based on salary expression (annual/daily rate)
-                if (selectedMinSal < 30000) {
-                    var selectedContractType = "contract";
-                } else selectedContractType = "permanent";
-
-                console.log("selectedMinSal");
-                console.log(selectedMinSal);
-                console.log("selectedMaxSal");
-                console.log(selectedMaxSal);
-                console.log("selectedMedSal");
-                console.log(selectedMedSal);
-                console.log(selectedKeyword);
-                console.log(selectedTitle);
-                console.log(selectedCompany);
-                console.log(selectedContractType);
-                console.log(selectedJobRole);
-            
-            // End temp code 
-            
+            console.log("selectedMinSal");
+            console.log(selectedMinSal);
+            console.log("selectedMaxSal");
+            console.log(selectedMaxSal);
+            console.log("selectedMedSal");
+            console.log(selectedMedSal);
+            console.log(selectedKeyword);
+            console.log(selectedTitle);
+            console.log(selectedCompany);
+            console.log(selectedContractType);
+            console.log(selectedJobRole);
+        
+        // End temp code 
+        
             // Filter by 1) Keyword 2) State 
             var filteredbenchmarkListing = benchmarkListing.filter(item =>
                 (item.Keyword === selectedKeyword) &&  // Replace with inputValue for job search keyword
@@ -259,7 +180,8 @@ d3.csv(csvPath)
                 };
 
                 // Render chart
-                Plotly.newPlot(`insertChartHere${i}`, permBenchmarkData, permBenchmarkLayout);
+                Plotly.newPlot("benchmark", permBenchmarkData, permBenchmarkLayout);
+
 
             } else if (selectedContractType === "contract") {
 
@@ -350,28 +272,27 @@ d3.csv(csvPath)
                 };
 
                 // Render chart
-                Plotly.newPlot(`insertChartHere${i}`, contractBenchmarkData, contractBenchmarkLayout);
+                Plotly.newPlot(`insertChartHere0`, contractBenchmarkData, contractBenchmarkLayout);
+
             };
-        
-
-
-        };
-
-        // Position axis titles above horizontal bar charts (problem: titles are really long)
-        document.getElementById(`insertChartHere0`).on('plotly_afterplot', function() {
-            var yAxisLabels = [].slice.call(document.querySelectorAll('[class^="yaxislayer"] .ytick text, [class*=" yaxislayer"] .ytick text'))
-            var bar = document.querySelector('.plot .barlayer .bars path')
-            var barHeight = bar.getBBox().height
-            var offset = 12
             
-            for (var x = 0; x < yAxisLabels.length; x++) {
-                var yAxisLabel = yAxisLabels[x];
+            // Position axis titles above horizontal bar charts (problem: titles are really long)
+            document.getElementById(`insertChartHere0`).on('plotly_afterplot', function() {
+                var yAxisLabels = [].slice.call(document.querySelectorAll('[class^="yaxislayer"] .ytick text, [class*=" yaxislayer"] .ytick text'))
+                var bar = document.querySelector('.plot .barlayer .bars path')
+                var barHeight = bar.getBBox().height
+                var offset = 12
+                
+                for (var i = 0; i < yAxisLabels.length; i++) {
+                var yAxisLabel = yAxisLabels[i];
                 yAxisLabel.setAttribute('text-anchor', 'start')
                 yAxisLabel.setAttribute('y', yAxisLabel.getAttribute('y') - (barHeight / 2) - offset)
-            };
+                };
+
+            }); 
         });
-
     });
+};
 
-});
+benchmarkChart();
 
