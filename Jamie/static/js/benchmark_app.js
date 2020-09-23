@@ -1,6 +1,6 @@
 // Get list of unique search keywords for benchmark salary mapping - not required for final
 // Keep this until we finalise our search parameter 
-var jsonPathJob = "jobSearchResults.json"
+var jsonPathJob = "jobSearchResults2.json"
 
 d3.json(jsonPathJob)
     .then(data => {var jobListing = data;
@@ -44,7 +44,7 @@ function benchmarkChart() {
             .then(data => {var jobListing = data;
 
             // Mock data - need to be replaced with inputValue
-            var selectedJob = jobListing[11]; // index 3 for permanent index 11 for contract
+            var selectedJob = jobListing[17]; // index 3 for permanent index 17 for contract
             console.log("selectedJob");
             console.log(selectedJob);
 
@@ -54,6 +54,7 @@ function benchmarkChart() {
             var selectedTitle = selectedJob.title;
             var selectedCompany = selectedJob.company;
             var selectedJobRole = selectedCompany + ": " + selectedTitle;
+            var selectedState = selectedJob.state;
 
             // Get Minimum & Maximum Salary - conditional function to deal with annual/daily/hourly rates
             if (selectedJob.salary_min == "") {
@@ -90,7 +91,7 @@ function benchmarkChart() {
             // Filter by 1) Keyword 2) State 
             var filteredbenchmarkListing = benchmarkListing.filter(item =>
                 (item.Keyword === selectedKeyword) &&  // Replace with inputValue for job search keyword
-                (item.State === "Victoria")); // Replace with inputValue for state
+                (item.State === selectedState)); // Replace with inputValue for state
 
             // Filter by Contract_Type
             var permanentBenchmarkListing = filteredbenchmarkListing.filter(item =>
