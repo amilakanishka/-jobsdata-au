@@ -12,7 +12,7 @@ d3.csv(csvPath)
 
             jobListing = jobListing.filter(job => job.salary_min > 100);
 
-            for (i = 0; i < 20; i++) {
+            for (i = 0; i < 30; i++) {
 
                 // Get data and insert into variable
                 var jobKeyword = jobListing[i].keyword;
@@ -35,7 +35,6 @@ d3.csv(csvPath)
 
                 // Create row div
                 var rowDiv = document.createElement('div');
-                // rowDiv.id = 'block';
                 rowDiv.className = 'row';
 
                 // DIV FOR JOB LISTING
@@ -46,7 +45,6 @@ d3.csv(csvPath)
 
                 // Create h2 for job title
                 var titleH2 =  document.createElement('h2');
-                // titleH2.id = jobID; // change in loop
                 titleH2.innerText = jobRole;
 
                 // Create a for company
@@ -101,12 +99,10 @@ d3.csv(csvPath)
                 bootstrapDivLeft.appendChild(descriptionP);
                 rowDiv.appendChild(bootstrapDivRight);
 
-
                 // Then append the whole thing onto the test section
                 document.getElementById('test').appendChild(containerDiv);
 
                 // SETUP BENCHMARK CHART
-
                 // Get keyword, state, title and company for filtering and plotting
                 var selectedKeyword = jobKeyword;
                 var selectedState = jobState;
@@ -131,18 +127,6 @@ d3.csv(csvPath)
                 if (selectedMinSal < 30000) {
                     var selectedContractType = "contract";
                 } else selectedContractType = "permanent";
-
-                console.log("selectedMinSal");
-                console.log(selectedMinSal);
-                console.log("selectedMaxSal");
-                console.log(selectedMaxSal);
-                console.log("selectedMedSal");
-                console.log(selectedMedSal);
-                console.log(selectedKeyword);
-                console.log(selectedTitle);
-                console.log(selectedCompany);
-                console.log(selectedContractType);
-                console.log(selectedJobRole);
             
             // End temp code 
             
@@ -244,7 +228,7 @@ d3.csv(csvPath)
                 
                 // Setup chart layout
                 var permBenchmarkLayout = {
-                    title: "Permanent Full Time Salary Ranges",
+                    title: "Salary Ranges: Offered vs Benchmark (Permanent Full Time)",
                     barmode: "stack",
                     bargroupgap: 0.1,
                     yaxis : { 
@@ -328,7 +312,7 @@ d3.csv(csvPath)
 
                 // Setup chart layout
                 var contractBenchmarkLayout = {
-                    title: "Contract Day Rate Salary Ranges",
+                    title: "Salary Ranges: Offered vs Benchmark (Contract Day Rate)",
                     barmode: "stack",
                     bargroupgap: 0.1,
                     yaxis : { 
@@ -353,8 +337,6 @@ d3.csv(csvPath)
                 Plotly.newPlot(`insertChartHere${i}`, contractBenchmarkData, contractBenchmarkLayout);
             };
         
-
-
         };
 
         // Position axis titles above horizontal bar charts (problem: titles are really long)
