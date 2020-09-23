@@ -15,7 +15,7 @@ d3.json("jobSearchResults.json").then(function (data) {
 
     //Get the weekday of the dates
     const daysOfWeek = dates.map(date => new Date(date).getDay());
-   
+
 
     // Now we have the days as numbers we can get their frequency
 
@@ -30,7 +30,7 @@ d3.json("jobSearchResults.json").then(function (data) {
     //Passing in our dates in the function Frequency so we get a dictionary of days and frequencies of job ads:
     const DaysOfWeek = Frequency(daysOfWeek);
 
-    
+
     // Extract the weekdays from the dictionary Frequency and place them in an array to store our variable x:
     var x = [];
     // Iterate through each ID object
@@ -39,11 +39,11 @@ d3.json("jobSearchResults.json").then(function (data) {
         x.push(key)
     });
 
-    
+
     // Now translate to weekday values - Note in our data, the Saturday is index 0 and Friday is 6 therefore the sequence starting Saturday:
     const weekdays = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     const x_days = x.map(day => weekdays[day]);
-   
+
 
     //Extracting the frequency values for our y
     var y = [];
@@ -51,7 +51,7 @@ d3.json("jobSearchResults.json").then(function (data) {
     Object.values(DaysOfWeek).forEach(value => {
         y.push(value)
     });
-    
+
 
     // Create a function to change the order of the index and position Monday as index 0:
 
@@ -68,7 +68,7 @@ d3.json("jobSearchResults.json").then(function (data) {
     //Rearrange the arrays x_days and y:
     rearrange(x_days);
     rearrange(y);
-    
+
     //Calling our bar plot function:
     barplot(y, x_days);
 
@@ -141,8 +141,10 @@ function barplot(y, x_days) {
         width: 1000
     };
 
+    var hoverBar = ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d',
+        'toggleHover', 'toggleSpikelines', 'hoverCompareCartesian', 'hoverClosestCartesian']
 
-    Plotly.newPlot('weekday-plot', data, layout);
+    Plotly.newPlot('weekday-plot', data, layout, { modeBarButtonsToRemove: hoverBar });
 
 
 }
