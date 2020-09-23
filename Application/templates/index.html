@@ -660,7 +660,19 @@ table tbody tr:hover {
         .wow-btn{
          padding-top:10vh;
          padding-bottom:4vh;
-    }    
+    }  
+    header {
+      padding: 156px 0 100px;
+    }
+    
+    section {
+      padding: 150px 0;
+    }
+
+    .benchmark-chart {
+      width: 80%;
+      height: 100%;
+  }         
 }
     </style>
 </head>
@@ -804,7 +816,10 @@ table tbody tr:hover {
           </div>
         </div>
       </div>
-    </section>     
+    </section>
+    <div class="row">
+        <section id="individual-job" class="bg-light"></section> 
+    </div>     
 </body>
 <script type="text/javascript" src="{{ url_for('static',filename='js/logic.js') }}"></script>
 </html>

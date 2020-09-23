@@ -32,6 +32,7 @@ Base.prepare(engine, reflect=True)
 Jobs = Base.classes.jobs
 Keyword = Base.classes.keyword
 State = Base.classes.state
+BenchmarkSalary = Base.classes.benchmark_salary
 
 @app.route("/")
 def home():
@@ -54,6 +55,7 @@ def home():
 @app.route("/get_jobs/<stat>/<role>", methods=['GET'])
 def get_jobs(stat=None, role=None):
     results = None    
+    
     session = Session(engine)    
     
     if stat == CONST_ALL and role == CONST_ALL:
@@ -93,6 +95,42 @@ def get_jobs(stat=None, role=None):
     # print(data)
     return jsonify(data)
     
+
+@app.route("/get_benchmark/<stat>/<role>", methods=['GET'])
+def get_benchmark(stat=None, role=None):
+    results = None    
+    session = Session(engine)    
+    
+    if stat == CONST_ALL and role == CONST_ALL:
+        results = session.query(BenchmarkSalary.source, BenchmarkSalary.job_role , BenchmarkSalary.contract_type,BenchmarkSalary.min_sal, BenchmarkSalary.max_sal,
+            BenchmarkSalary.median,BenchmarkSalary.country,Keyword.keyword,State.state).filter(Keyword.id == BenchmarkSalary.keyword_id,State.id == BenchmarkSalary.state_id).all()
+    if stat == CONST_ALL and role != CONST_ALL:
+        results = session.query(BenchmarkSalary.source, BenchmarkSalary.job_role , BenchmarkSalary.contract_type,BenchmarkSalary.min_sal, BenchmarkSalary.max_sal,
+            BenchmarkSalary.median,BenchmarkSalary.country,Keyword.keyword,State.state).filter(Keyword.id == BenchmarkSalary.keyword_id,State.id == BenchmarkSalary.state_id, Keyword.keyword == role).all()
+    if stat != CONST_ALL and role == CONST_ALL:    
+        results = session.query(BenchmarkSalary.source, BenchmarkSalary.job_role , BenchmarkSalary.contract_type,BenchmarkSalary.min_sal, BenchmarkSalary.max_sal,
+            BenchmarkSalary.median,BenchmarkSalary.country,Keyword.keyword,State.state).filter(Keyword.id == BenchmarkSalary.keyword_id,State.id == BenchmarkSalary.state_id,State.state == stat).all()
+    if stat != CONST_ALL and role != CONST_ALL:    
+        results = session.query(BenchmarkSalary.source, BenchmarkSalary.job_role , BenchmarkSalary.contract_type,BenchmarkSalary.min_sal, BenchmarkSalary.max_sal,
+            BenchmarkSalary.median,BenchmarkSalary.country,Keyword.keyword,State.state).filter(Keyword.id == BenchmarkSalary.keyword_id,State.id == BenchmarkSalary.state_id,State.state == stat, Keyword.keyword == role).all()            
+    session.close()    
+
+    all_bench = []
+    for source, job_role, contract_type, min_sal, max_sal, median, country,keyword,state in results:
+        job_dict = {}
+        job_dict["source"] = source
+        job_dict["job_role"] = job_role
+        job_dict["contract_type"] = contract_type
+        job_dict["min_sal"] = min_sal
+        job_dict["max_sal"] = max_sal
+        job_dict["median"] = median
+        job_dict["country"] = country
+        job_dict["keyword"] = keyword
+        job_dict["state"] = state        
+        all_bench.append(job_dict)
+    
+    data = all_bench
+    return jsonify(data)
 
 @app.route("/team")
 def team():
