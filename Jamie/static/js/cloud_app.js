@@ -1,7 +1,7 @@
 // Create function for word bubble chart
 function wordBubble() {
 
-    var jsonPath = "jobSearchResults.json"
+    var jsonPath = "jobSearchResults2.json"
 
     d3.json(jsonPath)
         .then(data => {var jobListing = data;
@@ -91,7 +91,15 @@ function wordBubble() {
             (item.x !== "|") &&
             (item.x !== "") &&
             (item.x !== "-") &&
-            (item.x !== "]"));
+            (item.x !== "]") && 
+            (item.x !== "and") &&
+            (item.x !== "the") &&
+            (item.x !== "in") &&
+            (item.x !== "or") &&
+            (item.x !== "of") &&
+            (item.x !== "a") &&
+            (item.x !== "at") &&
+            (item.x !== "m")); 
 
             // Console.log to DELETE LATER
             console.log("Clean up after RegEx wordData");
