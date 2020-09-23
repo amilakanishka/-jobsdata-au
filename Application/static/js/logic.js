@@ -238,10 +238,21 @@ function renderWordCloud(data){
 
   // Remove dictionary if key is - | ] or blank. Clean up balance after RegEx
   var wordData = wordData.filter(item =>
-      (item.x !== "|") &&
-      (item.x !== "") &&
-      (item.x !== "-") &&
-      (item.x !== "]"));
+    (item.x !== "|") &&
+    (item.x !== "") &&
+    (item.x !== "-") &&
+    (item.x !== "]") && 
+    (item.x !== "_") && 
+    (item.x !== "and") &&
+    (item.x !== "el") &&
+    (item.x !== "the") &&
+    (item.x !== "in") &&
+    (item.x !== "or") &&
+    (item.x !== "of") &&
+    (item.x !== "a") &&
+    (item.x !== "x") &&
+    (item.x !== "at") &&
+    (item.x !== "m"));
 
   // Sort the list of dictionaries by value
   wordData.sort(function(first, second) {
