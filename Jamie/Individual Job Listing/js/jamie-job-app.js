@@ -343,12 +343,15 @@ d3.csv(csvPath)
             var yAxisLabels = [].slice.call(document.querySelectorAll('[class^="yaxislayer"] .ytick text, [class*=" yaxislayer"] .ytick text'))
             var bar = document.querySelector('.plot .barlayer .bars path')
             var barHeight = bar.getBBox().height
-            var offset = 12
+            var offset = 2
+
+            console.log(yAxisLabels);
+            console.log(yAxisLabels.length);
             
             for (var x = 0; x < yAxisLabels.length; x++) {
                 var yAxisLabel = yAxisLabels[x];
                 yAxisLabel.setAttribute('text-anchor', 'start')
-                yAxisLabel.setAttribute('y', yAxisLabel.getAttribute('y') - (barHeight / 2) - offset)
+                yAxisLabel.setAttribute('y', yAxisLabel.getAttribute('y') - (barHeight / 3) - offset)
             };
         });
 
