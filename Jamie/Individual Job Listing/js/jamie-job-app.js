@@ -12,7 +12,7 @@ d3.csv(csvPath)
 
             jobListing = jobListing.filter(job => job.salary_min > 100);
 
-            for (i = 0; i < 30; i++) {
+            for (i = 0; i < 50; i++) {
 
                 // Get data and insert into variable
                 var jobKeyword = jobListing[i].keyword;
@@ -343,7 +343,7 @@ d3.csv(csvPath)
             var yAxisLabels = [].slice.call(document.querySelectorAll('[class^="yaxislayer"] .ytick text, [class*=" yaxislayer"] .ytick text'))
             var bar = document.querySelector('.plot .barlayer .bars path')
             var barHeight = bar.getBBox().height
-            var offset = 2
+            var offset = .72
 
             console.log(yAxisLabels);
             console.log(yAxisLabels.length);
@@ -351,7 +351,7 @@ d3.csv(csvPath)
             for (var x = 0; x < yAxisLabels.length; x++) {
                 var yAxisLabel = yAxisLabels[x];
                 yAxisLabel.setAttribute('text-anchor', 'start')
-                yAxisLabel.setAttribute('y', yAxisLabel.getAttribute('y') - (barHeight / 3) - offset)
+                yAxisLabel.setAttribute('y', yAxisLabel.getAttribute('y') - (barHeight / 2) * offset)
             };
         });
 
