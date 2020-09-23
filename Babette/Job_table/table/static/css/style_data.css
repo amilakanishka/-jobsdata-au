@@ -1,0 +1,43 @@
+.navbar-brand{
+        font-family: fantasy ;
+        font-size: xx-large;
+}
+
+.navbar-nav{
+        color: black;
+}
+
+thead{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+tbody{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+#text{
+    float: left;
+    font-size: 14px;
+    padding-inline-start: 5px;
+    padding-top: 10px;
+}
+
+
+.summary{
+    padding-top: 30px;
+}
+
+@media (max-width: 660px) {
+
+    #text {
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+  
+    .thumbnail {
+    margin-right: 30px;
+    }
+  }
