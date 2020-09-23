@@ -17,6 +17,10 @@ tbody{
     padding-right: 10px;
 }
 
+thead tr {
+    font-weight:bold;
+}
+
 
 #text{
     float: left;
