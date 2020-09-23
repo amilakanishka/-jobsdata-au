@@ -68,7 +68,7 @@ d3.json("jobSearchResults.json").then(function (data) {
     //Rearrange the arrays x_days and y:
     rearrange(x_days);
     rearrange(y);
-
+    
     //Calling our bar plot function:
     barplot(y, x_days);
 
@@ -122,7 +122,8 @@ function barplot(y, x_days) {
             tickfont: {
                 size: 14,
                 color: '#000000'
-            }
+            },
+            dtickrange: ["0", "10000"]
         },
         yaxis: {
             title: "Number of job ads",

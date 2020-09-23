@@ -18,6 +18,13 @@ if (state == state) {
   });
 }
 
+//To initialise the map on local machine
+// var myMap = L.map("map", {
+//       center: [-25, 134],
+//       zoom: 5
+//     });
+
+
 // Adding light tile layer to the map
 var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
@@ -88,7 +95,7 @@ d3.json("jobSearchResults.json").then(function (response) {
 
       // Add a new marker to the cluster group and bind a pop-up
       markers.addLayer(L.marker([latitude, longitude])
-        .bindPopup("<h1>" + response[i].title + "</h1> <hr> <h3>Company: " + response[i].company + "</h3>"
+        .bindPopup("<h2>" + response[i].title + "</h2> <hr> <h3>" + response[i].company + "</h3>"
           + "<p><a href=" + response[i].redirect_url + ">Position description</a></p>" +
           "<p>Date posted: " + new Date(response[i].created) + "</p>"));
     }
