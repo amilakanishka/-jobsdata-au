@@ -112,85 +112,56 @@ function renderMap(data,state){
 
 
     // Adding light tile layer to the map
-    var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-    maxZoom: 18,
-    id: "light-v10",
-    accessToken: API_KEY
-    }).addTo(myMap);
-
-
-    // Adding street tile layer to the map
     var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-    tileSize: 512,
-    maxZoom: 18,
-    zoomOffset: -1,
-    id: "mapbox/streets-v11",
-    accessToken: API_KEY
-    }).addTo(myMap);
+        attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+        tileSize: 512,
+        maxZoom: 18,
+        zoomOffset: -1,
+        id: "mapbox/streets-v11",
+        accessToken: API_KEY
+        }).addTo(myMap);
 
-    // Only one base layer can be shown at a time
-    var baseMaps = {
-    Light: lightmap,
-    };
-
-    // Pass our map layers into our layer control
-    // Add the layer control to the map
-    L.control.layers(baseMaps).addTo(myMap);
-
-
-    // Grab the data with d3
-    //d3.json("jobSearchResults.json", function (response) {
-    var response = data;
-    // Create a new marker cluster group
-    Street: streetmap
-    var markers = L.markerClusterGroup({
-        spiderfyOnMaxZoom: false,
-        showCoverageOnHover: false,
-        // zoomToBoundsOnClick: false,
-        iconCreateFunction: function (cluster) {
-        var childCount = cluster.getChildCount();
-        var c = ' marker-cluster-';
-        if (childCount < 10) {
-            c += 'small';
-        }
-        else if (childCount < 100) {
-            c += 'medium';
-        }
-        else {
-            c += 'large';
-        }
-
-        return new L.DivIcon({
-            html: '<div><span>' + childCount + '</span></div>',
-            className: 'marker-cluster' + c, iconSize: new L.Point(40, 40)
+        var response = data;
+        // Create a new marker cluster group
+        Street: streetmap
+        var markers = L.markerClusterGroup({
+            spiderfyOnMaxZoom: false,
+            showCoverageOnHover: false,
+            // zoomToBoundsOnClick: false,
+            iconCreateFunction: function (cluster) {
+            var childCount = cluster.getChildCount();
+            var c = ' marker-cluster-';
+            if (childCount < 10) {
+                c += 'small';
+            }
+            else if (childCount < 100) {
+                c += 'medium';
+            }
+            else {
+                c += 'large';
+            }
+            return new L.DivIcon({
+                html: '<div><span>' + childCount + '</span></div>',
+                className: 'marker-cluster' + c, iconSize: new L.Point(40, 40)
+            });
+            }
         });
+        // Loop through data
+        for (var i = 0; i < response.length; i++) {
+            // Set the data location property to a variable
+            var latitude = parseFloat(response[i].latitude);
+            var longitude = parseFloat(response[i].longitude);
+            // Check for location property
+            if (latitude) {
+            // Add a new marker to the cluster group and bind a pop-up
+            markers.addLayer(L.marker([latitude, longitude])
+                .bindPopup("<h3>" + response[i].title + "</h3> <hr> <h4>Company: " + response[i].company + "</h4>"
+                + "<p><a href=" + response[i].redirect_url + ">Position description</a></p>" +
+                "<p>Date posted: " + new Date(response[i].created) + "</p>"));
+            }
         }
-
-    });
-
-    // Loop through data
-    for (var i = 0; i < response.length; i++) {
-
-        // Set the data location property to a variable
-        var latitude = parseFloat(response[i].latitude);
-        var longitude = parseFloat(response[i].longitude);
-
-        // Check for location property
-        if (latitude) {
-
-        // Add a new marker to the cluster group and bind a pop-up
-        markers.addLayer(L.marker([latitude, longitude])
-            .bindPopup("<h1>" + response[i].title + "</h1> <hr> <h3>Company: " + response[i].company + "</h3>"
-            + "<p><a href=" + response[i].redirect_url + ">Position description</a></p>" +
-            "<p>Date posted: " + new Date(response[i].created) + "</p>"));
-        }
-
-    }
-
-    // Add our marker cluster layer to the map
-    myMap.addLayer(markers);
+        // Add our marker cluster layer to the map
+        myMap.addLayer(markers);
 }
 
 function renderWordCloud(data){
@@ -238,10 +209,21 @@ function renderWordCloud(data){
 
   // Remove dictionary if key is - | ] or blank. Clean up balance after RegEx
   var wordData = wordData.filter(item =>
-      (item.x !== "|") &&
-      (item.x !== "") &&
-      (item.x !== "-") &&
-      (item.x !== "]"));
+    (item.x !== "|") &&
+    (item.x !== "") &&
+    (item.x !== "-") &&
+    (item.x !== "]") && 
+    (item.x !== "_") && 
+    (item.x !== "and") &&
+    (item.x !== "el") &&
+    (item.x !== "the") &&
+    (item.x !== "in") &&
+    (item.x !== "or") &&
+    (item.x !== "of") &&
+    (item.x !== "a") &&
+    (item.x !== "x") &&
+    (item.x !== "at") &&
+    (item.x !== "m"));
 
   // Sort the list of dictionaries by value
   wordData.sort(function(first, second) {
@@ -419,12 +401,12 @@ function renderWeekday(data){
           showlegend: false,
           // height: 300,
           // width: 300
-      };
+        };
 
+        var hoverBar = ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d',
+            'toggleHover', 'toggleSpikelines', 'hoverCompareCartesian', 'hoverClosestCartesian']
 
-      Plotly.newPlot('weekday-plot', data, layout);
-
-
+        Plotly.newPlot('weekday-plot', data, layout, { modeBarButtonsToRemove: hoverBar });
   }
 }
 
