@@ -87,7 +87,7 @@ body {
 }
 .head-bar{
     padding-top: 1vh;
-    max-height: 10vh;
+    max-height: 15vh;
 }
 
 .wow {
@@ -173,7 +173,7 @@ body {
     background-color: #f7f7f7;
 }
 hr{
-    background-color: #c7c7c7; height: 1px; border: 0;
+    background-color: #c7c7c7; height: 2px; border: 0;
     margin-top: 1vh;
 }
 h1,h2,h4,h3,h5,a,button{
