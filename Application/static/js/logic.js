@@ -438,7 +438,7 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
             // Append child 
             containerDiv.appendChild(rowDiv);
             rowDiv.appendChild(bootstrapDivLeft);
-            bootstrapDivLeft.appendChild(titleH2);
+            bootstrapDivLeft.appendChild(titleH3);
             bootstrapDivLeft.appendChild(companyA);
             bootstrapDivLeft.appendChild(jobUl);
             jobUl.appendChild(dateIl);
