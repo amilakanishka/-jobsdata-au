@@ -39,8 +39,7 @@ function renderMap(data,state){
                           "Queensland"                  : [-23.52, 149.13, 6], 
                           "Western Australia"           : [-31.95, 115.86, 7], 
                           "South Australia"             : [-34.93, 138.60, 7], 
-                          "Northern Territory"          : [-35.28, 149.13, 6], 
-                          "Australian Capital Territory": [-25.69, 133.88, 5],
+                          "Northern Territory"          : [-19.49, 132.55, 6],
                           "All"                         : [-25.27, 133.77, 4] 
                         };
 
@@ -238,28 +237,6 @@ function renderWeekday(data){
 
     //Passing in our dates in the function Frequency so we get a dictionary of days and frequencies of job ads:
     const DaysOfWeek = Frequency(daysOfWeek);
-
-    
-    // // Extract the weekdays from the dictionary Frequency and place them in an array to store our variable x:
-    // var x = [];
-    // // Iterate through each ID object
-    // Object.keys(DaysOfWeek).forEach(key => {
-    //     // Concatenate "OTU" with each ID number
-    //     x.push(key)
-    // });
-
-    
-    // // Now translate to weekday values - Note in our data, the Saturday is index 0 and Friday is 6 therefore the sequence starting Saturday:
-    // const weekdays = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-    // const x_days = x.map(day => weekdays[day]);
-   
-
-    // //Extracting the frequency values for our y
-    // var y = [];
-    // // Iterate through each value
-    // Object.values(DaysOfWeek).forEach(value => {
-    //     y.push(value)
-    // });
 
     //Initialise a dictionary with empty values to ensure all days of the week are showing on the graph wvwn there are no job posts: 
     var week = {
