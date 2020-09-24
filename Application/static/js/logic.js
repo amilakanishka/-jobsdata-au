@@ -369,7 +369,7 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
             var jobKeyword = jobListing[i].keyword;
             var jobRole = jobListing[i].title;
             var jobCompany = jobListing[i].company;
-            var jobPlace = jobListing[i].area;
+            var jobPlace = jobListing[i].area.replace("[", "").replace("'", "").replace("]", "");
             var jobState = jobListing[i].state;
             var jobDate = jobListing[i].created;
             var jobTime = jobListing[i].contract_time;
@@ -444,8 +444,13 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
             bootstrapDivLeft.appendChild(jobUl);
             jobUl.appendChild(dateIl);
             jobUl.appendChild(placeIl);
-            jobUl.appendChild(timeIl);
-            jobUl.appendChild(typeIl);
+            if(timeIl != 'NaN'){
+                jobUl.appendChild(timeIl);
+            }
+            if(typeIl != 'NaN'){
+                jobUl.appendChild(typeIl);
+            }            
+            
             bootstrapDivLeft.appendChild(descriptionP);
             rowDiv.appendChild(bootstrapDivRight);
 
