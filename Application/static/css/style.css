@@ -89,9 +89,23 @@ body {
     padding-top: 1vh;
     max-height: 10vh;
 }
+
+.wow {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .wow-logo{
-    padding-bottom: 2vh;
-    padding-top:10vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    /* padding-bottom: 5px;
+    padding-top:10px; */
 }
 .img-logo{
     max-height: 25vh;
@@ -417,9 +431,6 @@ textarea{
 .blockquote-side.font-1{
     margin-left:12px;
 }
-.E-social{
-    text-align:left;padding-top:36px;padding-bottom:0px;
-}
 .footer-p2 a{
     color: black;
     font-size: 14px;
@@ -484,12 +495,12 @@ table tbody tr:hover {
     .font-1{
         font-size: 18px;
     }
-/*   .block{
-    padding-top: 30px;
-    padding-bottom: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-   }*/
+    .block{
+      padding-top: 30px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+   }
    .Element-heading-para{
     padding-right: 60px;
   }
@@ -587,9 +598,9 @@ table tbody tr:hover {
         max-height: 10vh;
     }
     .wow-logo{
-        padding-bottom: 2vh;
-        padding-top:10vh;
-    }
+      padding-bottom: 10px;
+      padding-top: 10px;
+      }
     .img-logo{
         max-height: 30vh;
         margin-left: auto;
@@ -606,9 +617,9 @@ table tbody tr:hover {
         min-height: 150vh;
         background-size:60vh;
     }
-        .wow-btn{
-         padding-top:10vh;
-         padding-bottom:4vh;
+    .wow-btn{
+        padding-top:10vh;
+        padding-bottom:4vh;
     }  
     header {
       padding: 156px 0 100px;
@@ -623,8 +634,6 @@ table tbody tr:hover {
       height: 100%;
   }         
 }
-
-
 
 
 
