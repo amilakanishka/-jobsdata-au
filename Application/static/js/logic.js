@@ -369,7 +369,7 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
             var jobKeyword = jobListing[i].keyword;
             var jobRole = jobListing[i].title;
             var jobCompany = jobListing[i].company;
-            var jobPlace = jobListing[i].area.replace("[", "").replace("'", "").replace("]", "");
+            var jobPlace = jobListing[i].area.replace("[", "").replaceAll("'", "").replace("]", "");
             var jobState = jobListing[i].state;
             var jobDate = jobListing[i].created;
             var jobTime = jobListing[i].contract_time;
