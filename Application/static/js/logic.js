@@ -379,7 +379,7 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
 
             // Create container div for job detail
             var containerDiv = document.createElement('div');
-            // containerDiv.id = 'test';
+            containerDiv.id = 'job-container';
             containerDiv.className = 'container';
 
             // Create row div
@@ -392,9 +392,9 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
             bootstrapDivLeft.id = 'insertJobHere';
             bootstrapDivLeft.className = 'col-md-6 mx-auto';
 
-            // Create h2 for job title
-            var titleH2 =  document.createElement('h2');
-            titleH2.innerText = jobRole;
+            // Create h3 for job title
+            var titleH3 =  document.createElement('h3');
+            titleH3.innerText = jobRole;
 
             // Create a for company
             var companyA =  document.createElement('p');
