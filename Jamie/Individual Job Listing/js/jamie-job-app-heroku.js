@@ -30,7 +30,7 @@ d3.csv(csvPath)
 
                 // Create container div for job detail
                 var containerDiv = document.createElement('div');
-                // containerDiv.id = 'test';
+                containerDiv.id = 'job-container';
                 containerDiv.className = 'container';
 
                 // Create row div
@@ -43,9 +43,9 @@ d3.csv(csvPath)
                 bootstrapDivLeft.id = 'insertJobHere';
                 bootstrapDivLeft.className = 'col-md-6 mx-auto';
 
-                // Create h2 for job title
-                var titleH2 =  document.createElement('h2');
-                titleH2.innerText = jobRole;
+                // Create h3 for job title
+                var titleH3 =  document.createElement('h3');
+                titleH3.innerText = jobRole;
 
                 // Create p for company
                 var companyA =  document.createElement('p');
@@ -89,7 +89,7 @@ d3.csv(csvPath)
                 // Append child 
                 containerDiv.appendChild(rowDiv);
                 rowDiv.appendChild(bootstrapDivLeft);
-                bootstrapDivLeft.appendChild(titleH2);
+                bootstrapDivLeft.appendChild(titleH3);
                 bootstrapDivLeft.appendChild(companyA);
                 bootstrapDivLeft.appendChild(jobUl);
                 jobUl.appendChild(dateIl);
