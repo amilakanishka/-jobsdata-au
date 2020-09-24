@@ -7,12 +7,9 @@ function handleSubmit() {
 
   // Select the input value from the form
   var stateSelection = d3.select("#ddstate").node().value;
-  console.log(stateSelection);
   var roleSelection = d3.select("#ddrole").node().value;
-  console.log(roleSelection);
   var url = `/get_jobs/${stateSelection}/${roleSelection}`;
   d3.json(url).then(function(data) {
-    console.log(data);
     renderMap(data,stateSelection);
     renderWordCloud(data);
     renderWeekday(data);
@@ -42,9 +39,7 @@ function renderMap(data,state){
                           "Northern Territory"          : [-19.49, 132.55, 6],
                           "All"                         : [-25.27, 133.77, 4] 
                         };
-
-
-    console.log(stateLocations);     
+   
     for (const [key, value] of Object.entries(stateLocations)) {      
       if(key == state){
         myMap = L.map("map", {
@@ -120,10 +115,6 @@ function renderWordCloud(data){
       titles.push(jobListing[i].title) // Return title in a list
       areas.push(jobListing[i].area) // Return area in a list
   };
-
-  // Get unique values for titles - NOT USED - DELETE LATER
-  // var distinctTitles = [...new Set(titles)];
-  // console.log(distinctTitles);  
 
   // Split words in title
   // Use RegEx to replace special characters with space 
@@ -367,7 +358,6 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
     d3.select("#individual-job").selectAll("div").remove();
     var url = `/get_benchmark/${stateSelection}/${roleSelection}`;
     d3.json(url).then(function(benchmarkListing) {
-        console.log(benchmarkListing)
         var hoverBar = ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d','toggleHover', 'toggleSpikelines', 'hoverCompareCartesian', 'hoverClosestCartesian'];
         jobListing = jobListing.filter(job => job.salary_min > 100);
         var loopMax = Math.min(jobListing.length, 30);
@@ -704,8 +694,6 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
         var bar = document.querySelector('.plot .barlayer .bars path')
         var barHeight = bar.getBBox().height
         var offset = 0.1
-        console.log(yAxisLabels);
-        console.log(yAxisLabels.length);
         for (var x = 0; x < yAxisLabels.length; x++) {
             var yAxisLabel = yAxisLabels[x];
             yAxisLabel.setAttribute('text-anchor', 'start')
@@ -772,8 +760,6 @@ function render_Underemp(){
                 trace.y.push(underemploymentPercent); 
                     
             }
-
-            console.log(lookup);
         
             // Get the group names:
             var months = Object.keys(lookup);
@@ -782,8 +768,6 @@ function render_Underemp(){
             // so we can just infer the states from the *first* year:
             var firstMonth = lookup[months[0]];
             var states = Object.keys(firstMonth);
-
-            console.log(states);
 
             // Create the main traces, one for each state:
             var traces = [];
@@ -905,9 +889,6 @@ function render_Underemp(){
         
     });
 
-}
-
-window.onload=function(){
 }
 
 

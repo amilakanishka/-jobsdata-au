@@ -172,7 +172,11 @@ def get_historical_salary():
 
 @app.route("/team")
 def team():
-    return render_template("team.html")    
+    return render_template("team.html")  
+
+@app.route("/about")
+def about():
+    return render_template("about.html")     
 
 if __name__ == '__main__':
     app.run()    
