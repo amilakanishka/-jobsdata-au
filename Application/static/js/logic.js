@@ -444,10 +444,10 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
             bootstrapDivLeft.appendChild(jobUl);
             jobUl.appendChild(dateIl);
             jobUl.appendChild(placeIl);
-            if(timeIl !== 'NaN'){
+            if(jobTime !== 'NaN'){
                 jobUl.appendChild(timeIl);
             }
-            if(typeIl !== 'NaN'){
+            if(jobType !== 'NaN'){
                 jobUl.appendChild(typeIl);
             }            
             
