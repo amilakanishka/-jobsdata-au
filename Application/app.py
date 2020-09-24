@@ -33,6 +33,8 @@ Jobs = Base.classes.jobs
 Keyword = Base.classes.keyword
 State = Base.classes.state
 BenchmarkSalary = Base.classes.benchmark_salary
+UnderEmploymentRates = Base.classes.under_employment_rates
+HistoricalSalary = Base.classes.historical_salary
 
 @app.route("/")
 def home():
@@ -130,6 +132,43 @@ def get_benchmark(stat=None, role=None):
     
     data = all_bench
     return jsonify(data)
+
+@app.route("/get_underemployment", methods=['GET'])
+def get_underemployment():
+    results = None    
+    session = Session(engine)    
+        
+    results = session.query(UnderEmploymentRates.Period, UnderEmploymentRates.People).all()            
+    session.close()    
+
+    all_emp = []
+    for Period, People in results:
+        emp = {}
+        emp["Period"] = Period
+        emp["People"] = People       
+        all_emp.append(emp)
+    
+    data = all_emp
+    return jsonify(data)
+
+@app.route("/get_historical_salary", methods=['GET'])
+def get_historical_salary():
+    results = None    
+    session = Session(engine)    
+        
+    results = session.query(HistoricalSalary.month, HistoricalSalary.salary,State.state).filter(State.id == HistoricalSalary.state_id).all()          
+    session.close()    
+
+    all_emp = []
+    for month, salary, state in results:
+        emp = {}
+        emp["month"] = month
+        emp["salary"] = salary   
+        emp["state"] = state     
+        all_emp.append(emp)
+    
+    data = all_emp
+    return jsonify(data)         
 
 @app.route("/team")
 def team():

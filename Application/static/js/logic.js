@@ -17,6 +17,7 @@ function handleSubmit() {
     renderWordCloud(data);
     renderWeekday(data);
     renderJobTable(data,stateSelection,roleSelection);
+    render_Underemp();
     gotoBottom("#map");
   });
 }
@@ -239,26 +240,58 @@ function renderWeekday(data){
     const DaysOfWeek = Frequency(daysOfWeek);
 
     
+    // // Extract the weekdays from the dictionary Frequency and place them in an array to store our variable x:
+    // var x = [];
+    // // Iterate through each ID object
+    // Object.keys(DaysOfWeek).forEach(key => {
+    //     // Concatenate "OTU" with each ID number
+    //     x.push(key)
+    // });
+
+    
+    // // Now translate to weekday values - Note in our data, the Saturday is index 0 and Friday is 6 therefore the sequence starting Saturday:
+    // const weekdays = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    // const x_days = x.map(day => weekdays[day]);
+   
+
+    // //Extracting the frequency values for our y
+    // var y = [];
+    // // Iterate through each value
+    // Object.values(DaysOfWeek).forEach(value => {
+    //     y.push(value)
+    // });
+
+    //Initialise a dictionary with empty values to ensure all days of the week are showing on the graph wvwn there are no job posts: 
+    var week = {
+        '0': 0,
+        '1': 0,
+        '2': 0,
+        '3': 0,
+        '4': 0,
+        '5': 0,
+        '6': 0,
+    }
+    //Consolidate two dictionnaries so all weekdays are showing:
+    const accumulative = {
+        ...week,
+        ...DaysOfWeek
+    }
     // Extract the weekdays from the dictionary Frequency and place them in an array to store our variable x:
     var x = [];
     // Iterate through each ID object
-    Object.keys(DaysOfWeek).forEach(key => {
+    Object.keys(accumulative).forEach(key => {
         // Concatenate "OTU" with each ID number
         x.push(key)
     });
-
-    
     // Now translate to weekday values - Note in our data, the Saturday is index 0 and Friday is 6 therefore the sequence starting Saturday:
     const weekdays = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     const x_days = x.map(day => weekdays[day]);
-   
-
     //Extracting the frequency values for our y
     var y = [];
     // Iterate through each value
-    Object.values(DaysOfWeek).forEach(value => {
+    Object.values(accumulative).forEach(value => {
         y.push(value)
-    });
+    });    
     
 
     // Create a function to change the order of the index and position Monday as index 0:
@@ -515,7 +548,7 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
         if (selectedContractType === "permanent") {
 
             // Add selected data to array
-            permJobRoles.push(selectedJobRole);
+            permJobRoles.push('OFFERED SALARY');
             permMinSals.push(selectedMinSal);
             permMaxSals.push((selectedMaxSal-selectedMedSal));
             permMedSals.push((selectedMedSal-selectedMinSal));
@@ -599,7 +632,7 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
         } else if (selectedContractType === "contract") {
 
             // Add selected data to array
-            contractJobRoles.push(selectedJobRole);
+            contractJobRoles.push('OFFERED SALARY');
             contractMinSals.push(selectedMinSal);
             contractMaxSals.push((selectedMaxSal-selectedMedSal));
             contractMedSals.push((selectedMedSal-selectedMinSal));
@@ -695,17 +728,220 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
         var yAxisLabels = [].slice.call(document.querySelectorAll('[class^="yaxislayer"] .ytick text, [class*=" yaxislayer"] .ytick text'))
         var bar = document.querySelector('.plot .barlayer .bars path')
         var barHeight = bar.getBBox().height
-        var offset = .72
+        var offset = 0.1
         console.log(yAxisLabels);
         console.log(yAxisLabels.length);
         for (var x = 0; x < yAxisLabels.length; x++) {
             var yAxisLabel = yAxisLabels[x];
             yAxisLabel.setAttribute('text-anchor', 'start')
-            yAxisLabel.setAttribute('y', yAxisLabel.getAttribute('y') - (barHeight / 2) * offset)
+            yAxisLabel.setAttribute('y', yAxisLabel.getAttribute('y') - (barHeight / 4) * offset)
         };
     });       
   
     })
+}
+
+function render_Underemp(){ 
+
+    var url1 = `/get_underemployment`;
+    var url2 = `/get_historical_salary`;
+    var hoverBar = [ "zoom2d", "pan2d", "select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d",
+    "hoverClosestCartesian", "hoverCompareCartesian",
+    "zoom3d", "pan3d", "resetCameraDefault3d", "resetCameraLastSave3d", "hoverClosest3d",
+    "orbitRotation", "tableRotation",
+    "zoomInGeo", "zoomOutGeo", "resetGeo", "hoverClosestGeo",
+    "toImage",
+    "sendDataToCloud",
+    "hoverClosestGl2d",
+    "hoverClosestPie",
+    "toggleHover",
+    "resetViews",
+    "toggleSpikelines",
+    "resetViewMapbox"];
+    d3.select("#underemp-plot").selectAll("div").remove();
+
+    d3.json(url2)
+        .then(data => {var historicalSalaries = data;
+
+        d3.json(url1)
+        .then(data => {var underemploymentData = data;
+
+            // Create a lookup table to sort and regroup the columns of data,
+            // first by month, then by state:
+            var lookup = {};
+
+            function getData(month, state) {
+                var byMonth, trace;
+                if (!(byMonth = lookup[month])) {;
+                    byMonth = lookup[month] = {};
+                }
+                    // If a container for this month + state doesn't exist yet,
+                    // then create one:
+                    if (!(trace = byMonth[state])) {
+                        trace = byMonth[state] = {
+                        x: [],
+                        y: [],
+                        id: [],
+                        text: [],
+                        marker: {size: []}
+                        };
+                    }
+                    return trace;
+            }
+
+            // Go through each row, get the right trace, and append the data:
+            for (var i = 0; i < historicalSalaries.length; i++) {
+                var datum = historicalSalaries[i];
+                var trace = getData(datum.month, datum.state);
+                trace.text.push(datum.state);
+                trace.id.push(datum.state);
+                trace.x.push(datum.salary);
+                trace.marker.size.push(datum.salary*0.5);
+                
+                // Filter underemployment data to find data with matching month-year
+                var underemploymentMatch = underemploymentData.filter(item =>
+                    (item.Period === datum.month));
+                
+                // Format data type from string to float
+                underemploymentPercent = parseFloat(underemploymentMatch[0].People);
+
+                // Append
+                trace.y.push(underemploymentPercent); 
+                    
+            }
+
+            console.log(lookup);
+        
+            // Get the group names:
+            var months = Object.keys(lookup);
+
+            // In this case, every month-year includes every state, 
+            // so we can just infer the states from the *first* year:
+            var firstMonth = lookup[months[0]];
+            var states = Object.keys(firstMonth);
+
+            console.log(states);
+
+            // Create the main traces, one for each state:
+            var traces = [];
+            for (i = 0; i < states.length; i++) {
+                var data = firstMonth[states[i]];
+
+                // Create a single trace for the frames to pass data for each month
+                traces.push({
+                name: states[i],
+                x: data.x.slice(),
+                y: data.y.slice(),
+                id: data.id.slice(),
+                text: data.text.slice(),
+                mode: 'markers',
+                marker: {
+                    size: data.marker.size.slice(),
+                    sizemode: 'area',
+                    sizeref: 18
+                }
+                });
+            }
+
+            // Create a frame for each month. 
+            var frames = [];
+            for (i = 0; i < months.length; i++) {
+                frames.push({
+                name: months[i],
+                data: states.map(function (state) {
+                    return getData(months[i], state);
+                    })
+                })
+            }
+
+            // Create slider steps, one for each frame. 
+            var sliderSteps = [];
+            for (i = 0; i < months.length; i++) {
+                sliderSteps.push({
+                method: 'animate',
+                label: months[i],
+                args: [[months[i]], {
+                    mode: 'immediate',
+                    transition: {duration: 300},
+                    frame: {duration: 300, redraw: false},
+                    }]
+                });
+            }
+
+            var layout = {
+                title: "Movement Between IT Salaries and Underemployment Rate",
+                xaxis: {
+                title: 'IT Salaries in Australia',
+                range: [50000, 200000]
+                },
+                yaxis: {
+                title: 'Underemployment Rate (%)',
+                range: [4,17]
+                },
+                showlegend: true,
+                legend: {
+                x: 0,
+                y: 1,
+                xanchor: "left",
+                yanchor: "bottom",
+                orientation: "h"
+                },
+                hovermode: 'closest',
+                // Use updatemenus to create a play button and a pause button
+                updatemenus: [{
+                x: 0,
+                y: 0,
+                yanchor: 'top',
+                xanchor: 'left',
+                showactive: false,
+                direction: 'left',
+                type: 'buttons',
+                pad: {t: 87, r: 10},
+                buttons: [{
+                    method: 'animate',
+                    args: [null, {
+                    mode: 'immediate',
+                    fromcurrent: true,
+                    transition: {duration: 300},
+                    frame: {duration: 500, redraw: false}
+                    }],
+                    label: 'Play'
+                }, {
+                    method: 'animate',
+                    args: [[null], {
+                    mode: 'immediate',
+                    transition: {duration: 0},
+                    frame: {duration: 0, redraw: false}
+                    }],
+                    label: 'Pause'
+                }]
+                }],
+                // Add the slider and use `pad` to position it
+                // nicely next to the buttons.
+                sliders: [{
+                pad: {l: 130, t: 55},
+                currentvalue: {
+                                visible: true,
+                                prefix: 'Period:',
+                                xanchor: 'right',
+                                font: {size: 20, color: '#666'}
+                                },
+                steps: sliderSteps
+                }]
+            };
+            
+            // Create the plot:
+            Plotly.newPlot('underemp-plot', {
+                data: traces,
+                layout: layout,
+                frames: frames, 
+                modeBarButtonsToRemove: hoverBar 
+            });
+
+        });
+        
+    });
+
 }
 
 window.onload=function(){
