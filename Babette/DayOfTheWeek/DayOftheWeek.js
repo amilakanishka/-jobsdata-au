@@ -10,67 +10,87 @@ var dates;
 // The data from the JSON file is arbitrarily named importedData as the argument
 d3.json("jobSearchResults.json").then(function (data) {
 
-    var dates = data.map(job => job.created);
+
+var dates = data.map(job => job.created);
+
+//Get the weekday of the dates
+const daysOfWeek = dates.map(date => new Date(date).getDay());
 
 
-    //Get the weekday of the dates
-    const daysOfWeek = dates.map(date => new Date(date).getDay());
+// Now we have the days as numbers we can get their frequency
+
+function Frequency(array) {
+    const frequency = {};
+
+    array.forEach(value => frequency[value] = 0);
+    const uniques = array.filter(value => ++frequency[value] == 1);
+    return frequency;
+}
+
+//Passing in our dates in the function Frequency so we get a dictionary of days and frequencies of job ads:
+const DaysOfWeek = Frequency(daysOfWeek);
 
 
-    // Now we have the days as numbers we can get their frequency
+//Initialise a dictionary with empty values to ensure all days of the week are showing on the graph wvwn there are no job posts: 
+var week = {
+    '0': 0,
+    '1': 0,
+    '2': 0,
+    '3': 0,
+    '4': 0,
+    '5': 0,
+    '6': 0,
+}
 
-    function Frequency(array) {
-        const frequency = {};
-
-        array.forEach(value => frequency[value] = 0);
-        const uniques = array.filter(value => ++frequency[value] == 1);
-        return frequency;
-    }
-
-    //Passing in our dates in the function Frequency so we get a dictionary of days and frequencies of job ads:
-    const DaysOfWeek = Frequency(daysOfWeek);
-
-
-    // Extract the weekdays from the dictionary Frequency and place them in an array to store our variable x:
-    var x = [];
-    // Iterate through each ID object
-    Object.keys(DaysOfWeek).forEach(key => {
-        // Concatenate "OTU" with each ID number
-        x.push(key)
-    });
+//Consolidate two dictionnaries so all weekdays are showing:
+const accumulative = {
+    ...week,
+    ...DaysOfWeek
+  }
 
 
-    // Now translate to weekday values - Note in our data, the Saturday is index 0 and Friday is 6 therefore the sequence starting Saturday:
-    const weekdays = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-    const x_days = x.map(day => weekdays[day]);
 
 
-    //Extracting the frequency values for our y
-    var y = [];
-    // Iterate through each value
-    Object.values(DaysOfWeek).forEach(value => {
-        y.push(value)
-    });
+// Extract the weekdays from the dictionary Frequency and place them in an array to store our variable x:
+var x = [];
+// Iterate through each ID object
+Object.keys(accumulative).forEach(key => {
+    // Concatenate "OTU" with each ID number
+    x.push(key)
+});
 
 
-    // Create a function to change the order of the index and position Monday as index 0:
+// Now translate to weekday values - Note in our data, the Saturday is index 0 and Friday is 6 therefore the sequence starting Saturday:
+const weekdays = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+const x_days = x.map(day => weekdays[day]);
 
-    function rearrange(array) {
 
-        Array.prototype.move = function (from, to) {
-            this.splice(to, 0, this.splice(from, 1)[0]);
-        };
+//Extracting the frequency values for our y
+var y = [];
+// Iterate through each value
+Object.values(accumulative).forEach(value => {
+    y.push(value)
+});
 
-        array.move(0, 6)
-        array.move(0, 6)
-    }
 
-    //Rearrange the arrays x_days and y:
-    rearrange(x_days);
-    rearrange(y);
+// Create a function to change the order of the index and position Monday as index 0:
 
-    //Calling our bar plot function:
-    barplot(y, x_days);
+function rearrange(array) {
+
+    Array.prototype.move = function (from, to) {
+        this.splice(to, 0, this.splice(from, 1)[0]);
+    };
+
+    array.move(0, 6)
+    array.move(0, 6)
+}
+
+//Rearrange the arrays x_days and y:
+rearrange(x_days);
+rearrange(y);
+
+//Calling our bar plot function:
+barplot(y, x_days);
 
 });
 
@@ -123,7 +143,6 @@ function barplot(y, x_days) {
                 size: 14,
                 color: '#000000'
             },
-            dtickrange: ["0", "10000"]
         },
         yaxis: {
             title: "Number of job ads",
