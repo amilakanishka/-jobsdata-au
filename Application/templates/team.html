@@ -1,179 +1,145 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="HVAC Template">
-    <meta name="keywords" content="HVAC, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TV Price Comparer | About</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Bootstrap and fonts -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/css/font-awesome.min.css') }}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css" integrity="sha512-8jdwayz5n8F2cnW26l9vpV6+yGOcRAqz6HTu+DQ3FtVIAts2gTdlFZOGpYhvBMXkWEgxPN3Y22UWyZXuDowNLA==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!-- Styles and scripts -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='js/script.js') }}" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+   
+    <title>Data Jobs - Team</title>
 
-    <!-- Css Styles -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/font-awesome.min.css') }}">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/elegant-icons.csss') }}">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/nice-select.css') }}">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/magnific-popup.css') }}">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/jquery-ui.min.css') }}">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/owl.carousel.min.css') }}">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/slicknav.min.css') }}">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="{{ url_for('static',filename='img/ETL_Logo_large3.png') }}" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-10">
-                    <div class="header__nav">
-                        <nav class="header__menu">
-                            <ul>
-                                <li><a href="./index.html">Home</a></li>
-                                <li class="active"><a href="./about.html">About</a></li>
-                                <li><a href="./team.html">Team</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas__open">
-                <span class="fa fa-bars"></span>
-            </div>
-        </div>
-    </header>
-    <!-- Header Section End -->
+<!-- div used to make the body blur -->
+    <div class="overlay" id="overlay" onclick="closeNav()"></div>
 
-    <!-- Breadcrumb End -->
-    <div class="breadcrumb-option set-bg" data-setbg="img/ETL_footer2.png">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2></h2>
-                             <span></span>
-                        </div>
+    <section class="head index-part-1">
+        <div class="head-bar">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 col-xs-6 col-sm-6 col-md-6">
+                    <a href="index.html"><img class="img-responsive" src="{{ url_for('static',filename='img/AAData_Job_small.png') }}"></a>
+                </div>
+                <div class="col-lg-6 col-xs-6 col-sm-6 col-md-6 text-right">
+                    <div id="mySidenav" class="sidenav text-center">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br>
+                        <a href="index.html">Home</a><hr>
+                        <a href="job_listing.html">About the Project</a><hr>
+                        <a href="team.html">Team</a><hr>
+                    </div>
+                    <div class="main" id="main">
+                      <a href="#" onclick="openNav()">MENU &#9776;</a>
                     </div>
                 </div>
-            </div>
+              </div>
+              <hr>
+          </div>
         </div>
-    </div>
 
-    <!-- Team Section Begin -->
-    <section class="team spad">
+    <section class="index-part-2">
+        <div class="wow">
+          <div class="container">
+            <div class="row">
+               <div class="wow-logo">
+                  <img class="img-responsive img-logo" src="{{ url_for('static',filename='img/analytics1.png') }}">
+               </div> 
+               <div class="font-1 helmet text-center">
+                 <p><strong>The 2020 Monash Bootcamp Data Team</strong></p>
+               </div>
+            </div>
+          </div>
+        </div>
+    </section>
+ 
+    <section class="index-part-2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title team-title">
-                        <span></span>
-                        <h2>Meet Our Team</h2>
+               <div class="text-center">
+                    <h2>Team Members</h2>
+               </div>
+               <hr class="hr-mid">
+               <div class="sub-text text-center">
+                     <p class="font-1">
+                        Project 2
+                     </p>
+               </div>
+           </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
+                    <div class="block text-center block-first">
+                        <h4>Amil Walgamage</h4>
+                        <hr class="hr-mid">
+                            <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/amil2.jpg') }}">
+                    </div>
+                </div>   
+            
+                <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
+                    <div class="block text-center block-second">
+                        <h4>Babette Blanquet</h4>
+                        <hr class="hr-mid">
+                            <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/babette2.jpg') }}">
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team__item">
-                        <div class="team__item__pic">
-                            <img src="{{ url_for('static',filename='img/about/team-1.jpg') }}" alt="">
-                        </div>
-                        <div class="team__item__text">
-                            <h5>John Smith</h5>
-                            <span>Marketing</span>
-                        </div>
-                    </div>
+                <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
+                    <div class="block text-center block-third">
+                        <h4>Jamie Tan</h4>
+                        <hr class="hr-mid">
+                        <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/jamie2.jpg') }}">
+                    </div>   
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team__item">
-                        <div class="team__item__pic">
-                            <img src="{{ url_for('static',filename='img/about/team-2.jpg') }}" alt="">
-                        </div>
-                        <div class="team__item__text">
-                            <h5>Christine Wise</h5>
-                            <span>C.E.O</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team__item">
-                        <div class="team__item__pic">
-                            <img src="{{ url_for('static',filename='img/about/team-3.jpg') }}" alt="">
-                        </div>
-                        <div class="team__item__text">
-                            <h5>Sean Robbins</h5>
-                            <span>Manager</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team__item">
-                        <div class="team__item__pic">
-                            <img src="{{ url_for('static',filename='img/Tas2.jpg') }}" alt="">
-                        </div>
-                        <div class="team__item__text">
-                            <h5>Tas Tudor</h5>
-                            <span></span>
-                        </div>
+                <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
+                    <div class="block text-center block-last">
+                        <h4>Tas Tudor</h4>
+                        <hr class="hr-mid">
+                        <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/Tas2.jpg') }}">                                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Team Section End -->
 
-  
-    <!-- Footer Section Begin -->
-    <footer class="footer set-bg" data-setbg="img/ETL_footer1.png">
-        <div class="container">
-            <div class="footer__contact">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="footer__contact__title">
-                            <h2>Compare TV's Now!</h2>
-                        </div>
-                    </div>
-
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            <div class="footer__copyright__text">
-                <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+    <section class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+            <div class="footer-p1">
+                    <p class="font-2">Copyright 2020 by Amil Walgamage, Babette Blanquet, Jamie Tan & Tas Tudor </p>
             </div>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <img class="img-responsive foot-img" src="{{ url_for('static',filename='img/AAData_Job_small.png') }}">
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+            <div class="footer-p2" >
+                     <p class="font-2">Monash Bootcamp Project 2</a></p>
+            </div>
+          </div>
         </div>
-    </footer>
-    <!-- Footer Section End -->
-
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
-
-    <script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"> </script>
-    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"> </script>
-    <script src="{{ url_for('static',filename='js/jquery.nice-select.min.js') }}"> </script>
-    <script src="{{ url_for('static',filename='js/jquery-ui.min.js') }}"> </script>
-    <script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js') }}"> </script>
-    <script src="{{ url_for('static',filename='js/mixitup.min.js') }}"> </script>
-    <script src="{{ url_for('static',filename='js/jquery.slicknav.js') }}"> </script>
-    <script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"> </script>
-    <script src="{{ url_for('static',filename='js/main.js') }}"> </script>
+      </div>
+    </section>
+    <div class="row">
+        <section id="individual-job" class="bg-light"></section> 
+    </div>     
 </body>
-
+<script type="text/javascript" src="{{ url_for('static',filename='js/logic.js') }}"></script>
 </html>
+
