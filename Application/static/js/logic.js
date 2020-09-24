@@ -355,6 +355,7 @@ function renderWeekday(data){
 }
 
 function renderJobTable(jobListing,stateSelection,roleSelection){
+    d3.select("#individual-job").selectAll("div").remove();
     var url = `/get_benchmark/${stateSelection}/${roleSelection}`;
     d3.json(url).then(function(benchmarkListing) {
         console.log(benchmarkListing)
