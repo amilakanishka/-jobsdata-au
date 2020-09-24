@@ -91,14 +91,25 @@ function wordBubble() {
             (item.x !== "|") &&
             (item.x !== "") &&
             (item.x !== "-") &&
+            (item.x !== "- ") &&
+            (item.x !== " -") &&
+            (item.x !== " - ") &&
             (item.x !== "]") && 
+            (item.x !== "_") && 
             (item.x !== "and") &&
+            (item.x !== "el") &&
+            (item.x !== "EL") &&
             (item.x !== "the") &&
             (item.x !== "in") &&
             (item.x !== "or") &&
             (item.x !== "of") &&
             (item.x !== "a") &&
+            (item.x !== "A") &&
+            (item.x !== "x") &&
+            (item.x !== "X") &&
+            (item.x !== "L") &&
             (item.x !== "at") &&
+            (item.x !== "M") &&
             (item.x !== "m")); 
 
             // Console.log to DELETE LATER

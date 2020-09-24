@@ -315,5 +315,3 @@ function benchmarkChart() {
     });
 };
 
-// Initialise benchmark chart function
-benchmarkChart();
