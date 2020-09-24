@@ -481,33 +481,29 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
         
         // Filter by 1) Keyword 2) State 
         var filteredbenchmarkListing = benchmarkListing.filter(item =>
-            (item.Keyword === selectedKeyword) &&  // Replace with inputValue for job search keyword
-            (item.State === selectedState)); // Replace with inputValue for state
-
+            (item.keyword === selectedKeyword) &&  // Replace with inputValue for job search keyword
+            (item.state === selectedState)); // Replace with inputValue for state
         // Filter by Contract_Type
         var permanentBenchmarkListing = filteredbenchmarkListing.filter(item =>
-            (item.Contract_Type === "permanent")); 
-        
+            (item.contract_type === "permanent")); 
         var contractBenchmarkListing = filteredbenchmarkListing.filter(item =>
-            (item.Contract_Type === "contract"));   
-
+            (item.contract_type === "contract"));   
         // Setup permanent job benchmark information as arrays
-        var permJobRoles = permanentBenchmarkListing.map(row => row.Source + ": " + row.Job_Role);
-        var permMinSals = permanentBenchmarkListing.map(row => row.Min_Sal);
-        var permMaxSals = permanentBenchmarkListing.map(row => row.Max_Sal - row.Median);
-        var permMedSals = permanentBenchmarkListing.map(row => row.Median - row.Min_Sal);
-        var permMinSalsText = permanentBenchmarkListing.map(row => "$"+row.Min_Sal);
-        var permMaxSalsText = permanentBenchmarkListing.map(row => "$"+row.Max_Sal);
-        var permMedSalsText = permanentBenchmarkListing.map(row => "$"+row.Median);
-
+        var permJobRoles = permanentBenchmarkListing.map(row => row.source + ": " + row.job_role);
+        var permMinSals = permanentBenchmarkListing.map(row => row.min_sal);
+        var permMaxSals = permanentBenchmarkListing.map(row => row.max_sal - row.median);
+        var permMedSals = permanentBenchmarkListing.map(row => row.median - row.min_sal);
+        var permMinSalsText = permanentBenchmarkListing.map(row => "$"+row.min_sal);
+        var permMaxSalsText = permanentBenchmarkListing.map(row => "$"+row.max_sal);
+        var permMedSalsText = permanentBenchmarkListing.map(row => "$"+row.median);
         // Setup contract job benchmark information as arrays
-        var contractJobRoles = contractBenchmarkListing.map(row => row.Source + ": " + row.Job_Role);
-        var contractMinSals = contractBenchmarkListing.map(row => row.Min_Sal);
-        var contractMaxSals = contractBenchmarkListing.map(row => row.Max_Sal - row.Median);
-        var contractMedSals = contractBenchmarkListing.map(row => row.Median - row.Min_Sal);
-        var contractMinSalsText = contractBenchmarkListing.map(row => "$"+row.Min_Sal);
-        var contractMaxSalsText = contractBenchmarkListing.map(row => "$"+row.Max_Sal);
-        var contractMedSalsText = contractBenchmarkListing.map(row => "$"+row.Median);
+        var contractJobRoles = contractBenchmarkListing.map(row => row.source + ": " + row.job_role);
+        var contractMinSals = contractBenchmarkListing.map(row => row.min_sal);
+        var contractMaxSals = contractBenchmarkListing.map(row => row.max_sal - row.median);
+        var contractMedSals = contractBenchmarkListing.map(row => row.median - row.min_sal);
+        var contractMinSalsText = contractBenchmarkListing.map(row => "$"+row.min_sal);
+        var contractMaxSalsText = contractBenchmarkListing.map(row => "$"+row.max_sal);
+        var contractMedSalsText = contractBenchmarkListing.map(row => "$"+row.median);
         
         // Add conditional function to decide to plot permanent or contract benchmark chart
         if (selectedContractType === "permanent") {
@@ -688,22 +684,20 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
     
     };
 
-    // Position axis titles above horizontal bar charts (problem: titles are really long)
+	// Position axis titles above horizontal bar charts (problem: titles are really long)
     document.getElementById(`insertChartHere0`).on('plotly_afterplot', function() {
         var yAxisLabels = [].slice.call(document.querySelectorAll('[class^="yaxislayer"] .ytick text, [class*=" yaxislayer"] .ytick text'))
         var bar = document.querySelector('.plot .barlayer .bars path')
         var barHeight = bar.getBBox().height
-        var offset = 2
-
+        var offset = .72
         console.log(yAxisLabels);
         console.log(yAxisLabels.length);
-        
         for (var x = 0; x < yAxisLabels.length; x++) {
             var yAxisLabel = yAxisLabels[x];
             yAxisLabel.setAttribute('text-anchor', 'start')
-            yAxisLabel.setAttribute('y', yAxisLabel.getAttribute('y') - (barHeight / 3) - offset)
+            yAxisLabel.setAttribute('y', yAxisLabel.getAttribute('y') - (barHeight / 2) * offset)
         };
-    });        
+    });       
   
     })
 }
