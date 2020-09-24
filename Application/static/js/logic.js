@@ -380,8 +380,7 @@ function renderWeekday(data){
           // width: 300
         };
 
-        var hoverBar = ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d',
-            'toggleHover', 'toggleSpikelines', 'hoverCompareCartesian', 'hoverClosestCartesian']
+        var hoverBar = ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d','toggleHover', 'toggleSpikelines', 'hoverCompareCartesian', 'hoverClosestCartesian'];
 
         Plotly.newPlot('weekday-plot', data, layout, { modeBarButtonsToRemove: hoverBar });
   }
@@ -392,8 +391,7 @@ function renderJobTable(jobListing,stateSelection,roleSelection){
     var url = `/get_benchmark/${stateSelection}/${roleSelection}`;
     d3.json(url).then(function(benchmarkListing) {
         console.log(benchmarkListing)
-        var hoverBar = ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d',
-        'toggleHover', 'toggleSpikelines', 'hoverCompareCartesian', 'hoverClosestCartesian']
+        var hoverBar = ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d','toggleHover', 'toggleSpikelines', 'hoverCompareCartesian', 'hoverClosestCartesian'];
         jobListing = jobListing.filter(job => job.salary_min > 100);
         var loopMax = Math.min(jobListing.length, 30);
         for (i = 0; i < loopMax; i++) {
@@ -745,21 +743,7 @@ function render_Underemp(){
 
     var url1 = `/get_underemployment`;
     var url2 = `/get_historical_salary`;
-    var hoverBar = [
-        "zoom2d", "pan2d", "select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d",
-        "hoverClosestCartesian", "hoverCompareCartesian",
-        "zoom3d", "pan3d", "resetCameraDefault3d", "resetCameraLastSave3d", "hoverClosest3d",
-        "orbitRotation", "tableRotation",
-        "zoomInGeo", "zoomOutGeo", "resetGeo", "hoverClosestGeo",
-        "toImage",
-        "sendDataToCloud",
-        "hoverClosestGl2d",
-        "hoverClosestPie",
-        "toggleHover",
-        "resetViews",
-        "toggleSpikelines",
-        "resetViewMapbox"
-      ];
+    var hoverBar = ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d','toggleHover', 'toggleSpikelines', 'hoverCompareCartesian', 'hoverClosestCartesian'];
     d3.select("#underemp-plot").selectAll("div").remove();
 
     d3.json(url2)
@@ -883,7 +867,7 @@ function render_Underemp(){
                 showlegend: true,
                 legend: {
                 x: 0,
-                y: 1,
+                y: 0.9,
                 xanchor: "left",
                 yanchor: "bottom",
                 orientation: "h"
@@ -937,7 +921,7 @@ function render_Underemp(){
                 data: traces,
                 layout: layout,
                 frames: frames, 
-                modeBarButtonsToRemove: hoverBar 
+                config:{displayModeBar: false}
             });
 
         });
