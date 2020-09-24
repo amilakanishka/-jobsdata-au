@@ -99,7 +99,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.wow-logo{
+.wow-logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -107,6 +107,15 @@ body {
     padding-bottom: 5px;
     padding-top: 10px;
 }
+.wow-logo2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 40%; */
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
 .img-logo{
     max-height: 25vh;
     margin-left: auto;
@@ -537,7 +546,7 @@ table tbody tr:hover {
     textarea{
         padding-top: 15px;
     }
-    .call-btn-1{
+    /* .call-btn-1{
     margin-top: 12px;
     padding-top: 12px;
     padding-bottom: 10px;
@@ -554,7 +563,7 @@ table tbody tr:hover {
         padding-top: 5px;
         padding-bottom: 5px;
         font-size: 10px;
-    }
+    } */
     .head-bar{
     padding: auto;
     }
