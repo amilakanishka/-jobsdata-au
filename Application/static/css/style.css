@@ -116,7 +116,7 @@ body {
     max-height: 5vh;
 }
 .head{
-    min-height: 75vh;
+    min-height: 25vh;
     /* background-image: url('../img/analytics2.jpg'); */
     position: relative;
     background-position: bottom;
