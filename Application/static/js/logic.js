@@ -745,19 +745,21 @@ function render_Underemp(){
 
     var url1 = `/get_underemployment`;
     var url2 = `/get_historical_salary`;
-    var hoverBar = [ "zoom2d", "pan2d", "select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d",
-    "hoverClosestCartesian", "hoverCompareCartesian",
-    "zoom3d", "pan3d", "resetCameraDefault3d", "resetCameraLastSave3d", "hoverClosest3d",
-    "orbitRotation", "tableRotation",
-    "zoomInGeo", "zoomOutGeo", "resetGeo", "hoverClosestGeo",
-    "toImage",
-    "sendDataToCloud",
-    "hoverClosestGl2d",
-    "hoverClosestPie",
-    "toggleHover",
-    "resetViews",
-    "toggleSpikelines",
-    "resetViewMapbox"];
+    var hoverBar = [
+        "zoom2d", "pan2d", "select2d", "lasso2d", "zoomIn2d", "zoomOut2d", "autoScale2d", "resetScale2d",
+        "hoverClosestCartesian", "hoverCompareCartesian",
+        "zoom3d", "pan3d", "resetCameraDefault3d", "resetCameraLastSave3d", "hoverClosest3d",
+        "orbitRotation", "tableRotation",
+        "zoomInGeo", "zoomOutGeo", "resetGeo", "hoverClosestGeo",
+        "toImage",
+        "sendDataToCloud",
+        "hoverClosestGl2d",
+        "hoverClosestPie",
+        "toggleHover",
+        "resetViews",
+        "toggleSpikelines",
+        "resetViewMapbox"
+      ];
     d3.select("#underemp-plot").selectAll("div").remove();
 
     d3.json(url2)
@@ -868,8 +870,8 @@ function render_Underemp(){
                 });
             }
 
-            var layout = {
-                title: "Movement Between IT Salaries and Underemployment Rate",
+            var layout = {                
+                title: {text: 'Movement Between IT Salaries and Underemployment Rate', x:0.5, y:0.98, xanchor:'center'},
                 xaxis: {
                 title: 'IT Salaries in Australia',
                 range: [50000, 200000]
