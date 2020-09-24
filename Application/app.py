@@ -90,7 +90,7 @@ def get_jobs(stat=None, role=None):
         job_dict["keyword"] = keyword
         job_dict["state"] = state
         all_jobs.append(job_dict)
-    
+        print(area)
     data = all_jobs
     # print(data)
     return jsonify(data)

@@ -357,12 +357,12 @@ function renderWeekday(data){
 function renderJobTable(jobListing,stateSelection,roleSelection){
     var url = `/get_benchmark/${stateSelection}/${roleSelection}`;
     d3.json(url).then(function(benchmarkListing) {
-
+        console.log(benchmarkListing)
         var hoverBar = ['toImage', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d',
         'toggleHover', 'toggleSpikelines', 'hoverCompareCartesian', 'hoverClosestCartesian']
         jobListing = jobListing.filter(job => job.salary_min > 100);
-
-        for (i = 0; i < 30; i++) {
+        var loopMax = Math.min(jobListing.length, 30);
+        for (i = 0; i < loopMax; i++) {
 
             // Get data and insert into variable
             var jobKeyword = jobListing[i].keyword;
