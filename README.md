@@ -1,4 +1,4 @@
-# Project_2 #
+# Project_2: Data Jobs #
 ### A web app with interactive visualisations ###
 
 Team members: 
@@ -8,11 +8,11 @@ Team members:
 - Babette Blanquet
 
 In this project, our goal was to help Australians visualize the Data job market in a few clicks.
-The app has been deployed to Heroku and you can try it here: https://datajobs-au.herokuapp.com/
+You can check our [Data Jobs app](https://datajobs-au.herokuapp.com/) on Heroku.
 
-![App](Application/static/img/website-gif)
+![App](Application/static/img/website-gif.gif)
 
-### How to read our code ###
+### How to read our code: ###
 
 The repository named 'Application' contains the following folders:
 - app.py is the flask app which renders the data from the database
@@ -27,4 +27,4 @@ In the js folder, you will find:
 In the sass folder:
 XXXXXXXXXXXXX
 
-![DataArchitecture](Application/static/img/data-architecture)
+![DataArchitecture](Application/static/img/data-architecture.png)
