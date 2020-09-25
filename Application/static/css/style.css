@@ -231,14 +231,14 @@ h6{
     padding-right: 15%;
 }
 .about-block-first{
-    border-right: solid;
-    border-bottom: solid;
+    border-right: none;
+    border-bottom: none;
 }
 .about-block-second{
-    border-bottom: solid;
+    border-bottom: none;
 }
 .about-block-third{
-    border-right: solid;
+    border-right: none;
 }
 .block p{
     line-height: 28px;
@@ -295,7 +295,7 @@ i{
     padding-bottom: 45px;
     border-top: 1px solid #cccccc;
 }
-/* .generic-page{
+.generic-page{
     background-color: #f7f7f7; 
     padding-bottom: 30px;
 }
@@ -305,11 +305,11 @@ i{
 .img-generic{
     padding-top: 15px;
     width: 60%;
-    /* margin: 0px; */
+    margin: 0px;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 20px;
-} */
+}
 .img-charts{
     padding-top: 10px;
     width: 100%;
@@ -317,12 +317,12 @@ i{
     margin-right: auto;
     padding-bottom: 10px;
 }
-/* .generic-p{
+.generic-p{
     padding-bottom: 20px;
     font-size: 18px;
 
 } */
-/* .element-full{
+.element-full{
     background-color: #f7f7f7; 
 }
 .element-page{
@@ -360,7 +360,7 @@ i{
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 12px;
-} */
+}
 .btn-line{
     padding-top: 5px;
 }
@@ -376,7 +376,7 @@ i{
      padding-left:0px;padding-right:0px;
 }
 
-/* input,select,textarea{
+input,select,textarea{
     width: 360px;
     border:1px solid black;
     border-radius: 30px;
@@ -411,7 +411,7 @@ textarea{
 }
 .E-image img{
     padding-top: 50px;
-} */
+}
 .wow-btn{
      padding-top:4vh;
      padding-bottom:2vh;
@@ -420,9 +420,9 @@ textarea{
     margin-right: auto;
     margin-left: auto;
 }
-/* .why-div{
+.why-div{
     margin-bottom:35px;
-} */
+}
 .line-full{
     margin-top:50px;margin-bottom:50px;
 }
@@ -435,7 +435,7 @@ textarea{
     margin-left: auto;
     margin-right: auto;
 }
-/* .blockquote-row{
+.blockquote-row{
  padding-left:2%;
  padding-right: 18%;
 }
@@ -444,7 +444,7 @@ textarea{
 }
 .blockquote-side.font-1{
     margin-left:12px;
-} */
+}
 .footer-p2 a{
     color: black;
     font-size: 14px;
@@ -551,7 +551,7 @@ table tbody tr:hover {
     textarea{
         padding-top: 15px;
     }
-    /* .call-btn-1{
+    .call-btn-1{
     margin-top: 12px;
     padding-top: 12px;
     padding-bottom: 10px;
@@ -568,7 +568,7 @@ table tbody tr:hover {
         padding-top: 5px;
         padding-bottom: 5px;
         font-size: 10px;
-    } */
+    }
     .head-bar{
     padding: auto;
     }
