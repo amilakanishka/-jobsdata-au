@@ -27,4 +27,4 @@ In the js folder, you will find:
 In the sass folder:
 XXXXXXXXXXXXX
 
-![DataArchitecture](Application/static/img/data-architecture.png)
+![DataArchitecture](Application/static/img/dataArchitecture.png)
