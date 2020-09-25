@@ -7,8 +7,7 @@ Team members:
 - Tas Tudor
 - Babette Blanquet
 
-In this project, our goal was to help Australians visualize the Data job market in a few clicks.
-You can check our [Data Jobs app](https://datajobs-au.herokuapp.com/) on Heroku.
+This project provides insights into the Australian Data job market. You can check our [Data Jobs app](https://datajobs-au.herokuapp.com/) on Heroku.
 
 ![App](Application/static/img/website-gif.gif)
 
@@ -25,6 +24,6 @@ In the js folder, you will find:
 - script.js
 
 In the sass folder:
-XXXXXXXXXXXXX
+- the scss files
 
-![DataArchitecture](Application/static/img/dataArchitecture.png)
+![DataArchitecture](Application/static/img/dataArchitecture.PNG)
