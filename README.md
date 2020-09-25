@@ -45,5 +45,6 @@ In the sass folder:
 ![WordCloud](Application/static/img/wordcloud.PNG)
 
 **Salary Benchmark**
+
 ![Benchmark](Application/static/img/benchmark.PNG)
 
