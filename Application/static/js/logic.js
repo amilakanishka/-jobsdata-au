@@ -24,10 +24,6 @@ function gotoBottom(item){
   location.href = item;
 }
 
-window.onload=function(){
-    handleSubmit();
-}
-
 function renderMap(data,state){
     if (myMap !== undefined && myMap !== null) {
       myMap.remove(); // should remove the map from UI and clean the inner children of DOM element
