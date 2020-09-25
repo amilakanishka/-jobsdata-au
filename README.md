@@ -24,7 +24,7 @@ In the js folder, you will find:
 - script.js
 
 In the sass folder:
-- the scss files
+- the scss files for the header and footer's font library
 
 ### Snapshot of the Data Architecture to build our app: ###
 
