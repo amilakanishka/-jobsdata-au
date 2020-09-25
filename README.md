@@ -1,7 +1,7 @@
 # Project 2: Data Jobs #
 ### A web app with interactive visualisations ###
 
-Team members: 
+**Team members:**
 - Amil Walgamage
 - Jamie Tan
 - Tas Tudor
@@ -43,12 +43,7 @@ In the sass folder:
 **The number of job ads per weekday**
 
 ![jobAdsWeekday](Application/static/img/weekdays.PNG)
-=======
-#### An interactive map with the number of jobs and their locations ####
 
-![Map](Application/static/img/map-1loop.gif)
+**Word Cloud:**
+![WordCloud](Application/static/img/wordcloud.PNG)
 
-#### The number of job ads per weekday #####
-
-![jobAdsWeekday](Application/static/img/weekday.PNG)
->>>>>>> Stashed changes
