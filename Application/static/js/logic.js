@@ -24,6 +24,10 @@ function gotoBottom(item){
   location.href = item;
 }
 
+window.onload=function(){
+    handleSubmit();
+}
+
 function renderMap(data,state){
     if (myMap !== undefined && myMap !== null) {
       myMap.remove(); // should remove the map from UI and clean the inner children of DOM element
@@ -95,7 +99,7 @@ function renderMap(data,state){
             // Add a new marker to the cluster group and bind a pop-up
             markers.addLayer(L.marker([latitude, longitude])
                 .bindPopup("<h3>" + response[i].title + "</h3> <hr> <h4>Company: " + response[i].company + "</h4>"
-                + "<p><a href=" + response[i].redirect_url + ">Position description</a></p>" +
+                + "<p><a target='_blank' href=" + response[i].redirect_url + ">Position description</a></p>" +
                 "<p>Date posted: " + new Date(response[i].created) + "</p>"));
             }
         }
