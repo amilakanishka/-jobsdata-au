@@ -26,16 +26,12 @@ In the js folder, you will find:
 In the sass folder:
 - the scss files
 
-<<<<<<< Updated upstream
-### Snapshot of the Data Architecture to build the Data Jobs app: ###
-=======
 ### Snapshot of the Data Architecture to build our app: ###
->>>>>>> Stashed changes
+
 ![DataArchitecture](Application/static/img/dataArchitecture.PNG)
 
 ### The visualisations ###
 
-<<<<<<< Updated upstream
 **An interactive map with the number of jobs and their locations**
 
 ![Map](Application/static/img/map-1loop.gif)
@@ -45,5 +41,6 @@ In the sass folder:
 ![jobAdsWeekday](Application/static/img/weekdays.PNG)
 
 **Word Cloud:**
+
 ![WordCloud](Application/static/img/wordcloud.PNG)
 
