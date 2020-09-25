@@ -48,9 +48,6 @@ const accumulative = {
     ...DaysOfWeek
   }
 
-
-
-
 // Extract the weekdays from the dictionary Frequency and place them in an array to store our variable x:
 var x = [];
 // Iterate through each ID object
@@ -58,7 +55,6 @@ Object.keys(accumulative).forEach(key => {
     // Concatenate "OTU" with each ID number
     x.push(key)
 });
-
 
 // Now translate to weekday values - Note in our data, the Saturday is index 0 and Friday is 6 therefore the sequence starting Saturday:
 const weekdays = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
@@ -150,10 +146,11 @@ function barplot(y, x_days) {
                 size: 18,
                 color: '#000000'
             },
-            tickfont: {
-                size: 14,
-                color: '#000000'
-            }
+            // tickfont: {
+            //     size: 14,
+            //     color: '#000000'
+            // },
+            showticklabels: false,
         },
         showlegend: false,
         height: 600,
