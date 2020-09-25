@@ -1,7 +1,7 @@
 # Project 2: Data Jobs #
 ### A web app with interactive visualisations ###
 
-Team members: 
+**Team members:**
 - Amil Walgamage
 - Jamie Tan
 - Tas Tudor
@@ -26,16 +26,12 @@ In the js folder, you will find:
 In the sass folder:
 - the scss files
 
-<<<<<<< Updated upstream
-### Snapshot of the Data Architecture to build the Data Jobs app: ###
-=======
 ### Snapshot of the Data Architecture to build our app: ###
->>>>>>> Stashed changes
+
 ![DataArchitecture](Application/static/img/dataArchitecture.PNG)
 
 ### The visualisations ###
 
-<<<<<<< Updated upstream
 **An interactive map with the number of jobs and their locations**
 
 ![Map](Application/static/img/map-1loop.gif)
@@ -43,12 +39,12 @@ In the sass folder:
 **The number of job ads per weekday**
 
 ![jobAdsWeekday](Application/static/img/weekdays.PNG)
-=======
-#### An interactive map with the number of jobs and their locations ####
 
-![Map](Application/static/img/map-1loop.gif)
+**Word Cloud**
 
-#### The number of job ads per weekday #####
+![WordCloud](Application/static/img/wordcloud.PNG)
 
-![jobAdsWeekday](Application/static/img/weekday.PNG)
->>>>>>> Stashed changes
+**Salary Benchmark**
+
+![Benchmark](Application/static/img/benchmark.PNG)
+
