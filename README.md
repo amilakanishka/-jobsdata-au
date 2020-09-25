@@ -40,7 +40,10 @@ In the sass folder:
 
 ![jobAdsWeekday](Application/static/img/weekdays.PNG)
 
-**Word Cloud:**
+**Word Cloud**
 
 ![WordCloud](Application/static/img/wordcloud.PNG)
+
+**Salary Benchmark**
+![Benchmark](Application/static/img/benchmark.PNG)
 
