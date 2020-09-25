@@ -338,10 +338,11 @@ function renderWeekday(data){
                   size: 18,
                   color: '#000000'
               },
-              tickfont: {
-                  size: 14,
-                  color: '#000000'
-              }
+        // tickfont: {
+            //     size: 14,
+            //     color: '#000000'
+            // },
+            showticklabels: false,
           },
           showlegend: false,
           // height: 300,
