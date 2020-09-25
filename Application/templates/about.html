@@ -10,7 +10,6 @@
     <!-- Bootstrap and fonts -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/css/font-awesome.min.css') }}">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/fontawesome.min.css" integrity="sha512-8jdwayz5n8F2cnW26l9vpV6+yGOcRAqz6HTu+DQ3FtVIAts2gTdlFZOGpYhvBMXkWEgxPN3Y22UWyZXuDowNLA==" crossorigin="anonymous" /> -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
@@ -57,58 +56,92 @@
     <section class="index-part-1">
         <div class="container">
             <div class="wow-logo2 text-center">
-                  <img class="img-responsive text-center" src="{{ url_for('static',filename='img/analytics1.png') }}">
+                <img class="img-responsive text-center" src="{{ url_for('static',filename='img/analytics1.png') }}">
             </div> 
             <div class="font-1 helmet text-center">
-                 <p><strong>The 2020 Monash Bootcamp Data Jobs - Project Brief</strong></p>
+                <p><strong>2020 Monash Bootcamp Data Jobs Portal</strong></p>
             </div>
           </div>
     </section>
  
     <section class="index-part-3">
         <div class="container">
-            <!-- <div class="row"> -->
-               <div class="text-center">
-                    <h2>Team Members</h2>
-               </div>
+            <div class="text-center">
+                <h2>Project Summary</h2>
+            </div>
                <hr class="hr-mid">
-               <div class="sub-text text-center">
-                     <p class="font-1">
-                        Project 2
-                     </p>
-               </div>
-           <!-- </div> -->
+            <div class="sub-text text-center">
+                <p class="font-1">
+                    Amil Walgamage, Babette Blanquet, Jamie Tan & Tas Tudor
+                </p>
+            </div>
 
             <div class="row">
                 <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
                     <div class="block text-center block-first">
-                        <h4>Amil Walgamage</h4>
+                        <div class="icon">
+                            <i class="fa fa-question fa-2x">
+                            </i>
+                        <h3>Project Problem Statement</h3>
                         <hr class="hr-mid">
-                            <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/amil2.jpg') }}">
+                            <p class="font-2">There is not a specific data profesional 
+                                job portal.
+                            </p>
                     </div>
                 </div>   
             
                 <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
                     <div class="block text-center block-second">
-                        <h4>Babette Blanquet</h4>
+                        <div class="icon">
+                            <i class="fa fa-bar-chart fa-2x">
+                            </i>
+                        <h3>Project Goal</h3>
                         <hr class="hr-mid">
-                            <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/babette2.jpg') }}">
+                        <p class="font-2">To build a portal to provide current information 
+                            and job listings to prospective data professional job seekers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="index-part-3">
+        <div class="container">
+            <div class="text-center">
+                <h2>The Architecture</h2>
+                <hr class="hr-mid">
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
+                    <div class="block text-center block-first">
+                        <h3>Sources</h3>
+                        <hr class="hr-mid">
+                            <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/SOURCES.png') }}">
+                    </div>
+                </div>   
+            
+                <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
+                    <div class="block text-center block-second">
+                        <h3>Extraction</h3>
+                        <hr class="hr-mid">
+                            <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/EXTRACTION.png') }}">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
                     <div class="block text-center block-third">
-                        <h4>Jamie Tan</h4>
+                        <h3>Web App</h3>
                         <hr class="hr-mid">
-                        <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/jamie2.jpg') }}">
+                        <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/WEB_APP.png') }}">
                     </div>   
                 </div>
                 <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6 col-block">
                     <div class="block text-center block-last">
-                        <h4>Tas Tudor</h4>
+                        <h3>Visualisations</h3>
                         <hr class="hr-mid">
-                        <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/Tas2.jpg') }}">                                        
+                        <img class="img-charts img-responsive" src="{{ url_for('static',filename='img/VISUALISATION.png') }}">                                        
                     </div>
                 </div>
             </div>
