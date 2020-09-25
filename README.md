@@ -40,7 +40,7 @@ In the sass folder:
 
 ![Map](Application/static/img/map-1loop.gif)
 
-**The number of job ads per weekday***
+**The number of job ads per weekday**
 
 ![jobAdsWeekday](Application/static/img/weekdays.PNG)
 =======
