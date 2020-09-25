@@ -1,4 +1,4 @@
-# Project_2: Data Jobs #
+# Project 2: Data Jobs #
 ### A web app with interactive visualisations ###
 
 Team members: 
@@ -26,15 +26,15 @@ In the js folder, you will find:
 In the sass folder:
 - the scss files
 
-### Snapshot of the Data Architecture to build our app: ###
+### Snapshot of the Data Architecture to build the Data Jobs app: ###
 ![DataArchitecture](Application/static/img/dataArchitecture.PNG)
 
 ### The visualisations ###
 
-#### An interactive map with the number of jobs and their locations ####
+**An interactive map with the number of jobs and their locations**
 
 ![Map](Application/static/img/map-1loop.gif)
 
-#### The number of job ads per weekday #####
+**The number of job ads per weekday***
 
-![jobAdsWeekday](Application/static/img/weekday.PNG)
+![jobAdsWeekday](Application/static/img/weekdays.PNG)
