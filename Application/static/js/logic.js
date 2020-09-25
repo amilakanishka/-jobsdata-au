@@ -64,7 +64,7 @@ function renderMap(data,state){
         // Create a new marker cluster group
         Street: streetmap
         var markers = L.markerClusterGroup({
-            spiderfyOnMaxZoom: false,
+            // spiderfyOnMaxZoom: false,
             showCoverageOnHover: false,
             // zoomToBoundsOnClick: false,
             iconCreateFunction: function (cluster) {
