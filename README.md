@@ -7,14 +7,14 @@
 - Tas Tudor
 - Babette Blanquet
 
-**Project Summary**
+**Project Summary:**
 This project provides insights into the Australian Data job market. 
 You can check our [Data Jobs app](https://datajobs-au.herokuapp.com/) on Heroku.
 
-**Project Problem Statement**
+**Project Problem Statement:**
 There is not a specific jobs portal for data professionals.
 
-**Desired Outcome**
+**Desired Outcome:**
 To build a live portal to provide current information and job listings to prospective data professional job seekers.
 
 ![App](Application/static/img/website-gif.gif)
@@ -37,31 +37,31 @@ In the sass folder:
 
 ### Snapshot of the toolbox used to build our app: ###
 
-![DataArchitecture](Application/static/img/dataArchitecture.PNG)
+![DataArchitecture](Application/static/img/Bootcamp_workflow_final.PNG)
 
-### The visualisations ###
+### The visualisations: ###
 
 The visualisations update based on the selection of two filters: 
   - jobs
   - states
 
-**An interactive map with the number of jobs and their locations**
+**An interactive map with the number of jobs and their locations:**
 
 ![Map](Application/static/img/map-1loop.gif)
 
-**The number of job ads per weekday**
+**The number of job ads per weekday:**
 
 ![jobAdsWeekday](Application/static/img/weekdays.PNG)
 
-**Word Cloud**
+**Word Cloud:**
 
 ![WordCloud](Application/static/img/wordcloud.PNG)
 
-**Salary Benchmark**
+**Salary Benchmark:**
 
 ![Benchmark](Application/static/img/benchmark.PNG)
 
-**Correlation between IT Salaries and underemployment rate**
+**Correlation between IT Salaries and underemployment rate:**
 
 ![ITsalaries](Application/static/img/ITsalaries-gif.gif)
 
