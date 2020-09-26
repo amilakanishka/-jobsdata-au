@@ -37,7 +37,7 @@ In the sass folder:
 
 ### Snapshot of the toolbox used to build our app: ###
 
-![DataArchitecture](Application/static/img/Bootcamp_workflow_final.PNG)
+![workflow](Application/static/img/Bootcamp_workflow_final.PNG)
 
 ### The visualisations: ###
 
