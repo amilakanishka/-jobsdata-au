@@ -17,11 +17,11 @@ There is not a specific jobs portal for data professionals.
 **Desired Outcome:**
 To build a live portal to provide current information and job listings to prospective data professional job seekers.
 
-![App](Application/static/img/website-gif.gif)
+![App](static/img/website-gif.gif)
 
 ### How to read our code: ###
 
-The repository named 'Application' contains the following folders:
+The repository contains the following folders:
 - app.py is the flask app which renders the data from the database
 - a folder templates where sit the three webpages: index.html for the home page, about.html, team.html
 - a folder static where sit: css/font/img/js/sass
@@ -37,7 +37,7 @@ In the sass folder:
 
 ### Snapshot of the toolbox used to build our app: ###
 
-![workflow](Application/static/img/Bootcamp_workflow_final.png)
+![workflow](static/img/Bootcamp_workflow_final.png)
 
 ### The visualisations: ###
 
@@ -47,22 +47,22 @@ The visualisations update based on the selection of two filters:
 
 **An interactive map with the number of jobs and their locations:**
 
-![Map](Application/static/img/map-1loop.gif)
+![Map](static/img/map-1loop.gif)
 
 **The number of job ads per weekday:**
 
-![jobAdsWeekday](Application/static/img/weekdays.PNG)
+![jobAdsWeekday](static/img/weekdays.PNG)
 
 **Word Cloud:**
 
-![WordCloud](Application/static/img/wordcloud.PNG)
+![WordCloud](static/img/wordcloud.PNG)
 
 **Salary Benchmark:**
 
-![Benchmark](Application/static/img/benchmark.PNG)
+![Benchmark](static/img/benchmark.PNG)
 
 **Correlation between IT Salaries and underemployment rate:**
 
-![ITsalaries](Application/static/img/ITsalaries-gif.gif)
+![ITsalaries](static/img/ITsalaries-gif.gif)
 
 
