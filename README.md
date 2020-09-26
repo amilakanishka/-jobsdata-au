@@ -22,10 +22,16 @@ To build a live portal to provide current information and job listings to prospe
 ### How to read our code: ###
 
 The repository contains the following folders:
+Data folder which contains the ETL solution on a Jupyter Notebook
+Presentation folder contains the powerpoint presentation
+
+Flask application related files in the main Project_2 folder.
 - app.py is the flask app which renders the data from the database
+- config.py which contations configurations
+- Procfile for Heroku deployment cnfigurations
+- requirements.txt with all the requirements for deployment on Heroku
 - a folder templates where sit the three webpages: index.html for the home page, about.html, team.html
 - a folder static where sit: css/font/img/js/sass
-- requirements.txt with all the requirements for deployment on Heroku
 
 In the js folder, you will find:
 - config.js - app with passwords
